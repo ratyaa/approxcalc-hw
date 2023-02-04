@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+NIXOS=1
+
 OPTIND=1
 SOURCE=${BASH_SOURCE[0]}
 # resolve $SOURCE until the file is no longer a symlink
@@ -116,4 +118,11 @@ fi
 
 cd $path
 echo "Moved to hw/$INDEX."
+
+if [[ $NIXOS == 1 ]]; then
+    if [ -z $IN_NIX_SHELL ]; then
+	nix-shell $DIR
+    fi
+fi
+
 
