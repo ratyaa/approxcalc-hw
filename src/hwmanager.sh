@@ -103,11 +103,6 @@ if getopts 'c:r:' OPTION; then
     esac
 else
     INDEX=$1
-    intcheckv=$(integer_check $INDEX)
-    if ! [[ $intcheckv == "" ]]; then
-	echo $intcheckv
-	return 0
-    fi
     path=$DIR/$INDEX
     dircheckv=$(mr_existence_check $path)
     if ! [[ $dircheckv == "" ]]; then
@@ -124,5 +119,3 @@ if [[ $NIXOS == 1 ]]; then
 	nix-shell $DIR
     fi
 fi
-
-
