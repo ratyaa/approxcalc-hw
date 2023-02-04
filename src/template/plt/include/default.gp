@@ -1,11 +1,11 @@
 if (!exists('GRIDCOLOR')) {
-     GRIDCOLOR = "#000000"
+     GRIDCOLOR = "#8F8F8F"
 } 
 if (!exists('TEXTCOLOR')) {
      TEXTCOLOR = "#000000"
 } 
 if (!exists('LINEWIDTH')) {
-     LINEWIDTH = 3
+     LINEWIDTH = 2
 } 
 if (!exists('POINTSIZE')) {
      POINTSIZE = 0.5

@@ -1,8 +1,9 @@
 TEX =			pdflatex
 TEX_FLAGS =		--output-directory $(BUILD_DIR) -shell-escape
 PLT =			gnuplot
-PLT_FLAGS =		-e "includedir = '../plt/include/'; outdir = '../pic/';"\
-			../plt/include/default.gp
+PLT_FLAGS =		-e "includedir = '../$(PLT_INCLUDE_DIR)/';\
+			outdir = '../$(PIC_DIR)/';"\
+			../$(PLT_INCLUDE_DIR)/default.gp
 PDF_READER =		zathura
 PDF_READER_FLAGS =
 SEM_DIR	=		../../sem/
@@ -11,8 +12,10 @@ PLT_DIR =		plt
 PIC_DIR =		pic
 TEX_DIR =		tex
 PDF_DIR =		../../pdf
+PLT_INCLUDE_DIR =	plt/include
 TEX_SRC =		$(wildcard $(TEX_DIR)/*.tex)
 PLT_SRC =		$(wildcard $(PLT_DIR)/*.gp)
+PLT_INCLUDE_SRC =	$(wildcard $(PLT_INCLUDE_DIR)/*.gp)
 PLT_INPUT =		$(PLT_SRC:%=../%)
 BUILD_DIR =		.build
 
@@ -44,7 +47,7 @@ endif
 
 build: $(TEX_TARGET)
 
-$(PLT_TARGET): $(PLT_SRC)
+$(PLT_TARGET): $(PLT_SRC) $(PLT_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
 	mkdir -p $(PIC_DIR)
 ifneq ($(PLT_SRC),)
