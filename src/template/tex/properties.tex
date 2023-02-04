@@ -1,0 +1,56 @@
+\def \srcdir{tex/}
+
+% Отступы
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm,bindingoffset=0cm]{geometry}
+
+% Математика
+\usepackage{mathtools}
+\usepackage{mathtext}
+
+% Язык & кодировки
+% \usepackage{ebgaramond}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage{textcomp}
+\usepackage{xfrac}
+
+% Lorem ipsum
+\usepackage{lipsum}
+
+% Оглавление
+\usepackage{titlesec}
+\titlespacing{\chapter}{0pt}{-30pt}{12pt}
+\titlespacing{\section}{\parindent}{5mm}{5mm}
+\titlespacing{\subsection}{\parindent}{5mm}{5mm}
+\usepackage{setspace}
+
+% Заголовок
+\usepackage{lastpage}
+\usepackage{fancybox,fancyhdr}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancyfoot[L]{\normalsize{Домашняя работа \textnumero \input{\srcdir index}}}
+\fancyfoot[R]{\normalsize{\thepage}}
+\fancyfoot[C]{}
+
+\fancyhead[C]{\normalsize{Приближенные методы аналитических вычислений, 22/23 уч. г.}}
+\fancyhead[L]{}
+\fancyhead[R]{}
+
+\usepackage[labelfont=bf,font=footnotesize,justification=centering]{caption}
+
+% Символы
+\newcommand{\Rnum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+\newcommand{\cg}{\textsl{g}} % removed \textnormal before \textsl
+\newcommand{\df}{\mathrm{d}}
+
+% Таблицы, графики & рисунки
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{svg}
+\renewcommand{\arraystretch}{1.4} 
+
+\pagestyle{fancy}
