@@ -1,0 +1,83 @@
+\documentclass[a4paper, 12pt]{article}
+
+\def \srcdir{tex/}
+\def \picdir{pic/}
+
+\input{\srcdir properties}
+\input{\srcdir macros}
+
+\title{Домашняя работа \textnumero \input{\srcdir index}}
+\author{\input{\srcdir author}}
+\date{\input{\srcdir date}}
+
+\begin{document}
+
+\maketitle\thispagestyle{fancy}
+
+\subsection*{Упражнение 1}
+\subsubsection*{\Rnum{1}. $\alpha \gg 1$}
+Пусть $x_0$ --- корень уравнения $x-1 = e^{-\alpha x}$, тогда,
+\salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \implies x_0 > 1 \implies e^{-\alpha x_0} < e^{-\alpha} \ll 1,}
+следовательно, $0 < x_0 - 1 \ll 1$, и $x_0$ можно представить в виде
+\salign{x_0 = 1 + \varepsilon, \quad 0 < \varepsilon \ll 1.}
+От полученного данной подстановкой уравнения $\varepsilon = e^{-\alpha(1 + \varepsilon)}$ отбросим малый член:
+\salign[*]{e^{-\alpha(1 + \varepsilon)} \approx e{-\alpha}, \quad -\alpha \approx \ln{\varepsilon},}
+откуда получаем $\varepsilon \approx e^{-\alpha}$, и, подставляя $\varepsilon$ в (1), получаем ответ:
+\salign[*]{\boxed{x_0 \approx 1 + e^{-\alpha}}}
+
+\subsubsection*{\Rnum{2}. $\alpha \ll 1$}
+Пусть $x_0$ --- корень уравнения $x-1 = e^{-\alpha x}$, тогда,
+\salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \implies x_0 > 1 \implies |-\alpha x_0| \ll 1,}
+следовательно, $0 < 1 - e^{-\alpha x_0} \ll 1$, и $e^{-\alpha x_0}$ можно представить в виде
+\salign{e^{-\alpha x_0} = 1 - \varepsilon, \quad 0 < \varepsilon \ll 1,}
+откуда $-\alpha x_0 = \ln{1 - \varepsilon}$, и, подстановкой (2) в исходное уравнение,
+\salign{x_0 = 2 - \varepsilon,}
+\salign[*]{\alpha(2 - \varepsilon) = \ln{\frac{1}{1 - \varepsilon}}.}
+Пренебрегая малой величиной, получаем
+\salign[*]{(2 - \varepsilon)\alpha \approx 2\alpha, \quad 2\alpha \approx \ln{\frac{1}{1 - \varepsilon}}, \quad \varepsilon = 1 - e^{-2\alpha},}
+откуда подстановкой в (3) получаем ответ:
+\salign[*]{\boxed{x_0 \approx 2 - e^{-2\alpha}}}
+
+\subsection*{Упражнение 2}
+% \subsubsection*{\Rnum{1}. $\alpha \gg 1$}
+% Пусть $x_0$ --- корень уравнения $\ln{x} = e^{-\alpha x}$, тогда,
+% \salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \implies \ln{x_0} > 0 \implies x_0 > 1 \implies e^{-\alpha x_0} < e^{-\alpha} \ll 1,}
+% следовательно, $0 < \ln{x_0} \ll 1$, и $x_0$ можно представить в виде
+% \salign{x_0 = 1 + \varepsilon, \quad 0 < \varepsilon \ll 1.}
+% От полученного данной подстановкой уравнения $\ln{(1 + \varepsilon)} = e^{-\alpha(1 + \varepsilon)}$ возьмем экспоненту:\
+% \salign[*]{1 + \varepsilon = e^{e^{-\alpha(1 + \varepsilon)}},}
+% и, так как $\xi = e^{-\alpha(1+\varepsilon)} \ll 1$, разложим правую часть по степеням $\xi$:
+% \salign[*]{e^\xi \approx 1 + \xi,}
+% откуда получаем $\varepsilon \approx \xi \approx e^{-\alpha(1+\varepsilon)}$, и, подставляя $\varepsilon$ в (1), получаем ответ:
+% \salign[*]{\boxed{x_0 \approx 1 + e^{-\alpha}}}
+
+% \subsubsection*{\Rnum{2}. $\alpha \ll 1$}
+% Пусть $x_0$ --- корень уравнения $x-1 = e^{-\alpha x}$, тогда,
+% \salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \implies x_0 > 1 \implies |-\alpha x_0| \ll 1,}
+% следовательно, $0 < 1 - e^{-\alpha x_0} \ll 1$, и $e^{-\alpha x_0}$ можно представить в виде
+% \salign{e^{-\alpha x_0} = 1 - \varepsilon, \quad 0 < \varepsilon \ll 1,}
+% откуда $-\alpha x_0 = \ln{1 - \varepsilon}$, и, подстановкой (2) в исходное уравнение,
+% \salign{x_0 = 2 - \varepsilon,}
+% \salign[*]{\alpha(2 - \varepsilon) = \ln{\frac{1}{1 - \varepsilon}}.}
+% Пренебрегая малой величиной, получаем
+% \salign[*]{(2 - \varepsilon)\alpha \approx 2\alpha, \quad 2\alpha \approx \ln{\frac{1}{1 - \varepsilon}}, \quad \varepsilon = 1 - e^{-2\alpha},}
+% откуда подстановкой в (3) получаем ответ:
+% \salign[*]{\boxed{x_0 \approx 2 - e^{-2\alpha}}}
+
+\subsection*{Упражнение 3}
+\lipsum[5-6]
+
+\subsection*{Упражнение 4}
+\lipsum[7-8]
+
+\subsection*{Задача 1}
+\lipsum[9-10]
+
+\subsection*{Задача 2}
+\lipsum[11-12]
+
+\svg[0.7]{sin}{Sample Text}
+\svg[0.7]{exp}{Sample Text}
+\svg[0.7]{linexp}{Sample Text}
+
+\end{document}
