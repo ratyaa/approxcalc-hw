@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
+\message{ !name(main.tex)}\documentclass[a4paper, 12pt]{article}
 
 \def \srcdir{tex/}
 \def \picdir{pic/}
@@ -11,6 +11,9 @@
 \date{\input{\srcdir date}}
 
 \begin{document}
+
+\message{ !name(main.tex) !offset(-3) }
+
 
 \maketitle\thispagestyle{fancy}
 
@@ -70,31 +73,21 @@
 \subsection*{Упражнение 3}
 \subsubsection*{\Rnum{1}. $x_1(\lambda)$}
 \subsubsection*{\Rnum{2}. $x_2(\lambda)$}
-Домножим на $-1$ и прологарифмируем обе части уравнения:
+Домножим обе части на $-1$ и прологарифмируем обе части уравнения:
 \salign{x = \ln{(-\lambda)} - \ln{(-x)}.}
 Чтобы записи были приятнее глазу, перепишем уравнение в следующем виде:
-\salign{y = -x, \quad \xi = -\ln{(-\lambda)}, \quad y = \xi + \ln{y}.}
-
-Пусть $\tilde{y}$ --- корень данного уравнения, удовлетворяющий условию задачи\
+\salign{y = -x, \quad \xi = -\ln{(-\lambda)}, \quad y = \xi + \ln{y}}.
+Пусть $\tilde{y}$ --- корень уравнения, удовлетворяющий условию задачи\
 $x_2(\lambda) < -1 \Leftrightarrow \tilde{y} > 1$. Применим метод итераций к (нумбер) и докажем, что\
-последовательность $\{y_n\}$ сходится в $\tilde{y}$.
-
-Пусть $y_1 = 1$, тогда
+последовательность ${y_n}$ сходится в $\tilde{y}$. Пусть $y_1 = 1$, тогда
 \salign{y_2 = \xi + \ln{y_1}, \quad (\Delta y)_1 = y_2 - y_1 = \xi - 1.}
 Так как $|\lambda| \ll 1$, $\xi > 1$ и, следовательно,
 \salign{y_2 > y_1, \quad (\Delta y)_1 > 0.}
 Предположим, что $\exists n: y_n > \tilde{y}$, тогда
-\salign{y_n = \xi + \ln{y_{n-1}}, \quad y_{n-1} = e^{y_n - \xi} = e^{(\tilde{y} - \xi) + (y_n - \tilde{y})} = \tilde{y}e^{y_n - \tilde{y}} > \tilde{y},}
+\salign{y_n = \xi + \ln{y_{n-1}}, \quad y_{n-1} = e^{y_n - \xi} = e^{(\tilde{y} - \xi) + (y_n - \tilde{y})} = \tilde{y}e^{y_n - \tilde{y}} > \tilde{y}},
 откуда по индукции:
 \salign{\exists n: y_n > \tilde{y} \Rightarrow \forall k \in \mathbb{N}, \ k \leq n \hookrightarrow y_k > \tilde{y},}
-что противоречит начальным условиям $\tilde{y} > 1, \ y_1 = 1$, следовательно $\{y_n\}$\
-ограниченна сверху.
-
-Докажем, что последовательность $\{y_n\}$ монотонно возрастает:
-\salign{(\Delta y)_n = y_{n+1} - y_n = (\xi + \ln{y_n}) - (\xi + \ln{y_{n-1}}) = \ln{\frac{y_n}{y_{n-1}}} = \ln{\left(1 + \frac{(\Delta y)_{n-1}}{y_{n-1}}\right)},}
-откуда по индукции:
-\salign{(\Delta y)_1 > 0 \Rightarrow \forall n \in \mathbb{N} \hookrightarrow (\Delta y)_n > 0 \Leftrightarrow \forall n \in \mathbb{N} \hookrightarrow y_{n+1} > y_n,}
-т.е. последовательность $\{y_n\}$ монотонно возрастает.
+что противоречит начальным условиям $\tilde{y} > 1, \ y_1 = 1$.
 
 \subsection*{Упражнение 4}
 \lipsum[7-8]
@@ -106,3 +99,4 @@ $x_2(\lambda) < -1 \Leftrightarrow \tilde{y} > 1$. Применим метод �
 \lipsum[11-12]
 
 \end{document}
+\message{ !name(main.tex) !offset(-102) }
