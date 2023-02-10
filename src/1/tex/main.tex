@@ -125,7 +125,34 @@ a для $\lambda = -e^{-8}$ ту же точность получаем при
 \salign[*]{\boxed{\tilde{x}_1(\lambda) = -1 + \sqrt{2(\lambda e + 1)}, \quad \tilde{x}_2(\lambda) = -1 - \sqrt{2(\lambda e + 1)}}}
 
 \subsection*{Задача 1}
-\lipsum[9-10]
+% \subsubsection*{\Rnum{1}. $\tilde{x}_1(\lambda)$}
+% Пусть $0 > \tilde{x} > -1$ --- корень уравнения $xe^x = \lambda$. При малых $x$ таких, что $|x| \ll 1$,\
+% \salign[*]{x e^x \approx x(1 + x + \frac{1}{2}x^2) \approx x,}
+% следовательно, $\tilde{x} \approx \tilde{x}e^x \approx \lambda$, ответ:
+% \salign[*]{\boxed{\tilde{x} \approx \lambda}}
+\subsubsection*{\Rnum{2}. $\alpha \gg 1$}
+Найдем сначала положительный корень данного уравнения $\tilde{x}_1 > 0$. Так как $\alpha \gg 1$,
+\salign[*]{\tanh{\alpha \tilde{x}_1} = \frac{e^{\alpha \tilde{x}_1} - e^{-\alpha \tilde{x}_1}}{e^{\alpha \tilde{x}_1} + e^{-\alpha \tilde{x}_1}} = 1 - \frac{2}{e^{2\alpha \tilde{x}_1} + 1} = 1 - \varepsilon, \ 0 < \varepsilon < 1.}
+В грубом приближении $\tanh{\alpha\tilde{x}_1} \approx 1, \ \tilde{x}_1 \approx \frac{\pi}{4}$, а следовательно $\varepsilon \ll 1$.
+Выразим $\tilde{x}_1$ через $\varepsilon$:
+\salign[*]{1 - \varepsilon = \arctan{\tilde{x}_1}, \quad \tilde{x}_1 = \tan{(1 - \varepsilon)} = \frac{\tan{1} - \tan{\varepsilon}}{1 + \tan{1}\tan{\varepsilon}}.}
+Пусть $\tan{1} = \beta$. Так как $\beta\tan{\varepsilon} \ll 1$,
+\salign{\tilde{x}_1 = \beta\frac{1 - \frac{\tan{\varepsilon}}{\beta}}{1 + \beta \tan{\varepsilon}} = \beta - \frac{(\beta^2 + 1)\tan{\varepsilon}}{1 + \beta\tan{\varepsilon}} \approx \beta - (\beta^2 + 1)\varepsilon.}
+Теперь преобразуем (11) и подставим $\tilde{x}_1$ из (12):
+\salign[*]{\varepsilon = \frac{2}{e^{2\alpha\tilde{x}_1 + 1}}, \quad \tilde{x}_1 = \frac{1}{2\alpha}\ln{\left(\frac{1}{\varepsilon} - 1\right)} \approx \beta - (\beta^2 + 1)\varepsilon.}
+Применим метод итераций к полученному уравнению. Возьмем $\varepsilon_1 = 0$, тогда:
+\salign[*]{\frac{1}{2\alpha}\ln{\left(\frac{1}{\varepsilon_{n+1}} - 1\right)} = \beta - (\beta^2 + 1)\varepsilon_n, \quad \varepsilon_2 = \frac{1}{e^{2\alpha\beta} + 1}, \quad \varepsilon_3 = \frac{1}{e^{2\alpha\beta}\left[e^{-(\beta^2 + 1)\frac{1}{e^{2\alpha\beta} + 1}}\right] + 1}.}
+Уже при $\alpha = 5$
+\salign[*]{\varepsilon_2 \approx 1.7 \cdot 10^{-7}, \ \frac{(\Delta\varepsilon)_2}{\varepsilon_2} = \frac{\varepsilon_3 - \varepsilon_2}{\varepsilon_2} \approx 10^{-5} \Rightarrow (\Delta\varepsilon)_2 \ll \varepsilon_2,}
+а следовательно
+\salign[*]{\varepsilon \approx \varepsilon_2 \approx \frac{1}{e^{2\alpha\beta} + 1}}
+является достаточным приближением.
+
+Подставляя полученную величину в (11), получаем приближенное выражение для $\tilde{x}_1$:
+\salign[*]{\tilde{x}_1 \approx \beta - \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}.}
+Так как в исходном уравнении правая и левая части --- нечетные функции, $\exists \tilde{x}_2 = -\tilde{x}_1$:
+корень исходного уравнения, откуда, учитывая тривиальный корень $\tilde{x}_0 = 0$, ответ:
+\salign{\boxed{\tilde{x} \in \left\{0, \ \beta - \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}, \ -\beta + \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}\right\}}}
 
 \subsection*{Задача 2}
 \lipsum[11-12]
