@@ -109,9 +109,9 @@ $\hat{y} = \xi + \ln{\hat{y}}$, т.е. $\hat{y} = \tilde{y}$. $\blacksquare$
 
 То, с какой точностью записывать ответ, сильно зависит от $\lambda$. Например, при\
 $x_1 = -1$ для $\lambda = -e^{-4}$, с точностью до трёх значащих цифр
-\salign[*]{\tilde{x}_2(-e^4) \approx x_6 = -(\xi + \ln{(\xi + \ln{(\xi + \ln{(\xi + \ln{\xi})})})}), \ \xi = -\ln{(-\lambda)} = 4,}
+\salign[*]{\tilde{x}_2(-e^{-4}) \approx x_6 = -(\xi + \ln{(\xi + \ln{(\xi + \ln{(\xi + \ln{\xi})})})}), \ \xi = -\ln{(-\lambda)} = 4,}
 a для $\lambda = -e^{-8}$ ту же точность получаем при
-\salign[*]{\tilde{x}_2(-e^8) \approx x_4 = -(\xi + \ln{(\xi + \ln{\xi})}), \ \xi = -\ln{(-\lambda)} = 8.}
+\salign[*]{\tilde{x}_2(-e^{-8}) \approx x_4 = -(\xi + \ln{(\xi + \ln{\xi})}), \ \xi = -\ln{(-\lambda)} = 8.}
 \textbf{Буду считать, что $\lambda = -e^{-4} \approx -0.02$ удовлетворяет условию $|\lambda| \ll 1$ и запишу в ответ $\tilde{x}_2(\lambda) \approx x_6$:}
 \salign[*]{\boxed{\tilde{x}_2(\lambda) \approx -(\xi + \ln{(\xi + \ln{(\xi + \ln{(\xi + \ln{\xi})})})}), \ \xi = -\ln{(-\lambda)}}}
 \subsection*{Упражнение 4}
@@ -123,14 +123,11 @@ a для $\lambda = -e^{-8}$ ту же точность получаем при
 \salign[]{\frac{1}{2}\varepsilon^2 = \delta e, \quad \varepsilon = \pm \sqrt{2\delta e} = \pm \sqrt{2(\lambda e + 1)},}
 отсюда, подставляя в (9) и учитывая, что $\tilde{x}_1(\lambda) > \tilde{x}_2(\lambda)$, ответ:
 \salign[*]{\boxed{\tilde{x}_1(\lambda) = -1 + \sqrt{2(\lambda e + 1)}, \quad \tilde{x}_2(\lambda) = -1 - \sqrt{2(\lambda e + 1)}}}
-\lipsum[7-8]
 
 \subsection*{Задача 1}
 \lipsum[9-10]
 
 \subsection*{Задача 2}
 \lipsum[11-12]
-
-
 
 \end{document}
