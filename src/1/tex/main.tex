@@ -133,7 +133,7 @@ a для $\lambda = -e^{-8}$ ту же точность получаем при
 \subsubsection*{\Rnum{2}. $\alpha \gg 1$}
 Найдем сначала положительный корень данного уравнения $\tilde{x}_1 > 0$. Так как $\alpha \gg 1$,
 \salign[*]{\tanh{\alpha \tilde{x}_1} = \frac{e^{\alpha \tilde{x}_1} - e^{-\alpha \tilde{x}_1}}{e^{\alpha \tilde{x}_1} + e^{-\alpha \tilde{x}_1}} = 1 - \frac{2}{e^{2\alpha \tilde{x}_1} + 1} = 1 - \varepsilon, \ 0 < \varepsilon < 1.}
-В грубом приближении $\tanh{\alpha\tilde{x}_1} \approx 1, \ \tilde{x}_1 \approx \frac{\pi}{4}$, а следовательно $\varepsilon \ll 1$.
+В грубом приближении $\tanh{\alpha\tilde{x}_1} \approx 1, \ \tilde{x}_1 \approx \tan{1}$, а следовательно $\varepsilon \ll 1$.
 Выразим $\tilde{x}_1$ через $\varepsilon$:
 \salign[*]{1 - \varepsilon = \arctan{\tilde{x}_1}, \quad \tilde{x}_1 = \tan{(1 - \varepsilon)} = \frac{\tan{1} - \tan{\varepsilon}}{1 + \tan{1}\tan{\varepsilon}}.}
 Пусть $\tan{1} = \beta$. Так как $\beta\tan{\varepsilon} \ll 1$,
@@ -152,7 +152,7 @@ a для $\lambda = -e^{-8}$ ту же точность получаем при
 \salign[*]{\tilde{x}_1 \approx \beta - \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}.}
 Так как в исходном уравнении правая и левая части --- нечетные функции, $\exists \tilde{x}_2 = -\tilde{x}_1$:
 корень исходного уравнения, откуда, учитывая тривиальный корень $\tilde{x}_0 = 0$, ответ:
-\salign{\boxed{\tilde{x} \in \left\{0, \ \beta - \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}, \ -\beta + \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}\right\}}}
+\salign{\boxed{\tilde{x} \in \left\{0, \ \beta - \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}, \ -\beta + \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}\right\}, \ \beta = \tan{1}}}
 
 \subsection*{Задача 2}
 \lipsum[11-12]
