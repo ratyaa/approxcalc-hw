@@ -22,8 +22,8 @@
 \salign{\tilde{x} = 1 + \varepsilon, \quad 0 < \varepsilon \ll 1.}
 От полученного данной подстановкой уравнения $\varepsilon = e^{-\alpha(1 + \varepsilon)}$ отбросим малый член:
 \salign[*]{e^{-\alpha(1 + \varepsilon)} \approx e{-\alpha}, \quad -\alpha \approx \ln{\varepsilon},}
-откуда получаем $\varepsilon \approx 1 - \alpha$, и, подставляя $\varepsilon$ в (1), получаем ответ:
-\salign[*]{\boxed{\tilde{x} \approx 2 - \alpha}}
+откуда получаем $\varepsilon \approx e^{-\alpha}$, и, подставляя $\varepsilon$ в (1), получаем ответ:
+\salign[*]{\boxed{\tilde{x} \approx 1 + e^{-\alpha}}}
 \subsubsection*{\Rnum{2}. $\alpha \ll 1$}
 Пусть $\tilde{x}$ --- корень уравнения $x-1 = e^{-\alpha x}$, тогда,
 \salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \Rightarrow \tilde{x} > 1 \Rightarrow |-\alpha \tilde{x}| \ll 1,}
@@ -48,9 +48,9 @@
 и, так как $\xi = e^{-\alpha(1+\varepsilon)} \ll 1$, разложим правую часть по степеням $\xi$:
 \salign[*]{1 + \varepsilon = e^\xi \approx 1 + \xi + \frac{1}{2}\xi^2.}
 Подставляя $\xi$ и пренебрегая малыми величинами, получаем
-\salign[*]{\varepsilon \approx e^{-\alpha(1+\varepsilon)} + \frac{1}{2}e^{-2\alpha(1+\varepsilon)} \approx e^{-\alpha} \approx 1 - \alpha,}
+\salign[*]{\varepsilon \approx e^{-\alpha(1+\varepsilon)} + \frac{1}{2}e^{-2\alpha(1+\varepsilon)} \approx e^{-\alpha},}
 и, подставляя $\varepsilon$ в (4), получаем ответ:
-\salign[*]{\boxed{\tilde{x} \approx 2 - \alpha}}
+\salign[*]{\boxed{\tilde{x} \approx 1+e^{-\alpha}}}
 \subsubsection*{\Rnum{2}. $\alpha \ll 1$}
 Пусть $\tilde{x}$ --- корень уравнения $x-1 = e^{-\alpha x}$, тогда,
 \salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \Rightarrow \tilde{x} > 1 \Rightarrow |-\alpha \tilde{x}| \ll 1,}
