@@ -4,8 +4,10 @@
 \usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm,bindingoffset=0cm]{geometry}
 
 % Математика
-\usepackage{mathtools}
-\usepackage{mathtext}
+% \usepackage{mathtools}
+% \usepackage{mathtext}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 % Язык & кодировки
 % \usepackage{ebgaramond}
@@ -20,10 +22,11 @@
 
 % Оглавление
 \usepackage{titlesec}
-\titlespacing{\chapter}{0pt}{-30pt}{12pt}
-\titlespacing{\section}{\parindent}{5mm}{5mm}
-\titlespacing{\subsection}{\parindent}{5mm}{5mm}
+% \titlespacing{\chapter}{0pt}{-30pt}{12pt}
+% \titlespacing{\section}{\parindent}{5mm}{5mm}
+% \titlespacing{\subsection}{\parindent}{5mm}{5mm}
 \usepackage{setspace}
+\usepackage{indentfirst}
 
 % Заголовок
 \usepackage{lastpage}
@@ -39,11 +42,6 @@
 \fancyhead[R]{}
 
 \usepackage[labelfont=bf,font=footnotesize,justification=centering]{caption}
-
-% Символы
-\newcommand{\Rnum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
-\newcommand{\cg}{\textsl{g}} % removed \textnormal before \textsl
-\newcommand{\df}{\mathrm{d}}
 
 % Таблицы, графики & рисунки
 \usepackage{array}
