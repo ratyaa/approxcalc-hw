@@ -22,8 +22,8 @@
 \salign{\tilde{x} = 1 + \varepsilon, \quad 0 < \varepsilon \ll 1.}
 От полученного данной подстановкой уравнения $\varepsilon = e^{-\alpha(1 + \varepsilon)}$ отбросим малый член:
 \salign[*]{e^{-\alpha(1 + \varepsilon)} \approx e{-\alpha}, \quad -\alpha \approx \ln{\varepsilon},}
-откуда получаем $\varepsilon \approx e^{-\alpha}$, и, подставляя $\varepsilon$ в (1), получаем ответ:
-\salign[*]{\boxed{\tilde{x} \approx 1 + e^{-\alpha}}}
+откуда получаем $\varepsilon \approx 1 - \alpha$, и, подставляя $\varepsilon$ в (1), получаем ответ:
+\salign[*]{\boxed{\tilde{x} \approx 2 - \alpha}}
 \subsubsection*{\Rnum{2}. $\alpha \ll 1$}
 Пусть $\tilde{x}$ --- корень уравнения $x-1 = e^{-\alpha x}$, тогда,
 \salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \Rightarrow \tilde{x} > 1 \Rightarrow |-\alpha \tilde{x}| \ll 1,}
@@ -33,9 +33,9 @@
 \salign{\tilde{x} = 2 - \varepsilon,}
 \salign[*]{\alpha(2 - \varepsilon) = \ln{\frac{1}{1 - \varepsilon}}.}
 Пренебрегая малой величиной, получаем
-\salign[*]{(2 - \varepsilon)\alpha \approx 2\alpha, \quad 2\alpha \approx \ln{\frac{1}{1 - \varepsilon}}, \quad \varepsilon \approx 1 - e^{-2\alpha},}
+\salign[*]{(2 - \varepsilon)\alpha \approx 2\alpha, \quad 2\alpha \approx \ln{\frac{1}{1 - \varepsilon}}, \quad \varepsilon \approx 1 - e^{-2\alpha} \approx 2\alpha,}
 откуда подстановкой в (3) получаем ответ:
-\salign[*]{\boxed{\tilde{x} \approx 1 + e^{-2\alpha}}}
+\salign[*]{\boxed{\tilde{x} \approx 2 - 2\alpha}}
 \subsection*{Упражнение 2}
 \subsubsection*{\Rnum{1}. $\alpha \gg 1$}
 Пусть $\tilde{x}$ --- корень уравнения $\ln{x} = e^{-\alpha x}$, тогда,
@@ -48,9 +48,9 @@
 и, так как $\xi = e^{-\alpha(1+\varepsilon)} \ll 1$, разложим правую часть по степеням $\xi$:
 \salign[*]{1 + \varepsilon = e^\xi \approx 1 + \xi + \frac{1}{2}\xi^2.}
 Подставляя $\xi$ и пренебрегая малыми величинами, получаем
-\salign[*]{\varepsilon \approx e^{-\alpha(1+\varepsilon)} + \frac{1}{2}e^{-2\alpha(1+\varepsilon)} \approx e^{-\alpha},}
+\salign[*]{\varepsilon \approx e^{-\alpha(1+\varepsilon)} + \frac{1}{2}e^{-2\alpha(1+\varepsilon)} \approx e^{-\alpha} \approx 1 - \alpha,}
 и, подставляя $\varepsilon$ в (4), получаем ответ:
-\salign[*]{\boxed{\tilde{x} \approx 1 + e^{-\alpha}}}
+\salign[*]{\boxed{\tilde{x} \approx 2 - \alpha}}
 \subsubsection*{\Rnum{2}. $\alpha \ll 1$}
 Пусть $\tilde{x}$ --- корень уравнения $x-1 = e^{-\alpha x}$, тогда,
 \salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \Rightarrow \tilde{x} > 1 \Rightarrow |-\alpha \tilde{x}| \ll 1,}
@@ -60,9 +60,9 @@
 \salign{\tilde{x} = e^{1 - \varepsilon},}
 \salign[*]{\alpha e^{1 - \varepsilon} = \ln{\frac{1}{1 - \varepsilon}}.}
 Пренебрегая малой величиной, получаем
-\salign[*]{\alpha e^{1-\varepsilon} \approx \alpha e, \quad \alpha e \approx \ln{\frac{1}{1 - \varepsilon}}, \quad \varepsilon = 1 - e^{-e\alpha},}
+\salign[*]{\alpha e^{1-\varepsilon} \approx \alpha e, \quad \alpha e \approx \ln{\frac{1}{1 - \varepsilon}}, \quad \varepsilon = 1 - e^{-e\alpha} \approx e\alpha,}
 откуда подстановкой в (6) получаем ответ:
-\salign[*]{\boxed{\tilde{x} \approx e^{e^{-e\alpha}}}}
+\salign[*]{\boxed{\tilde{x} \approx e^{1 - e\alpha}}}
 \subsection*{Упражнение 3}
 \subsubsection*{\Rnum{1}. $\tilde{x}_1(\lambda)$}
 Пусть $0 > \tilde{x} > -1$ --- корень уравнения $xe^x = \lambda$. При малых $x$ таких, что $|x| \ll 1$,\
@@ -166,7 +166,7 @@ $\tilde{x}_i^+ = - \tilde{x}_i^-,\ \tilde{x}_i^+ > 0$. Отсюда и из гр
 \salign[*]{\tilde{x}_1 \approx \beta - \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}.}
 Так как в исходном уравнении правая и левая части --- нечетные функции, $\exists \tilde{x}_2 = -\tilde{x}_1$:
 корень исходного уравнения, откуда, учитывая тривиальный корень $\tilde{x}_0 = 0$, ответ:
-\salign[*]{\boxed{\tilde{x}_0 = 0,\ \tilde{x}_{1,2} \approx \pm\left(\beta - \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}\right)}}
+\salign[*]{\boxed{\tilde{x}_0 = 0,\ \tilde{x}_{1,2} \approx \pm\left(\beta - \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}\right),\ \beta = \tan{1}}}
 
 \subsection*{Задача 2}
 \svg[0.7]{problem2}{График функции $\boldsymbol{|\cos{x} + \alpha\sinc{x}|}$ при $\boldsymbol{\alpha = 3}$}
