@@ -1,0 +1,23 @@
+% svg inclusion
+\newcommand{\svg}[3][0.7] {
+  \begin{figure}[h]
+    \begin{center}
+      \fontsize{7}{8}\selectfont
+      \includesvg[scale=#1]{\picdir #2}
+      \caption{#3}
+    \end{center}
+  \end{figure}
+}
+
+% Simple single-line alignment
+\newcommand{\salign}[2][] {
+  \begin{align#1}
+    #2
+  \end{align#1}
+}
+
+% Символы
+\DeclareMathOperator{\sinc}{sinc}
+\newcommand{\Rnum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+\newcommand{\cg}{\textsl{g}} % removed \textnormal before \textsl
+\newcommand{\df}{\mathrm{d}}

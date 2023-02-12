@@ -1,0 +1,39 @@
+\documentclass[a4paper, 12pt]{article}
+
+\def \srcdir{tex/}
+\def \picdir{pic/}
+
+\input{\srcdir properties}
+\input{\srcdir macros}
+
+\title{Домашняя работа \textnumero \input{\srcdir index}}
+\author{\input{\srcdir author}}
+\date{\input{\srcdir date}}
+
+\begin{document}
+
+\maketitle\thispagestyle{fancy}
+
+\subsection*{Упражнение 1}
+\lipsum[1-2]
+
+\subsection*{Упражнение 2}
+\lipsum[3-4]
+
+\subsection*{Упражнение 3}
+\lipsum[5-6]
+
+\subsection*{Упражнение 4}
+\lipsum[7-8]
+
+\subsection*{Задача 1}
+\lipsum[9-10]
+
+\subsection*{Задача 2}
+\lipsum[11-12]
+
+\svg[0.7]{sin}{Sample Text}
+\svg[0.7]{exp}{Sample Text}
+\svg[0.7]{linexp}{Sample Text}
+
+\end{document}
