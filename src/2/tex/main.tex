@@ -14,26 +14,62 @@
 
 \maketitle\thispagestyle{fancy}
 
-\subsection*{Упражнение 1}
-\lipsum[1-2]
+% \subsection*{Упражнение 1}
+% \lipsum[1-2]
 
-\subsection*{Упражнение 2}
-\lipsum[3-4]
+% \subsection*{Упражнение 2}
+% \lipsum[3-4]
 
-\subsection*{Упражнение 3}
-\lipsum[5-6]
+% \subsection*{Упражнение 3}
+% \lipsum[5-6]
 
-\subsection*{Упражнение 4}
-\lipsum[7-8]
+% \subsection*{Упражнение 4}
+% \lipsum[7-8]
 
-\subsection*{Задача 1}
-\lipsum[9-10]
+% \subsection*{Задача 1}
+% \lipsum[9-10]
 
 \subsection*{Задача 2}
-\lipsum[11-12]
+\subsubsection*{\Rnum{1}. $b \gg a$}
+Так как $b \gg a$ и $0 \le x \le a$, $x \ll a \implies$
+\salign{e^{\frac{x}{b}} \approx 1 + \frac{x}{b},\quad \int\limits_0^a \frac{x^n}{e^{\frac{x}{b}} - 1}\; \df x \approx \int\limits_0^a bx^{n-1}\; \df x = \left.\frac{bx^n}{n}\right|_0^a = \frac{ba^n}{n},}
+ответ:
+\salign[*]{\boxed{I(n,a,b) \approx \frac{ba^n}{n}}}
 
-\svg[0.7]{sin}{Sample Text}
-\svg[0.7]{exp}{Sample Text}
-\svg[0.7]{linexp}{Sample Text}
+\subsubsection*{\Rnum{2}. $n \gg 1,\ nb \ll a$}
+Приблизительно найдем точку $\tilde{x}$, в которой подынтегральная функция
+\salign{f(x) = \frac{x^n}{e^{\frac{x}{b}} - 1}}
+достигает максимума:
+\salign{\left.\frac{\df}{\df x}f(x)\right|_{x=\tilde{x}} = \frac{n\tilde{x}^{n-1}}{e^{\frac{\tilde{x}}{b}} - 1} - \frac{\tilde{x}^ne^{\frac{\tilde{x}}{b}}}{\left(e^{\frac{\tilde{x}}{b}} - 1\right)^2} = 0,\quad \tilde{x} = \frac{nbe^{\frac{\tilde{x}}{b}}}{e^{\frac{\tilde{x}}{b}} - 1}.}
+Применяя метод итераций при $\tilde{x}_0 = nb$, так как $n \gg 1$:
+\salign{\tilde{x}_1 = \frac{nbe^{\frac{\tilde{x}_0}{b}}}{e^{\frac{\tilde{x}_0}{b}} - 1} = \frac{nbe^n}{e^n - 1} \approx nb = \tilde{x}_0,}
+следовательно
+\salign{\tilde{x} \approx nb.}
+
+При $x' = \frac{1}{2}nb$:
+\salign{\frac{f(x')}{f(\tilde{x})} = \left(\frac12\right)^n \frac{e^n - 1}{e^{\frac{n}{2}} - 1} \approx \left(\frac12\right)^ne^{\frac{n}{2}} = \left(\frac{e}{4}\right)^{\frac{n}{2}} \ll 1,}
+при $x'' = 2nb$:
+\salign{\frac{f(x'')}{f(\tilde{x})} = 2^{n} \frac{e^n - 1}{e^{2n} - 1} \approx 2^{n}e^{-n} = \left(\frac{2}{e}\right)^n \ll 1,}
+следовательно интеграл набирается в некоторой окрестности
+\salign{U(\tilde{x}):\ \forall x_u \in U(\tilde{x}) \hookrightarrow \frac12 nb < x_u < 2nb \ll a,}
+откуда
+\salign[*]{\forall x_u \in U(\tilde{x})\hookrightarrow e^{\frac{n}{2}} - 1 < e^{\frac{x_u}{b}} - 1 \approx e^{\frac{x_u}{b}} \implies}
+\salign{\int\limits_0^a \frac{x^n}{e^{\frac{x}{b}} - 1}\; \df x \approx \int\limits_0^a \frac{x^n}{e^{\frac{x}{b}}}\; \df x \approx b^{n+1}\int\limits_0^\infty \left(\frac{x}{b}\right)^ne^{-\frac{x}{b}}\; \df \left(\frac{x}{b}\right) = b^{n+1}\Gamma(n+1).}
+
+В условии задачи не указано, является ли $n$ целым числом (а, следовательно, так как $n \gg 1$ --- натуральным),\
+поэтому ответ:
+\salign[*]{\boxed{I(n,a,b) \approx b^{n+1}\Gamma(n+1),\text{ для } n \in \mathbb{N}\ I(n,a,b) \approx b^{n+1}n!}}
+% = \int\limits_0^a h(x)\; \df x,\ h(x) = x^ne^{-\frac{x}{b}}.}
+% Найдем неопределенный интеграл $\int h(x)\; \df x$:
+% \salign{\int x^ne^{-\frac{x}{b}}\; \df x = -b\int x^n\; \df e^{- \frac{x}{b}} = -bx^ne^{- \frac{x}{b}} + bn\int x^{n-1}e^{-\frac{x}{b}}\; \df x,}
+% откуда по индукции получаем
+% \salign{\int h(x)\; \df x = -be^{- \frac{x}{b}}\sum\limits_{k = 0}^n \frac{n!}{(n-k)!} b^k x^{n-k} + C = -be^{- \frac{x}{b}}\sum\limits_{k=0}^n \xi_k(x) + C = F(x).}
+% Для $x = 0$:
+% \salign{F(0) = -be^{- \frac{x}{b}}\xi_n(0) + C = -b^{n+1}n! + C.}
+% Так как $nb \ll a$, и $n \gg 1$, $b \ll \frac{a}{n} \ll a \Rightarrow b \ll a,\ n \ll \frac{a}{b}$, для $x = a$:
+% \salign{\forall k \in \{1,\dots,n\} \hookrightarrow \xi_k(a) = \xi_{k-1}(a)\frac{(n-k+1)b}{a} < }
+% \svg[0.7]{sin}{Sample Text}
+% \svg[0.7]{exp}{Sample Text}
+% \svg[0.7]{linexp}{Sample Text}
 
 \end{document}
