@@ -62,7 +62,7 @@
 Пренебрегая малой величиной, получаем
 \salign[*]{\alpha e^{1-\varepsilon} \approx \alpha e, \quad \alpha e \approx \ln{\frac{1}{1 - \varepsilon}}, \quad \varepsilon = 1 - e^{-e\alpha} \approx e\alpha,}
 откуда подстановкой в (6) получаем ответ:
-\salign[*]{\boxed{\tilde{x} \approx e^{1 - e\alpha}}}
+\salign[*]{\boxed{\tilde{x} \approx e(1 - e\alpha)}}
 \subsection*{Упражнение 3}
 \subsubsection*{\Rnum{1}. $\tilde{x}_1(\lambda)$}
 Пусть $0 > \tilde{x} > -1$ --- корень уравнения $xe^x = \lambda$. При малых $x$ таких, что $|x| \ll 1$,\
@@ -139,11 +139,11 @@ $\tilde{x}_i^+ = - \tilde{x}_i^-,\ \tilde{x}_i^+ > 0$. Отсюда и из гр
 Разделим уравнение на $x$, домножим на $15$ для удобства, произведем замену $y = x^2$\
 и решим приближенно полученное квадратное уравнение:
 \salign[*]{y^2(10\varepsilon - 1) - 15\varepsilon y + 15\varepsilon = 0,}
-\salign[*]{\tilde{y} = \frac{15\varepsilon \pm \sqrt{15^2\varepsilon^2 - 60\varepsilon(10\varepsilon - 1)}}{2(10\varepsilon - 1)} = \frac{\pm 30\sqrt{\varepsilon} \cdot \sqrt{1-\frac{39}4\varepsilon} + 15\varepsilon}{2(10\varepsilon - 1)} \approx \pm 15\sqrt{\varepsilon},}
+\salign[*]{\tilde{y} = \frac{15\varepsilon \pm \sqrt{15^2\varepsilon^2 - 60\varepsilon(10\varepsilon - 1)}}{2(10\varepsilon - 1)} = \frac{\pm 2\sqrt{15\varepsilon} \cdot \sqrt{1-\frac{25}{4}\varepsilon} + 15\varepsilon}{2(10\varepsilon - 1)} \approx \pm \sqrt{15\varepsilon},}
 а так как $y > 0$:
-\salign[*]{\tilde{y} \approx 15\sqrt{\varepsilon}.}
+\salign[*]{\tilde{y} \approx \sqrt{15\varepsilon}.}
 Подставляя полученный результат в $\varepsilon = \alpha - 1$ и $x = \pm\sqrt{y}$, получаем ответ:
-\salign[*]{\boxed{\tilde{x}_0 = 0,\ \tilde{x}_{1,2} \approx \pm\sqrt{15\sqrt{\alpha - 1}}}}
+\salign[*]{\boxed{\tilde{x}_0 = 0,\ \tilde{x}_{1,2} \approx \pm\sqrt[4]{15(\alpha - 1)}}}
 \subsubsection*{\Rnum{2}. $\alpha \gg 1$}
 Найдем сначала положительный корень данного уравнения $\tilde{x}_1 > 0$. Так как $\alpha \gg 1$,
 \salign{\tanh{\alpha \tilde{x}_1} = \frac{e^{\alpha \tilde{x}_1} - e^{-\alpha \tilde{x}_1}}{e^{\alpha \tilde{x}_1} + e^{-\alpha \tilde{x}_1}} = 1 - \frac{2}{e^{2\alpha \tilde{x}_1} + 1} = 1 - \varepsilon, \ 0 < \varepsilon < 1.}
@@ -153,20 +153,20 @@ $\tilde{x}_i^+ = - \tilde{x}_i^-,\ \tilde{x}_i^+ > 0$. Отсюда и из гр
 Пусть $\tan{1} = \beta$. Так как $\beta\tan{\varepsilon} \ll 1$,
 \salign{\tilde{x}_1 = \beta\frac{1 - \frac{\tan{\varepsilon}}{\beta}}{1 + \beta \tan{\varepsilon}} = \beta - \frac{(\beta^2 + 1)\tan{\varepsilon}}{1 + \beta\tan{\varepsilon}} \approx \beta - (\beta^2 + 1)\varepsilon.}
 Теперь преобразуем (10) и подставим $\tilde{x}_1$ из (11):
-\salign[*]{\varepsilon = \frac{2}{e^{2\alpha\tilde{x}_1 + 1}}, \quad \tilde{x}_1 = \frac{1}{2\alpha}\ln{\left(\frac{1}{\varepsilon} - 1\right)} \approx \beta - (\beta^2 + 1)\varepsilon.}
+\salign[*]{\varepsilon = \frac{2}{e^{2\alpha\tilde{x}_1 + 1}}, \quad \tilde{x}_1 = \frac{1}{2\alpha}\ln{\left(\frac{2}{\varepsilon} - 1\right)} \approx \beta - (\beta^2 + 1)\varepsilon.}
 Применим метод итераций к полученному уравнению. Возьмем $\varepsilon_1 = 0$, тогда:
-\salign[*]{\frac{1}{2\alpha}\ln{\left(\frac{1}{\varepsilon_{n+1}} - 1\right)} = \beta - (\beta^2 + 1)\varepsilon_n, \quad \varepsilon_2 = \frac{1}{e^{2\alpha\beta} + 1}, \quad \varepsilon_3 = \frac{1}{e^{2\alpha\beta}\left[e^{-(\beta^2 + 1)\frac{1}{e^{2\alpha\beta} + 1}}\right] + 1}.}
+\salign[*]{\frac{1}{2\alpha}\ln{\left(\frac{2}{\varepsilon_{n+1}} - 1\right)} = \beta - (\beta^2 + 1)\varepsilon_n, \quad \varepsilon_2 = \frac{2}{e^{2\alpha\beta} + 1}, \quad \varepsilon_3 = \frac{2}{e^{2\alpha\beta}\left[e^{-(\beta^2 + 1)\frac{2}{e^{2\alpha\beta} + 1}}\right] + 1}.}
 Уже при $\alpha = 5$
 \salign[*]{\varepsilon_2 \approx 1.7 \cdot 10^{-7}, \ \frac{(\Delta\varepsilon)_2}{\varepsilon_2} = \frac{\varepsilon_3 - \varepsilon_2}{\varepsilon_2} \approx 10^{-5} \Rightarrow (\Delta\varepsilon)_2 \ll \varepsilon_2,}
 а следовательно
-\salign[*]{\varepsilon \approx \varepsilon_2 \approx \frac{1}{e^{2\alpha\beta} + 1}}
+\salign[*]{\varepsilon \approx \varepsilon_2 \approx 2e^{-2\alpha\beta}}
 является достаточным приближением.
 
 Подставляя полученную величину в (11), получаем приближенное выражение для $\tilde{x}_1$:
-\salign[*]{\tilde{x}_1 \approx \beta - \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}.}
+\salign[*]{\tilde{x}_1 \approx \beta - 2e^{-2\alpha\beta}(\beta^2 + 1).}
 Так как в исходном уравнении правая и левая части --- нечетные функции, $\exists \tilde{x}_2 = -\tilde{x}_1$:
 корень исходного уравнения, откуда, учитывая тривиальный корень $\tilde{x}_0 = 0$, ответ:
-\salign[*]{\boxed{\tilde{x}_0 = 0,\ \tilde{x}_{1,2} \approx \pm\left(\beta - \frac{\beta^2 + 1}{e^{2\alpha\beta} + 1}\right),\ \beta = \tan{1}}}
+\salign[*]{\boxed{\tilde{x}_0 = 0,\ \tilde{x}_{1,2} \approx \pm\left(\beta - 2e^{-2\alpha\beta}(\beta^2 + 1)\right),\ \beta = \tan{1}}}
 
 \subsection*{Задача 2}
 \svg[0.7]{problem2}{График функции $\boldsymbol{|\cos{x} + \alpha\sinc{x}|}$ при $\boldsymbol{\alpha = 3}$}

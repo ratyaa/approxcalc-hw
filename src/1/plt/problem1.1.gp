@@ -11,6 +11,7 @@ set key right bottom
 set key width -11
 
 plot tanh(2*x) title "$\\tanh{2x}$",\
-     tanh(x) title "$\\tanh{x}$",\
      tanh(0.5*x) title "$\\tanh{\\frac12 x}$",\
+     tanh(x) title "$\\tanh{x}$",\
      atan(x) title "$\\arctan{x}$"
+
