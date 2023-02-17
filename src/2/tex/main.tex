@@ -26,9 +26,43 @@
 % \subsection*{Упражнение 4}
 % \lipsum[7-8]
 
-% \subsection*{Задача 1}
-% \lipsum[9-10]
+\subsection*{Задача 1}
+Определим $f(x)$ как подынтегральную функцию, и $h(x)$ как ее знаменатель:
+\salign{I(a) = \int\limits_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x = \int\limits_0^\infty f(x)\; \df x = \int\limits_0^\infty \frac{1}{h(x)}\; \df x,\quad h(x) = xa^2 + (1-x^2)^2.}
+\subsubsection*{\Rnum{1}. $a \gg 1$}
+При очень малых $x$, т.е. $xa^2 \ll 1$, следует
+\salign{x \ll \frac{1}{a^2} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim 1 \Rightarrow f(x) \sim 1.}
+При $xa \sim 1$:
+\salign{xa^2 \sim a \gg 1,\ x \sim \frac{1}{a} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim a \gg 1 \Rightarrow f(x) \ll 1,}
+следовательно, интеграл набирается в некой окрестности нуля $x \le x' \sim \frac{1}{a} \ll 1$,\
+а значит в $h(x)$ можно отбросить члены высших порядков малости и интегрировать от $0$ до $x'$:
+\salign{
+  I(a) &= \int\limits_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \approx \int\limits_0^{x'} \frac{1}{xa^2 + 1}\; \df x = \frac{1}{a^2}\int\limits_0^{x'} \frac{1}{xa^2 + 1}\; \df (xa^2 + 1) =\\
+  &= \left.\frac{1}{a^2}\frac{-1}{(xa^2 + 1)^2}\right|_0^{x'} = \frac{1}{a^2} \left(1 - \frac{1}{(x'a^2 + 1)^2}\right),\ x' \sim \frac{1}{a} \Rightarrow \frac{1}{(x'a^2 + 1)^2} \sim \frac{1}{a^2} \implies %
+}
+ответ:
+\salign{\boxed{I(a) \approx \frac{1}{a^2}}}
 
+\subsubsection*{\Rnum{2}. $a \ll 1$}
+При $x \ll 1$ выполняется
+\salign{xa^2 \ll 1, (1-x^2)^2 \sim 1 \Rightarrow h(x) \sim 1 \Rightarrow f(x) \sim 1,}
+при $x \gg 1$:
+\salign{(1-x^2)^2 \gg 1 \Rightarrow h(x) \gg 1 \Rightarrow f(x) \ll 1.}
+При $x = 1 + \varepsilon,\ \varepsilon \ll 1$:
+\salign{h(x) = (1 + \varepsilon)a^2 + (2\varepsilon + \varepsilon^2)^2 \ll 1 \Rightarrow f(x) \gg 1,}
+следовательно, интеграл набирается в некой окрестности $1 - \varepsilon' \le x \le 1 + \varepsilon',\ \varepsilon' \ll 1$,\
+а значит в $h(x)$ интегрировать по $\varepsilon$ от $-\varepsilon'$ до $\varepsilon'$, отбросив члены высших порядков малости:
+\salign{
+  \begin{aligned}
+    I(a) = \int\limits_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x &\approx \int\limits_{-\varepsilon'}^{\varepsilon'} \frac{1}{(1 + \varepsilon)a^2 + (2\varepsilon + \varepsilon^2)^2}\; \df \varepsilon \approx\\
+                                                           &\approx \frac12 \int\limits_{-\varepsilon'}^{\varepsilon'} \frac{1}{a^2 + (2\varepsilon)^2}\; \df (2\varepsilon) = \left.\frac{1}{2a}\arctan{\frac{2\varepsilon}{a}}\right|_{-\varepsilon'}^{\varepsilon'} = \frac{1}{a}\arctan{\frac{2\varepsilon'}{a}}.
+  \end{aligned}
+}
+При $\hat\varepsilon \sim \sqrt{a} \hookrightarrow \hat\varepsilon \ll 1 \land \frac{2\hat\varepsilon}{a} \sim \frac{1}{\sqrt{a}} \gg 1$,\
+следовательно, приближения выше будут справедливы при $\varepsilon' \ge \hat\varepsilon$ и
+\salign{\frac{1}{a}\arctan{\frac{2\varepsilon'}{a} \approx \frac{\pi}{2a}},}
+ответ:
+\salign{\boxed{I(a) \approx \frac{\pi}{2a}}}
 \subsection*{Задача 2}
 \subsubsection*{\Rnum{1}. $b \gg a$}
 Так как $b \gg a$ и $0 \le x \le a$, $x \ll a \implies$
