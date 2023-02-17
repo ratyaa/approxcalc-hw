@@ -16,11 +16,12 @@
 
 \subsection*{Упражнение 1}
 Заменив переменную, обезразмерим интеграл:
-\salign{t = bx,\quad \df x = \frac{1}{b}\df t,\quad I(a, b) = \int\limits_0^\infty e^{-ax} \frac{\sin^2{bx}}{x^2}\; \df x = b \int\limits_0^\infty e^{-\frac{a}{b}t} \frac{\sin^2{t}}{t^2}\; \df t.}
+\salign[*]{t = bx,\quad \df x = \frac{1}{b}\df t,\quad I(a, b) = \int_0^\infty e^{-ax} \frac{\sin^2{bx}}{x^2}\; \df x = b \int_0^\infty e^{-\frac{a}{b}t} \frac{\sin^2{t}}{t^2}\; \df t.}
+
 \subsubsection*{\Rnum{1}. $a \gg b$}
 При $t \sim \sqrt{\frac{b}{a}} \ll 1$ степень при экспоненте $-\frac{a}{b}t \sim -\sqrt{\frac{a}{b}} \ll -1$,\
 следовательно, интеграл набирается при малых $t$ и $\sin^2{t}$ можно разложить в ряд:
-\salign{I(a,b) = b \int\limits_0^\infty e^{-\frac{a}{b}t} \frac{\sin^2{t}}{t^2}\; \df t \approx b \int\limits_0^\infty e^{-\frac{a}{b}t} \frac{t^2}{t^2}\; \df t = \frac{b^2}{a} \int\limits_0^\infty e^{-\frac{a}{b}t}\; \df \left(\frac{a}{b}t\right) = \frac{b^2}{a},}
+\salign[*]{I(a,b) = b \int_0^\infty e^{-\frac{a}{b}t} \frac{\sin^2{t}}{t^2}\; \df t \approx b \int_0^\infty e^{-\frac{a}{b}t} \frac{t^2}{t^2}\; \df t = \frac{b^2}{a} \int_0^\infty e^{-\frac{a}{b}t}\; \df \left(\frac{a}{b}t\right) = \frac{b^2}{a},}
 ответ:
 \salign[*]{\boxed{I(a,b) \approx \frac{b^2}{a}}}
 
@@ -28,12 +29,12 @@
 При $t \sim 10$, знаменатель подынтегральной функции $\frac{1}{t^2} \sim 0.01 \ll 1$, а следовательно\
 подынтегральная функция $f(t) \ll 1$ и интеграл набирается в некой окрестности $0 \le t \le t' \sim 10$.\
 При этом степень при экспоненте остается мала: $-\frac{a}{b}t \ll 1$, следовательно
-\salign{e^{-\frac{a}{b}t} \approx 1,\ I(a, b) = b \int\limits_0^\infty e^{-\frac{a}{b}t} \frac{\sin^2{t}}{t^2}\; \df t \approx b \int\limits_0^\infty \frac{\sin^2{t}}{t^2}\; \df t.}
+\salign[*]{e^{-\frac{a}{b}t} \approx 1,\ I(a, b) = b \int_0^\infty e^{-\frac{a}{b}t} \frac{\sin^2{t}}{t^2}\; \df t \approx b \int_0^\infty \frac{\sin^2{t}}{t^2}\; \df t.}
 Полученный интеграл вычисляется:
-\salign{
+\salign[*]{
   \begin{aligned}
-    I &= \int\limits_0^\infty \frac{\sin^2{t}}{t^2}\; \df t = \left.\frac{\sin^2{t}}{t}\right|_0^\infty - \int\limits_0^\infty t\; \df \left(\frac{\sin^2{t}}{t^2}\right) = - \int\limits_0^\infty t\; \df \left(\frac{\sin^2{t}}{t^2}\right)\\
-      &= - \int\limits_0^\infty t \left(\frac{2\sin{t}\cos{t}}{t^2} - \frac{2\sin^2{t}}{t^3}\right)\; \df t = - \int\limits_0^\infty \frac{\sin{2t}}{2t}\; \df (2t) + 2I,\quad I = \int\limits_0^\infty \frac{\sin{2t}}{2t}\; \df (2t) = \frac{\pi}{2},
+    I &= \int_0^\infty \frac{\sin^2{t}}{t^2}\; \df t = \left.\frac{\sin^2{t}}{t}\right|_0^\infty - \int_0^\infty t\; \df \left(\frac{\sin^2{t}}{t^2}\right) = - \int_0^\infty t\; \df \left(\frac{\sin^2{t}}{t^2}\right)\\
+      &= - \int_0^\infty t \left(\frac{2\sin{t}\cos{t}}{t^2} - \frac{2\sin^2{t}}{t^3}\right)\; \df t = - \int_0^\infty \frac{\sin{2t}}{2t}\; \df (2t) + 2I,\quad I = \int_0^\infty \frac{\sin{2t}}{2t}\; \df (2t) = \frac{\pi}{2},
   \end{aligned}
 }
 ответ:
@@ -44,33 +45,34 @@
 Так как $b \sim 1$, $\forall x \hookrightarrow (x - 1)^2 + b^2 \sim C \ge 1$, и при $x \ll 1$ справедливо $\frac{1}{x^2 + a^2} \gg 1$,\
 интеграл набирается в некоторой окрестности нуля $0 \le x \le x' \ll 1$, и можно пренебречь\
 величинами высших порядков малости:
-\salign{
+\salign[*]{
   \begin{aligned}
-    I(a, b) = \int\limits_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + b^2}\; \df x \approx  \frac{1}{1 + b^2}\int\limits_0^\infty \frac{1}{x^2 + a^2}\; \df x &= \left.\frac{1}{1+b^2} \frac{1}{a} \arctg{\frac{x}{a}}\right|_0^\infty = \\
+    I(a, b) = \int_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + b^2}\; \df x \approx  \frac{1}{1 + b^2}\int_0^\infty \frac{1}{x^2 + a^2}\; \df x &= \left.\frac{1}{1+b^2} \frac{1}{a} \arctg{\frac{x}{a}}\right|_0^\infty = \\
                                                                                                                                             &= \frac{\pi}{2a(1 + b^2),}
   \end{aligned}
 }
 ответ:
 \salign[*]{\boxed{I(a, b) = \frac{\pi}{2a(1+b^2)}}}
+
 \subsubsection*{\Rnum{2}. $a = b \gg 1$}
 Предположим, что при больших $a$ на данной области интегрирования можно пренебречь единицей в знаменателе:
-\salign{I(a) = \int\limits_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2}\; \df x \approx \int\limits_0^\infty \frac{1}{(x^2 + a^2)^2}\; \df x.}
+\salign[*]{I(a) = \int_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2}\; \df x \approx \int_0^\infty \frac{1}{(x^2 + a^2)^2}\; \df x.}
 Проверку предположения проведем оценкой сверху и снизу:
-\salign{
+\salign[*]{
   \begin{aligned}
     a \gg 1 &\Rightarrow \forall x \le \infty, x \ge 0 \hookrightarrow \frac{1}{\left((x-1)^2 + a^2\right)^2} \ge \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2} \ge \frac{1}{\left(x^2 + a^2\right)^2} > 0,\\
-          &\implies \int\limits_0^\infty \frac{1}{\left((x-1)^2 + a^2\right)^2}\; \df x \ge \int\limits_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2}\; \df x \ge \int\limits_0^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x,
+          &\implies \int_0^\infty \frac{1}{\left((x-1)^2 + a^2\right)^2}\; \df x \ge \int_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2}\; \df x \ge \int_0^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x,
   \end{aligned}
 }
 а следовательно, если выполняется
-\salign{I_1 = \int\limits_0^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x \approx \int\limits_0^\infty \frac{1}{\left((x-1)^2 + a^2\right)^2}\; \df x = \int\limits_{-1}^{\infty} \frac{1}{\left(x^2 + a^2\right)^2}\; \df x = I_2,}
+\salign[*]{I_1 \equiv \int_0^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x \approx \int_0^\infty \frac{1}{\left((x-1)^2 + a^2\right)^2}\; \df x = \int_{-1}^{\infty} \frac{1}{\left(x^2 + a^2\right)^2}\; \df x \equiv I_2,}
 что равносильно
-\salign{I_2 - I_1 \ll I_1,}
+\salign[*]{I_2 - I_1 \ll I_1,}
 то наше предположение верно.
 
 Вычислим полученный неопределенный интеграл. Заменим переменную:
-\salign{x = a\tan{u},\quad \df x = \frac{a}{\cos^2{u}}\; \df u,\quad u = \arctan{\frac{x}{a}},}
-\salign{
+\salign[*]{x = a\tan{u},\quad \df x = \frac{a}{\cos^2{u}}\; \df u,\quad u = \arctan{\frac{x}{a}},}
+\salign[*]{
   \begin{aligned}
     \hat{I}(x) &= \int \frac{1}{\left(x^2 + a^2\right)^2}\; \df x = \frac{1}{a^3} \int \frac{1}{\left(\tan^2{u} + 1^2\right)^2 \cos^2{u}}\; \df u = \frac{1}{a^3} \int \cos^2{u}\; \df u = \frac{1}{a^3} \int \cos^2{u}\; \df u =\\
                &= \frac{1}{2a^3} \int \left(\left(2\cos^2{u} - 1\right) + 1\right)\; \df u = \frac{1}{4a^3} \int \left(\cos{(2u)} + 1\right)\; \df (2u) = \frac{\sin{(2u)} + 2u}{4a^3} + C =\\
@@ -78,93 +80,139 @@
   \end{aligned}
 }
 откуда:
-\salign{I_1 = \int\limits_0^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x = \frac{\pi}{4a^3},\quad I_2 = \int\limits_{-1}^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x = \frac{\pi}{4a^3} + \frac{1}{2a^3} \left(\frac{a}{a^2 + 1} + \arctan{\frac{1}{a}}\right).}
+\salign[*]{I_1 = \int_0^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x = \frac{\pi}{4a^3},\quad I_2 = \int_{-1}^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x = \frac{\pi}{4a^3} + \frac{1}{2a^3} \left(\frac{a}{a^2 + 1} + \arctan{\frac{1}{a}}\right).}
 Проверим предположение:
-\salign{a \gg 1 \Rightarrow I_2 - I_1 = \frac{1}{2a^3} \left(\frac{a}{a^2 + 1} + \arctan{\frac{1}{a}}\right) \approx \frac{1}{2a^3} \left(\frac{1}{a} + \frac{1}{a}\right) \ll \frac{1}{2a^3} \left(\frac{\pi}{2}\right) = I_1,}
+\salign[*]{a \gg 1 \Rightarrow I_2 - I_1 = \frac{1}{2a^3} \left(\frac{a}{a^2 + 1} + \arctan{\frac{1}{a}}\right) \approx \frac{1}{2a^3} \left(\frac{1}{a} + \frac{1}{a}\right) \ll \frac{1}{2a^3} \left(\frac{\pi}{2}\right) = I_1,}
 а следовательно наше предположение верно, и $I(a) \approx I_1$, ответ:
-\salign{\boxed{I(a) \approx \frac{\pi}{4a^3}}}
-% \subsection*{Упражнение 3}
-% \lipsum[5-6]
+\salign[*]{\boxed{I(a) \approx \frac{\pi}{4a^3}}}
 
-% \subsection*{Упражнение 4}
-% \lipsum[7-8]
+\subsection*{Упражнение 3}
+Заменив переменную, обезразмерим интеграл:
+\salign[*]{
+  \begin{gathered}
+    t = bx,\quad \df x = \frac{1}{b}\df t,\\
+    I(a, b) = \int_0^\infty \frac{x}{x^2 + a^2}(1 - \tanh{(bx)})\; \df x = \int_0^\infty \frac{t}{t^2 + a^2b^2}(1 - \tanh{t})\; \df t \equiv \int_0^\infty f(t)\; \df t.
+  \end{gathered}
+}
+Так как $a \ll 1$ и $b \ll 1$, выполняется $1 \gg ab \gg a^2b^2$. Представим интеграл в виде
+\salign{\int_0^\infty f(t)\; \df t = \int_0^{t'} f(t)\; \df t + \int_{t'}^T f(t)\; \df t + \int_T^\infty f(t)\; \df t,\quad 0 < t' < 1,\quad T \sim 1.}
+Предположим, что $t'$ достаточно мал и $\tanh{t}$ в первом слагаемом можно разложить:
+\salign[*]{
+  \begin{aligned}
+    \int_0^{t'} f(t)\; \df t &\approx \int_0^{t'} \frac{t}{t^2 + a^2b^2}(1 - t)\; = \frac12 \int_0^{t'} \frac{1}{t^2 + a^2b^2}\; \df (t^2) + \int_0^{t'} \left(1 - \frac{a^2b^2}{t^2 + a^2b^2}\right)\; \df t =\\
+                                 &= \left.\frac12 \ln{(t^2 + a^2b^2)} - t + ab\arctan{\frac{t}{ab}}\right|_0^{t'} = \frac12 \ln{\left(1 + \frac{t'^2}{a^2b^2}\right)} - t' + ab \arctan{\frac{t'}{ab}}.
+  \end{aligned}
+}
+При $t' = \sfrac12$, $\tanh{t'} \approx t'$ с точностью примерно $10\%$, и это значение подойдет
+для грубых оценок с логарифмической точностью. Для данного $t'$ получаем:
+\salign[*]{
+  \begin{gathered}
+    \frac12 \ln{\left(1 + \frac{t'^2}{a^2b^2}\right)} - t' \approx -\ln{(ab)} + \ln(t') - t' = -\ln{(ab)} + C_1,\ C_1 \sim 1,\\
+    ab \arctan{\frac{t'}{ab}} < \frac{\pi ab}{2} \ll 1, \implies\\
+    \int_0^{t'} f(t)\; \df t \approx -ln(ab) + C_1,\quad C_1 \sim 1.
+  \end{gathered}
+}
+
+Для оценки третьего слагаемого из (1) возьмем $T = 2$:
+\salign[*]{
+  \begin{gathered}
+    a^2b^2 \ll t' \Rightarrow \forall t \ge T > t' \hookrightarrow \frac{t}{t^2 + a^2b^2} \approx \frac{1}{t},\quad t \ge T = 2 \implies\\
+    C_3 \equiv \int_T^\infty f(t)\; dt \approx \int_T^\infty \frac{1}{t}(1-\tanh{t})\; \df t= \int_T^\infty \frac{1}{t} \frac{2e^{-2t}}{1 + e^{-2t}}\; \df t < \int_T^\infty e^{-2t}\; \df t = e^{-4} \sim 10^{-2},
+  \end{gathered}
+}
+а, следовательно, при расчете с логарифмической точностью им можно пренебречь.
+
+Так как для $t \ge t'$ выполняется
+\salign[*]{f(t) \approx \frac{1}{t}(1 - \tanh{t}) \ge f(t + \varepsilon),\ \varepsilon > 0,}
+т.е. f(t) не имеет экстремальных точек при $t \ge t'$, оценим грубо второе слагаемое\
+из (1) как площадь трапеции:
+\salign[*]{C_2 \equiv \int_t'^T f(t)\; \df t \sim \frac12 \left(\frac{1}{t'}(1 - \tanh{t'}) + \frac{1}{T}(1 - \tanh{T})\right) \approx \frac12,}
+откуда получаем 
+\salign[*]{\int_0^\infty f(t)\; \df t = -\ln{(ab)} + (C_1 + C_2 + C_3) = -\ln{(ab)} + C,\ C \sim 1,}
+ответ:
+\salign[*]{\boxed{I(a,b) = -\ln{(ab)} + C,\ C \sim 1}}
+
+\subsection*{Упражнение 4}
+\salign[*]{S(a,b) = \sum_{n=0}^\infty n^ae^{-bn}}
+\subsubsection*{\Rnum{1}. $a \sim 1,\quad b \ll 1$}
+\subsubsection*{\Rnum{2}. $b \gg \frac{a}{b} \gg 1$}
 
 \subsection*{Задача 1}
 Определим $f(x)$ как подынтегральную функцию, и $h(x)$ как ее знаменатель:
-\salign{I(a) = \int\limits_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x = \int\limits_0^\infty f(x)\; \df x = \int\limits_0^\infty \frac{1}{h(x)}\; \df x,\quad h(x) = xa^2 + (1-x^2)^2.}
+\salign[*]{I(a) = \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \equiv \int_0^\infty f(x)\; \df x \equiv \int_0^\infty \frac{1}{h(x)}\; \df x,\quad h(x) = xa^2 + (1-x^2)^2.}
 \subsubsection*{\Rnum{1}. $a \gg 1$}
 При очень малых $x$, т.е. $xa^2 \ll 1$, следует
-\salign{x \ll \frac{1}{a^2} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim 1 \Rightarrow f(x) \sim 1.}
+\salign[*]{x \ll \frac{1}{a^2} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim 1 \Rightarrow f(x) \sim 1.}
 При $xa \sim 1$:
-\salign{xa^2 \sim a \gg 1,\ x \sim \frac{1}{a} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim a \gg 1 \Rightarrow f(x) \ll 1,}
+\salign[*]{xa^2 \sim a \gg 1,\ x \sim \frac{1}{a} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim a \gg 1 \Rightarrow f(x) \ll 1,}
 следовательно, интеграл набирается в некой окрестности нуля $x \le x' \sim \frac{1}{a} \ll 1$,\
 а значит в $h(x)$ можно отбросить члены высших порядков малости и интегрировать от $0$ до $x'$:
-\salign{
-  I(a) &= \int\limits_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \approx \int\limits_0^{x'} \frac{1}{xa^2 + 1}\; \df x = \frac{1}{a^2}\int\limits_0^{x'} \frac{1}{xa^2 + 1}\; \df (xa^2 + 1) =\\
+\salign[*]{
+  I(a) &= \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \approx \int_0^{x'} \frac{1}{xa^2 + 1}\; \df x = \frac{1}{a^2}\int_0^{x'} \frac{1}{xa^2 + 1}\; \df (xa^2 + 1) =\\
   &= \left.\frac{1}{a^2}\frac{-1}{(xa^2 + 1)^2}\right|_0^{x'} = \frac{1}{a^2} \left(1 - \frac{1}{(x'a^2 + 1)^2}\right),\ x' \sim \frac{1}{a} \Rightarrow \frac{1}{(x'a^2 + 1)^2} \sim \frac{1}{a^2} \implies %
 }
 ответ:
-\salign{\boxed{I(a) \approx \frac{1}{a^2}}}
+\salign[*]{\boxed{I(a) \approx \frac{1}{a^2}}}
 
 \subsubsection*{\Rnum{2}. $a \ll 1$}
 При $x \ll 1$ выполняется
-\salign{xa^2 \ll 1, (1-x^2)^2 \sim 1 \Rightarrow h(x) \sim 1 \Rightarrow f(x) \sim 1,}
+\salign[*]{xa^2 \ll 1, (1-x^2)^2 \sim 1 \Rightarrow h(x) \sim 1 \Rightarrow f(x) \sim 1,}
 при $x \gg 1$:
-\salign{(1-x^2)^2 \gg 1 \Rightarrow h(x) \gg 1 \Rightarrow f(x) \ll 1.}
+\salign[*]{(1-x^2)^2 \gg 1 \Rightarrow h(x) \gg 1 \Rightarrow f(x) \ll 1.}
 При $x = 1 + \varepsilon,\ \varepsilon \ll 1$:
-\salign{h(x) = (1 + \varepsilon)a^2 + (2\varepsilon + \varepsilon^2)^2 \ll 1 \Rightarrow f(x) \gg 1,}
+\salign[*]{h(x) = (1 + \varepsilon)a^2 + (2\varepsilon + \varepsilon^2)^2 \ll 1 \Rightarrow f(x) \gg 1,}
 следовательно, интеграл набирается в некой окрестности $1 - \varepsilon' \le x \le 1 + \varepsilon',\ \varepsilon' \ll 1$,\
 а значит в $h(x)$ интегрировать по $\varepsilon$ от $-\varepsilon'$ до $\varepsilon'$, отбросив члены высших порядков малости:
-\salign{
+\salign[*]{
   \begin{aligned}
-    I(a) = \int\limits_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x &\approx \int\limits_{-\varepsilon'}^{\varepsilon'} \frac{1}{(1 + \varepsilon)a^2 + (2\varepsilon + \varepsilon^2)^2}\; \df \varepsilon \approx\\
-                                                           &\approx \frac12 \int\limits_{-\varepsilon'}^{\varepsilon'} \frac{1}{a^2 + (2\varepsilon)^2}\; \df (2\varepsilon) = \left.\frac{1}{2a}\arctan{\frac{2\varepsilon}{a}}\right|_{-\varepsilon'}^{\varepsilon'} = \frac{1}{a}\arctan{\frac{2\varepsilon'}{a}}.
+    I(a) = \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x &\approx \int_{-\varepsilon'}^{\varepsilon'} \frac{1}{(1 + \varepsilon)a^2 + (2\varepsilon + \varepsilon^2)^2}\; \df \varepsilon \approx\\
+                                                           &\approx \frac12 \int_{-\varepsilon'}^{\varepsilon'} \frac{1}{a^2 + (2\varepsilon)^2}\; \df (2\varepsilon) = \left.\frac{1}{2a}\arctan{\frac{2\varepsilon}{a}}\right|_{-\varepsilon'}^{\varepsilon'} = \frac{1}{a}\arctan{\frac{2\varepsilon'}{a}}.
   \end{aligned}
 }
-При $\hat\varepsilon \sim \sqrt{a} \hookrightarrow \hat\varepsilon \ll 1 \land \frac{2\hat\varepsilon}{a} \sim \frac{1}{\sqrt{a}} \gg 1$,\
+При $\hat\varepsilon \sim \sqrt{a} \hookrightarrow \hat\varepsilon \ll 1\ \land\ \frac{2\hat\varepsilon}{a} \sim \frac{1}{\sqrt{a}} \gg 1$,\
 следовательно, приближения выше будут справедливы при $\varepsilon' \ge \hat\varepsilon$ и
-\salign{\frac{1}{a}\arctan{\frac{2\varepsilon'}{a} \approx \frac{\pi}{2a}},}
+\salign[*]{\frac{1}{a}\arctan{\frac{2\varepsilon'}{a} \approx \frac{\pi}{2a}},}
 ответ:
-\salign{\boxed{I(a) \approx \frac{\pi}{2a}}}
+\salign[*]{\boxed{I(a) \approx \frac{\pi}{2a}}}
 \subsection*{Задача 2}
 \subsubsection*{\Rnum{1}. $b \gg a$}
 Так как $b \gg a$ и $0 \le x \le a$, $x \ll a \implies$
-\salign{e^{\frac{x}{b}} \approx 1 + \frac{x}{b},\quad \int\limits_0^a \frac{x^n}{e^{\frac{x}{b}} - 1}\; \df x \approx \int\limits_0^a bx^{n-1}\; \df x = \left.\frac{bx^n}{n}\right|_0^a = \frac{ba^n}{n},}
+\salign[*]{e^{\frac{x}{b}} \approx 1 + \frac{x}{b},\quad \int_0^a \frac{x^n}{e^{\frac{x}{b}} - 1}\; \df x \approx \int_0^a bx^{n-1}\; \df x = \left.\frac{bx^n}{n}\right|_0^a = \frac{ba^n}{n},}
 ответ:
 \salign[*]{\boxed{I(n,a,b) \approx \frac{ba^n}{n}}}
 
 \subsubsection*{\Rnum{2}. $n \gg 1,\ nb \ll a$}
 Приблизительно найдем точку $\tilde{x}$, в которой подынтегральная функция
-\salign{f(x) = \frac{x^n}{e^{\frac{x}{b}} - 1}}
+\salign[*]{f(x) = \frac{x^n}{e^{\frac{x}{b}} - 1}}
 достигает максимума:
-\salign{\left.\frac{\df}{\df x}f(x)\right|_{x=\tilde{x}} = \frac{n\tilde{x}^{n-1}}{e^{\frac{\tilde{x}}{b}} - 1} - \frac{\tilde{x}^ne^{\frac{\tilde{x}}{b}}}{\left(e^{\frac{\tilde{x}}{b}} - 1\right)^2} = 0,\quad \tilde{x} = \frac{nbe^{\frac{\tilde{x}}{b}}}{e^{\frac{\tilde{x}}{b}} - 1}.}
+\salign[*]{\left.\frac{\df}{\df x}f(x)\right|_{x=\tilde{x}} = \frac{n\tilde{x}^{n-1}}{e^{\frac{\tilde{x}}{b}} - 1} - \frac{\tilde{x}^ne^{\frac{\tilde{x}}{b}}}{\left(e^{\frac{\tilde{x}}{b}} - 1\right)^2} = 0,\quad \tilde{x} = \frac{nbe^{\frac{\tilde{x}}{b}}}{e^{\frac{\tilde{x}}{b}} - 1}.}
 Применяя метод итераций при $\tilde{x}_0 = nb$, так как $n \gg 1$:
-\salign{\tilde{x}_1 = \frac{nbe^{\frac{\tilde{x}_0}{b}}}{e^{\frac{\tilde{x}_0}{b}} - 1} = \frac{nbe^n}{e^n - 1} \approx nb = \tilde{x}_0,}
+\salign[*]{\tilde{x}_1 = \frac{nbe^{\frac{\tilde{x}_0}{b}}}{e^{\frac{\tilde{x}_0}{b}} - 1} = \frac{nbe^n}{e^n - 1} \approx nb = \tilde{x}_0,}
 следовательно
-\salign{\tilde{x} \approx nb.}
+\salign[*]{\tilde{x} \approx nb.}
 
 При $x' = \frac{1}{2}nb$:
-\salign{\frac{f(x')}{f(\tilde{x})} = \left(\frac12\right)^n \frac{e^n - 1}{e^{\frac{n}{2}} - 1} \approx \left(\frac12\right)^ne^{\frac{n}{2}} = \left(\frac{e}{4}\right)^{\frac{n}{2}} \ll 1,}
+\salign[*]{\frac{f(x')}{f(\tilde{x})} = \left(\frac12\right)^n \frac{e^n - 1}{e^{\frac{n}{2}} - 1} \approx \left(\frac12\right)^ne^{\frac{n}{2}} = \left(\frac{e}{4}\right)^{\frac{n}{2}} \ll 1,}
 при $x'' = 2nb$:
-\salign{\frac{f(x'')}{f(\tilde{x})} = 2^{n} \frac{e^n - 1}{e^{2n} - 1} \approx 2^{n}e^{-n} = \left(\frac{2}{e}\right)^n \ll 1,}
+\salign[*]{\frac{f(x'')}{f(\tilde{x})} = 2^{n} \frac{e^n - 1}{e^{2n} - 1} \approx 2^{n}e^{-n} = \left(\frac{2}{e}\right)^n \ll 1,}
 следовательно интеграл набирается в некоторой окрестности
-\salign{U(\tilde{x}):\ \forall x_u \in U(\tilde{x}) \hookrightarrow \frac12 nb < x_u < 2nb \ll a,}
+\salign[*]{U(\tilde{x}):\ \forall x_u \in U(\tilde{x}) \hookrightarrow \frac12 nb < x_u < 2nb \ll a,}
 откуда
 \salign[*]{\forall x_u \in U(\tilde{x})\hookrightarrow e^{\frac{n}{2}} - 1 < e^{\frac{x_u}{b}} - 1 \approx e^{\frac{x_u}{b}} \implies}
-\salign{\int\limits_0^a \frac{x^n}{e^{\frac{x}{b}} - 1}\; \df x \approx \int\limits_0^a \frac{x^n}{e^{\frac{x}{b}}}\; \df x \approx b^{n+1}\int\limits_0^\infty \left(\frac{x}{b}\right)^ne^{-\frac{x}{b}}\; \df \left(\frac{x}{b}\right) = b^{n+1}\Gamma(n+1).}
+\salign[*]{\int_0^a \frac{x^n}{e^{\frac{x}{b}} - 1}\; \df x \approx \int_0^a \frac{x^n}{e^{\frac{x}{b}}}\; \df x \approx b^{n+1}\int_0^\infty \left(\frac{x}{b}\right)^ne^{-\frac{x}{b}}\; \df \left(\frac{x}{b}\right) = b^{n+1}\Gamma(n+1).}
 
 В условии задачи не указано, является ли $n$ целым числом (а, следовательно, так как $n \gg 1$ --- натуральным),\
 поэтому ответ:
 \salign[*]{\boxed{I(n,a,b) \approx b^{n+1}\Gamma(n+1),\text{ для } n \in \mathbb{N}\ I(n,a,b) \approx b^{n+1}n!}}
-% = \int\limits_0^a h(x)\; \df x,\ h(x) = x^ne^{-\frac{x}{b}}.}
+% = \int_0^a h(x)\; \df x,\ h(x) = x^ne^{-\frac{x}{b}}.}
 % Найдем неопределенный интеграл $\int h(x)\; \df x$:
-% \salign{\int x^ne^{-\frac{x}{b}}\; \df x = -b\int x^n\; \df e^{- \frac{x}{b}} = -bx^ne^{- \frac{x}{b}} + bn\int x^{n-1}e^{-\frac{x}{b}}\; \df x,}
+% \salign[*]{\int x^ne^{-\frac{x}{b}}\; \df x = -b\int x^n\; \df e^{- \frac{x}{b}} = -bx^ne^{- \frac{x}{b}} + bn\int x^{n-1}e^{-\frac{x}{b}}\; \df x,}
 % откуда по индукции получаем
-% \salign{\int h(x)\; \df x = -be^{- \frac{x}{b}}\sum\limits_{k = 0}^n \frac{n!}{(n-k)!} b^k x^{n-k} + C = -be^{- \frac{x}{b}}\sum\limits_{k=0}^n \xi_k(x) + C = F(x).}
+% \salign[*]{\int h(x)\; \df x = -be^{- \frac{x}{b}}\sum\limits_{k = 0}^n \frac{n!}{(n-k)!} b^k x^{n-k} + C = -be^{- \frac{x}{b}}\sum\limits_{k=0}^n \xi_k(x) + C = F(x).}
 % Для $x = 0$:
-% \salign{F(0) = -be^{- \frac{x}{b}}\xi_n(0) + C = -b^{n+1}n! + C.}
+% \salign[*]{F(0) = -be^{- \frac{x}{b}}\xi_n(0) + C = -b^{n+1}n! + C.}
 % Так как $nb \ll a$, и $n \gg 1$, $b \ll \frac{a}{n} \ll a \Rightarrow b \ll a,\ n \ll \frac{a}{b}$, для $x = a$:
-% \salign{\forall k \in \{1,\dots,n\} \hookrightarrow \xi_k(a) = \xi_{k-1}(a)\frac{(n-k+1)b}{a} < }
+% \salign[*]{\forall k \in \{1,\dots,n\} \hookrightarrow \xi_k(a) = \xi_{k-1}(a)\frac{(n-k+1)b}{a} < }
 % \svg[0.7]{sin}{Sample Text}
 % \svg[0.7]{exp}{Sample Text}
 % \svg[0.7]{linexp}{Sample Text}
