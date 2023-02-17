@@ -14,11 +14,34 @@
 
 \maketitle\thispagestyle{fancy}
 
-% \subsection*{Упражнение 1}
-% \lipsum[1-2]
+\subsection*{Упражнение 1}
+Заменив переменную, обезразмерим интеграл:
+\salign{t = bx,\quad \df x = \frac{1}{b}\df t,\quad I(a, b) = \int\limits_0^\infty e^{-ax} \frac{\sin^2{bx}}{x^2}\; \df x = b \int\limits_0^\infty e^{-\frac{a}{b}t} \frac{\sin^2{t}}{t^2}\; \df t.}
+\subsubsection*{\Rnum{1}. $a \gg b$}
+При $t \sim \sqrt{\frac{b}{a}} \ll 1$ степень при экспоненте $-\frac{a}{b}t \sim -\sqrt{\frac{a}{b}} \ll -1$,\
+следовательно, интеграл набирается при малых $t$ и $\sin^2{t}$ можно разложить в ряд:
+\salign{I(a,b) = b \int\limits_0^\infty e^{-\frac{a}{b}t} \frac{\sin^2{t}}{t^2}\; \df t \approx b \int\limits_0^\infty e^{-\frac{a}{b}t} \frac{t^2}{t^2}\; \df t = \frac{b^2}{a} \int\limits_0^\infty e^{-\frac{a}{b}t}\; \df \left(\frac{a}{b}t\right) = \frac{b^2}{a},}
+ответ:
+\salign[*]{\boxed{I(a,b) \approx \frac{b^2}{a}}}
 
-% \subsection*{Упражнение 2}
-% \lipsum[3-4]
+\subsubsection*{\Rnum{2}. $a \ll b$}
+При $t \sim 10$, знаменатель подынтегральной функции $\frac{1}{t^2} \sim 0.01 \ll 1$, а следовательно\
+подынтегральная функция $f(t) \ll 1$ и интеграл набирается в некой окрестности $0 \le t \le t' \sim 10$.\
+При этом степень при экспоненте остается мала: $-\frac{a}{b}t \ll 1$, следовательно
+\salign{e^{-\frac{a}{b}t} \approx 1,\ I(a, b) = b \int\limits_0^\infty e^{-\frac{a}{b}t} \frac{\sin^2{t}}{t^2}\; \df t \approx b \int\limits_0^\infty \frac{\sin^2{t}}{t^2}\; \df t.}
+Полученный интеграл вычисляется:
+\salign{
+  \begin{aligned}
+    I &= \int\limits_0^\infty \frac{\sin^2{t}}{t^2}\; \df t = \left.\frac{\sin^2{t}}{t}\right|_0^\infty - \int\limits_0^\infty t\; \df \left(\frac{\sin^2{t}}{t^2}\right) = - \int\limits_0^\infty t\; \df \left(\frac{\sin^2{t}}{t^2}\right)\\
+      &= - \int\limits_0^\infty t \left(\frac{2\sin{t}\cos{t}}{t^2} - \frac{2\sin^2{t}}{t^3}\right)\; \df t = - \int\limits_0^\infty \frac{\sin{2t}}{2t}\; \df (2t) + 2I,\quad I = \int\limits_0^\infty \frac{\sin{2t}}{2t}\; \df (2t) = \frac{\pi}{2},
+  \end{aligned}
+}
+ответ:
+\salign[*]{\boxed{I(a,b) \approx \frac{\pi b}{2}}}
+
+\subsection*{Упражнение 2}
+\subsubsection*{\Rnum{1}. $a \ll 1,\quad b \sim 1$}
+\subsubsection*{\Rnum{1}. $a = b \gg 1$}
 
 % \subsection*{Упражнение 3}
 % \lipsum[5-6]
