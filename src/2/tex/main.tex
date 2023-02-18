@@ -139,7 +139,7 @@
 \subsubsection*{\Rnum{1}. $a \sim 1,\quad b \ll 1$}
 Сравним $f'(n)$ и $f(n)$:
 \salign[*]{f'(n) = an^{a-1}e^{-bn} - bn^ae^{-bn} = \left(\frac{a}{n} - b\right)f(n),}
-а следовательно, начиная с некоторого
+а следовательно, так как $a \sim 1$ и $b \ll 1$, начиная с некоторого
 \salign{n' \gg 1,}
 можно будет приблизить сумму интегралом.
 
@@ -166,7 +166,7 @@
     n'^a \ll \left(\frac{a}{b}\right)^a\\
     (n'-1)^{(a+1)} \ll \frac{1}{b^a}
   \end{cases}
-  \overset{a \sim 1}{\iff}
+  \overset{a \sim 1,\ n' \gg 1}{\iff}
   \begin{cases}
     n' \gg 1\\
     n'^{(a+1)}b^{a} \ll 1.
@@ -182,11 +182,34 @@
 \salign[*]{\boxed{S(a,b) \approx \frac{1}{b^a}\Gamma(a+1),\text{ для } a \in \mathbb{N}\ S(a,b) \approx \frac{a!}{b^a}}}
 
 \subsubsection*{\Rnum{2}. $b \gg \frac{a}{b} \gg 1$}
+Сравним $f'(n)$ и $f(n)$:
+\salign[*]{f'(n) = an^{a-1}e^{-bn} - bn^ae^{-bn} = \left(\frac{a}{n} - b\right)f(n),}
+и при $\tilde{n} = \sfrac{a}{b}$, $f'(\tilde{n}) = 0$. Оценим, как изменяется отношение производной к\
+значению функции при изменении $\tilde{n}$ на $\varepsilon \sim 1$. $\sfrac{a}{b} \gg 1 \Rightarrow \sfrac{b}{a} \ll 1 \implies$
+\salign[*]{
+  \begin{gathered}
+    \frac{f'(\tilde{n} + \varepsilon)}{f(\tilde{n} + \varepsilon)} = \frac{a}{\frac{a}{b} + \varepsilon} - b = \frac{b}{1 + \frac{b\varepsilon}{a}} - b \overset{\sfrac{b}{a} \ll 1}{\approx} b\left( 1- \frac{b\varepsilon}{a}\right) - b = -\varepsilon\frac{b^2}{a},\\
+    b \gg \frac{a}{b} \Rightarrow b^2 \gg a \Rightarrow \frac{b^2}{a} \gg 1 \overset{\varepsilon \sim 1}{\implies} \left|\frac{f'(\tilde{n} + \varepsilon)}{f(\tilde{n} + \varepsilon)}\right| \gg 1,
+  \end{gathered}
+}
+а следовательно имеет смысл просуммировать несколько максимальных членов.
 
+Так как суммирование производится по $n \in \mathbb{N}$, рассматривать $|\varepsilon| \ll 1$ не имеет смысла.\
+Также, из того, что $n$ натурально, нельзя просто взять $S(a,b) = f(\sfrac{a}{b})$,\
+так как $\sfrac{a}{b}$ необязательно натурально, поэтому за сумму надо брать первые\
+члены справа и слева от $\tilde{n}$:
+\salign[*]{
+  \begin{gathered}
+    S(a,b) \approx f(\tilde{n}_1) + f(\tilde{n}_2),\quad 0 \le \tilde{n} - \tilde{n}_1 \le 1,\quad 0 \le \tilde{n}_2 - \tilde{n} \le 1 \iff\\
+    \tilde{n}_1 = \floor*{\frac{a}{b}},\quad \tilde{n}_2 = \ceil*{\frac{a}{b}},
+  \end{gathered}
+}
+откуда ответ:
+\salign[*]{\boxed{S(a,b) \approx \floor*{\frac{a}{b}}^ae^{-b \floor*{\frac{a}{b}}} + \ceil*{\frac{a}{b}}^ae^{-b \ceil*{\frac{a}{b}}}}}
 
 \subsection*{Задача 1}
 Определим $f(x)$ как подынтегральную функцию, и $h(x)$ как ее знаменатель:
-\salign[*]{I(a) = \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \equiv \int_0^\infty f(x)\; \df x \equiv \int_0^\infty \frac{1}{h(x)}\; \df x,\quad h(x) = xa^2 + (1-x^2)^2.}q
+\salign[*]{I(a) = \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \equiv \int_0^\infty f(x)\; \df x \equiv \int_0^\infty \frac{1}{h(x)}\; \df x,\quad h(x) = xa^2 + (1-x^2)^2.}
 \subsubsection*{\Rnum{1}. $a \gg 1$}
 При очень малых $x$, т.е. $xa^2 \ll 1$, следует
 \salign[*]{x \ll \frac{1}{a^2} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim 1 \Rightarrow f(x) \sim 1.}

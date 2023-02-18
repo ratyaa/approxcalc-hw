@@ -19,7 +19,7 @@ PLT_INCLUDE_SRC =	$(wildcard $(PLT_INCLUDE_DIR)/*.gp)
 PLT_INPUT =		$(PLT_SRC:%=../%)
 BUILD_DIR =		.build
 
-NAME :=			$(shell basename $(CURDIR))
+NAME :=			siryira_hw$(shell basename $(CURDIR))
 PLT_TARGET =		$(PLT_SRC:$(PLT_DIR)%.gp=$(PIC_DIR)%.svg)
 TEX_TARGET =		$(PDF_DIR)/$(NAME).pdf
 
