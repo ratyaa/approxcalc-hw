@@ -117,7 +117,7 @@
 \salign[*]{
   \begin{gathered}
     a^2b^2 \ll t' \Rightarrow \forall t \ge T > t' \hookrightarrow \frac{t}{t^2 + a^2b^2} \approx \frac{1}{t},\quad t \ge T = 2 \implies\\
-    C_3 \equiv \int_T^\infty f(t)\; dt \approx \int_T^\infty \frac{1}{t}(1-\tanh{t})\; \df t= \int_T^\infty \frac{1}{t} \frac{2e^{-2t}}{1 + e^{-2t}}\; \df t < \int_T^\infty e^{-2t}\; \df t = e^{-4} \sim 10^{-2},
+    C_3 \equiv \int_T^\infty f(t)\; dt \approx \int_T^\infty \frac{1}{t}(1-\tanh{t})\; \df t= \int_T^\infty \frac{1}{t} \frac{2e^{-2t}}{1 + e^{-2t}}\; \df t < \int_T^\infty e^{-2t}\; \df t = \frac12 e^{-4} \sim 10^{-2},
   \end{gathered}
 }
 а, следовательно, при расчете с логарифмической точностью им можно пренебречь.
@@ -126,20 +126,67 @@
 \salign[*]{f(t) \approx \frac{1}{t}(1 - \tanh{t}) \ge f(t + \varepsilon),\ \varepsilon > 0,}
 т.е. f(t) не имеет экстремальных точек при $t \ge t'$, оценим грубо второе слагаемое\
 из (1) как площадь трапеции:
-\salign[*]{C_2 \equiv \int_t'^T f(t)\; \df t \sim \frac12 \left(\frac{1}{t'}(1 - \tanh{t'}) + \frac{1}{T}(1 - \tanh{T})\right) \approx \frac12,}
+\salign[*]{C_2 \equiv \int_{t'}^T f(t)\; \df t \sim \frac12 \left(\frac{1}{t'}(1 - \tanh{t'}) + \frac{1}{T}(1 - \tanh{T})\right) \approx \frac12,}
 откуда получаем 
 \salign[*]{\int_0^\infty f(t)\; \df t = -\ln{(ab)} + (C_1 + C_2 + C_3) = -\ln{(ab)} + C,\ C \sim 1,}
 ответ:
 \salign[*]{\boxed{I(a,b) = -\ln{(ab)} + C,\ C \sim 1}}
 
 \subsection*{Упражнение 4}
-\salign[*]{S(a,b) = \sum_{n=0}^\infty n^ae^{-bn}}
+Можно сразу опустить первый член, так как он равен нулю:
+\salign[*]{S(a,b) \equiv \sum_{n=0}^\infty f(n) = \sum_{n=0}^\infty n^ae^{-bn} = \sum_{n=1}^\infty n^ae^{-bn}.}
+Сделал это для удобства рассуждений (чтобы, например, игнорировать случай $n = 0$ в утверждениях вроде $f'(n) \ll f(n)$), отсюда получаем $n \in \mathbb{N}$.
 \subsubsection*{\Rnum{1}. $a \sim 1,\quad b \ll 1$}
+Сравним $f'(n)$ и $f(n)$:
+\salign[*]{f'(n) = an^{a-1}e^{-bn} - bn^ae^{-bn} = \left(\frac{a}{n} - b\right)f(n),}
+а следовательно, начиная с некоторого
+\salign{n' \gg 1,}
+можно будет приблизить сумму интегралом.
+
+Попробуем подобрать $n'$ следующим образом. При $n \approx \frac{a}{b}$ получаем $f'(\sfrac{a}{b}) \approx 0$,\
+т.е. в этой точке будет находится максимум $f(n)$, и если мы подберем
+\salign{(n')^a \ll (\sfrac{a}{b})^a,}
+то интерал охватит примерно всю область, на которой он набирается:
+\salign[*]{\sum_{n = n'}^\infty f(n) \approx \int_{n'}^\infty f(n)\; \df n + \frac12 f(n') \approx \int_{0}^\infty f(n)\; \df n + \frac12 f(n') = \frac{1}{b^a}\Gamma(a+1) + \frac12 n'^ae^{-bn'}.}
+Оценим сумму остальных членов сверху:
+\salign[*]{n' \ll \frac{a}{b} \Rightarrow \forall n < n' \hookrightarrow f(n) \le f(n') \Rightarrow \sum_{n = 1}^{n' - 1} f(n) \le (n'-1)f(n'-1) = (n'-1)^{(a+1)}e^{-b(n'-1)}.}
+Так как $n' \ll \frac{a}{b},\ bn' \ll a \sim 1 \Rightarrow e^{-bn'} \approx e^{-b(n-1)} 1$, а следовательно, если выполняется
+\salign{(n'-1)^{(a+1)} \ll \frac{1}{b^a},}
+то
+\salign[*]{
+  \begin{gathered}
+    \sum_{n=1}^{n'-1} f(n) \approx (n'-1)^{(a+1)} \ll \frac{1}{b^a}\Gamma(a+1) + \frac12 n'^a \approx \frac{1}{b^a}\Gamma(a+1) \approx \sum_{n = n'}^\infty f(n) \implies\\
+    S(a,b) = \sum_{n=1}^{\infty} f(n) = \sum_{n=1}^{n'-1} f(n) + \sum_{n=n'}^{\infty} f(n) \approx \sum_{n=n'}^{\infty} f(n) \approx \frac{1}{b^a}\Gamma(a+1).
+  \end{gathered}
+}
+Осталось подобрать $n'$. Объединим условия (2), (3) и (4):
+\begin{align}
+  \begin{cases}
+    n' \gg 1\\
+    n'^a \ll \left(\frac{a}{b}\right)^a\\
+    (n'-1)^{(a+1)} \ll \frac{1}{b^a}
+  \end{cases}
+  \overset{a \sim 1}{\iff}
+  \begin{cases}
+    n' \gg 1\\
+    n'^{(a+1)}b^{a} \ll 1.
+  \end{cases}
+\end{align}
+При достаточно больших $а$ и достаточно малых $b$ получаем, что
+\salign[*]{\text{для } \boldsymbol{n' \approx b^{\left(- \frac{a}{a+2}\right)}}\hookrightarrow n'^{(a+1)}b^a \approx b^{\left(- \frac{a(a+1)}{a+2} + a\right)} = b^{\left(\frac{a}{a+2}\right)} \approx \frac{1}{n'},}
+а следовательно
+\salign[*]{n' \gg 1 \Leftrightarrow 1 \gg \frac{1}{n'} \approx n'^{(a+1)}b^a,}
+т.е. условия из (5) равносильны для данного $n'$, и если данное условие для данного $n'$ не выполняется, то\
+для любого другого $n$ не выполняется хотя бы одно из двух, и сумму нельзя приблизить интегралом. Буду\
+считать, что в задаче подразумевалось ее решение приближением через интеграл, и ответ:
+\salign[*]{\boxed{S(a,b) \approx \frac{1}{b^a}\Gamma(a+1),\text{ для } a \in \mathbb{N}\ S(a,b) \approx \frac{a!}{b^a}}}
+
 \subsubsection*{\Rnum{2}. $b \gg \frac{a}{b} \gg 1$}
+
 
 \subsection*{Задача 1}
 Определим $f(x)$ как подынтегральную функцию, и $h(x)$ как ее знаменатель:
-\salign[*]{I(a) = \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \equiv \int_0^\infty f(x)\; \df x \equiv \int_0^\infty \frac{1}{h(x)}\; \df x,\quad h(x) = xa^2 + (1-x^2)^2.}
+\salign[*]{I(a) = \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \equiv \int_0^\infty f(x)\; \df x \equiv \int_0^\infty \frac{1}{h(x)}\; \df x,\quad h(x) = xa^2 + (1-x^2)^2.}q
 \subsubsection*{\Rnum{1}. $a \gg 1$}
 При очень малых $x$, т.е. $xa^2 \ll 1$, следует
 \salign[*]{x \ll \frac{1}{a^2} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim 1 \Rightarrow f(x) \sim 1.}
