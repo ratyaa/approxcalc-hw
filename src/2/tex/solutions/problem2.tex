@@ -1,0 +1,32 @@
+\def \picdir{pic/}
+
+\subsection*{Задача 2}
+\subsubsection*{\Rnum{1}. $b \gg a$}
+Так как $b \gg a$ и $0 \le x \le a$, $x \ll a \implies$
+\feq{e^{\frac{x}{b}} \approx 1 + \frac{x}{b},\quad \int_0^a \frac{x^n}{e^{\frac{x}{b}} - 1}\; \df x \approx \int_0^a bx^{n-1}\; \df x = \left.\frac{bx^n}{n}\right|_0^a = \frac{ba^n}{n},}
+ответ:
+\feq{\boxed{I(n,a,b) \approx \frac{ba^n}{n}}}
+
+\subsubsection*{\Rnum{2}. $n \gg 1,\ nb \ll a$}
+Приблизительно найдем точку $\tilde{x}$, в которой подынтегральная функция
+\feq{f(x) = \frac{x^n}{e^{\frac{x}{b}} - 1}}
+достигает максимума:
+\feq{\left.\frac{\df}{\df x}f(x)\right|_{x=\tilde{x}} = \frac{n\tilde{x}^{n-1}}{e^{\frac{\tilde{x}}{b}} - 1} - \frac{\tilde{x}^ne^{\frac{\tilde{x}}{b}}}{\left(e^{\frac{\tilde{x}}{b}} - 1\right)^2} = 0,\quad \tilde{x} = \frac{nbe^{\frac{\tilde{x}}{b}}}{e^{\frac{\tilde{x}}{b}} - 1}.}
+Применяя метод итераций при $\tilde{x}_0 = nb$, так как $n \gg 1$:
+\feq{\tilde{x}_1 = \frac{nbe^{\frac{\tilde{x}_0}{b}}}{e^{\frac{\tilde{x}_0}{b}} - 1} = \frac{nbe^n}{e^n - 1} \approx nb = \tilde{x}_0,}
+следовательно
+\feq{\tilde{x} \approx nb.}
+
+При $x' = \frac{1}{2}nb$:
+\feq{\frac{f(x')}{f(\tilde{x})} = \left(\frac12\right)^n \frac{e^n - 1}{e^{\frac{n}{2}} - 1} \approx \left(\frac12\right)^ne^{\frac{n}{2}} = \left(\frac{e}{4}\right)^{\frac{n}{2}} \ll 1,}
+при $x'' = 2nb$:
+\feq{\frac{f(x'')}{f(\tilde{x})} = 2^{n} \frac{e^n - 1}{e^{2n} - 1} \approx 2^{n}e^{-n} = \left(\frac{2}{e}\right)^n \ll 1,}
+следовательно интеграл набирается в некоторой окрестности
+\feq{U(\tilde{x}):\ \forall x_u \in U(\tilde{x}) \hookrightarrow \frac12 nb < x_u < 2nb \ll a,}
+откуда
+\feq{\forall x_u \in U(\tilde{x})\hookrightarrow e^{\frac{n}{2}} - 1 < e^{\frac{x_u}{b}} - 1 \approx e^{\frac{x_u}{b}} \implies}
+\feq{\int_0^a \frac{x^n}{e^{\frac{x}{b}} - 1}\; \df x \approx \int_0^a \frac{x^n}{e^{\frac{x}{b}}}\; \df x \approx b^{n+1}\int_0^\infty \left(\frac{x}{b}\right)^ne^{-\frac{x}{b}}\; \df \left(\frac{x}{b}\right) = b^{n+1}\Gamma(n+1).}
+
+В условии задачи не указано, является ли $n$ целым числом (а, следовательно, так как $n \gg 1$ --- натуральным),\
+поэтому ответ:
+\feq{\boxed{I(n,a,b) \approx b^{n+1}\Gamma(n+1),\text{ для } n \in \mathbb{N}\ I(n,a,b) \approx b^{n+1}n!}}

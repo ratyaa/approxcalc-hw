@@ -1,0 +1,76 @@
+\def \picdir{pic/}
+
+\subsection*{Упражнение 4}
+Можно сразу опустить первый член, так как он равен нулю:
+\feq{S(a,b) \equiv \sum_{n=0}^\infty f(n) = \sum_{n=0}^\infty n^ae^{-bn} = \sum_{n=1}^\infty n^ae^{-bn}.}
+Сделал это для удобства рассуждений (чтобы, например, игнорировать случай $n = 0$ в утверждениях вроде $f'(n) \ll f(n)$), отсюда получаем $n \in \mathbb{N}$.
+\subsubsection*{\Rnum{1}. $a \sim 1,\quad b \ll 1$}
+Сравним $f'(n)$ и $f(n)$:
+\feq{f'(n) = an^{a-1}e^{-bn} - bn^ae^{-bn} = \left(\frac{a}{n} - b\right)f(n),}
+а следовательно, так как $a \sim 1$ и $b \ll 1$, начиная с некоторого
+\feq{n' \gg 1, \label{eq:4.1} \tag{\textbf{У4}.1}}
+можно будет приблизить сумму интегралом.
+
+Попробуем подобрать $n'$ следующим образом. При $n \approx \frac{a}{b}$ получаем $f'(\sfrac{a}{b}) \approx 0$,\
+т.е. в этой точке будет находится максимум $f(n)$, и если мы подберем
+\feq{(n')^a \ll (\sfrac{a}{b})^a, \label{eq:4.2} \tag{\textbf{У4}.2}}
+то интерал охватит примерно всю область, на которой он набирается:
+\feq{\sum_{n = n'}^\infty f(n) \approx \int_{n'}^\infty f(n)\; \df n + \frac12 f(n') \approx \int_{0}^\infty f(n)\; \df n + \frac12 f(n') = \frac{1}{b^a}\Gamma(a+1) + \frac12 n'^ae^{-bn'}.}
+Оценим сумму остальных членов сверху:
+\feq{n' \ll \frac{a}{b} \Rightarrow \forall n < n' \hookrightarrow f(n) \le f(n') \Rightarrow \sum_{n = 1}^{n' - 1} f(n) \le (n'-1)f(n'-1) = (n'-1)^{(a+1)}e^{-b(n'-1)}.}
+Так как $n' \ll \frac{a}{b},\ bn' \ll a \sim 1 \Rightarrow e^{-bn'} \approx e^{-b(n-1)} 1$, а следовательно, если выполняется
+\feq{(n'-1)^{(a+1)} \ll \frac{1}{b^a}, \label{eq:4.3} \tag{\textbf{У4}.3}}
+то
+\salign{
+  \begin{gathered}
+    \sum_{n=1}^{n'-1} f(n) \approx (n'-1)^{(a+1)} \ll \frac{1}{b^a}\Gamma(a+1) + \frac12 n'^a \approx \frac{1}{b^a}\Gamma(a+1) \approx \sum_{n = n'}^\infty f(n) \implies\\
+    S(a,b) = \sum_{n=1}^{\infty} f(n) = \sum_{n=1}^{n'-1} f(n) + \sum_{n=n'}^{\infty} f(n) \approx \sum_{n=n'}^{\infty} f(n) \approx \frac{1}{b^a}\Gamma(a+1).
+  \end{gathered}
+}
+Осталось подобрать $n'$. Объединим условия \eqref{eq:4.1}, \eqref{eq:4.2} и \eqref{eq:4.3}:
+\begin{align} \label{eq:4.4} \tag{\textbf{У4}.4}
+  \begin{cases}
+    n' \gg 1\\
+    n'^a \ll \left(\frac{a}{b}\right)^a\\
+    (n'-1)^{(a+1)} \ll \frac{1}{b^a}
+  \end{cases}
+  \overset{a \sim 1,\ n' \gg 1}{\iff}
+  \begin{cases}
+    n' \gg 1\\
+    n'^{(a+1)}b^{a} \ll 1.
+  \end{cases}
+\end{align}
+При достаточно больших $а$ и достаточно малых $b$ получаем, что
+\feq{\text{для } \boldsymbol{n' \approx b^{\left(- \frac{a}{a+2}\right)}}\hookrightarrow n'^{(a+1)}b^a \approx b^{\left(- \frac{a(a+1)}{a+2} + a\right)} = b^{\left(\frac{a}{a+2}\right)} \approx \frac{1}{n'},}
+а следовательно
+\feq{n' \gg 1 \Leftrightarrow 1 \gg \frac{1}{n'} \approx n'^{(a+1)}b^a,}
+т.е. условия из \eqref{eq:4.4} равносильны для данного $n'$, и если данное условие для данного $n'$ не выполняется, то\
+для любого другого $n$ не выполняется хотя бы одно из двух, и сумму нельзя приблизить интегралом. Буду\
+считать, что в задаче подразумевалось ее решение приближением через интеграл, и ответ:
+\feq{\boxed{S(a,b) \approx \frac{1}{b^a}\Gamma(a+1),\text{ для } a \in \mathbb{N}\ S(a,b) \approx \frac{a!}{b^a}}}
+
+\subsubsection*{\Rnum{2}. $b \gg \frac{a}{b} \gg 1$}
+Сравним $f'(n)$ и $f(n)$:
+\feq{f'(n) = an^{a-1}e^{-bn} - bn^ae^{-bn} = \left(\frac{a}{n} - b\right)f(n),}
+и при $\tilde{n} = \sfrac{a}{b}$, $f'(\tilde{n}) = 0$. Оценим, как изменяется отношение производной к\
+значению функции при изменении $\tilde{n}$ на $\varepsilon \sim 1$. $\sfrac{a}{b} \gg 1 \Rightarrow \sfrac{b}{a} \ll 1 \implies$
+\salign{
+  \begin{gathered}
+    \frac{f'(\tilde{n} + \varepsilon)}{f(\tilde{n} + \varepsilon)} = \frac{a}{\frac{a}{b} + \varepsilon} - b = \frac{b}{1 + \frac{b\varepsilon}{a}} - b \overset{\sfrac{b}{a} \ll 1}{\approx} b\left( 1- \frac{b\varepsilon}{a}\right) - b = -\varepsilon\frac{b^2}{a},\\
+    b \gg \frac{a}{b} \Rightarrow b^2 \gg a \Rightarrow \frac{b^2}{a} \gg 1 \overset{\varepsilon \sim 1}{\implies} \left|\frac{f'(\tilde{n} + \varepsilon)}{f(\tilde{n} + \varepsilon)}\right| \gg 1,
+  \end{gathered}
+}
+а следовательно имеет смысл просуммировать несколько максимальных членов.
+
+Так как суммирование производится по $n \in \mathbb{N}$, рассматривать $|\varepsilon| \ll 1$ не имеет смысла.\
+Также, из того, что $n$ натурально, нельзя просто взять $S(a,b) = f(\sfrac{a}{b})$,\
+так как $\sfrac{a}{b}$ необязательно натурально, поэтому за сумму надо брать первые\
+члены справа и слева от $\tilde{n}$:
+\salign{
+  \begin{gathered}
+    S(a,b) \approx f(\tilde{n}_1) + f(\tilde{n}_2),\quad 0 \le \tilde{n} - \tilde{n}_1 \le 1,\quad 0 \le \tilde{n}_2 - \tilde{n} \le 1 \iff\\
+    \tilde{n}_1 = \floor*{\frac{a}{b}},\quad \tilde{n}_2 = \ceil*{\frac{a}{b}},
+  \end{gathered}
+}
+откуда ответ:
+\feq{\boxed{S(a,b) \approx \floor*{\frac{a}{b}}^ae^{-b \floor*{\frac{a}{b}}} + \ceil*{\frac{a}{b}}^ae^{-b \ceil*{\frac{a}{b}}}}}

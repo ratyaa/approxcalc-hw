@@ -1,0 +1,47 @@
+\def \picdir{pic/}
+
+\subsection*{Упражнение 2}
+\subsubsection*{\Rnum{1}. $a \ll 1,\quad b \sim 1$}
+Так как $b \sim 1$, $\forall x \hookrightarrow (x - 1)^2 + b^2 \sim C \ge 1$, и при $x \ll 1$ справедливо $\frac{1}{x^2 + a^2} \gg 1$,\
+интеграл набирается в некоторой окрестности нуля $0 \le x \le x' \ll 1$, и можно пренебречь\
+величинами высших порядков малости:
+\salign{
+  \begin{aligned}
+    I(a, b) = \int_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + b^2}\; \df x \approx  \frac{1}{1 + b^2}\int_0^\infty \frac{1}{x^2 + a^2}\; \df x &= \left.\frac{1}{1+b^2} \frac{1}{a} \arctg{\frac{x}{a}}\right|_0^\infty = \\
+                                                                                                                              &= \frac{\pi}{2a(1 + b^2),}
+  \end{aligned}
+}
+ответ:
+\feq{\boxed{I(a, b) = \frac{\pi}{2a(1+b^2)}}}
+
+\subsubsection*{\Rnum{2}. $a = b \gg 1$}
+Предположим, что при больших $a$ на данной области интегрирования можно пренебречь единицей в знаменателе:
+\feq{I(a) = \int_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2}\; \df x \approx \int_0^\infty \frac{1}{(x^2 + a^2)^2}\; \df x.}
+Проверку предположения проведем оценкой сверху и снизу:
+\salign{
+  \begin{aligned}
+    a \gg 1 &\Rightarrow \forall x \le \infty, x \ge 0 \hookrightarrow \frac{1}{\left((x-1)^2 + a^2\right)^2} \ge \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2} \ge \frac{1}{\left(x^2 + a^2\right)^2} > 0,\\
+          &\implies \int_0^\infty \frac{1}{\left((x-1)^2 + a^2\right)^2}\; \df x \ge \int_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2}\; \df x \ge \int_0^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x,
+  \end{aligned}
+}
+а следовательно, если выполняется
+\feq{I_1 \equiv \int_0^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x \approx \int_0^\infty \frac{1}{\left((x-1)^2 + a^2\right)^2}\; \df x = \int_{-1}^{\infty} \frac{1}{\left(x^2 + a^2\right)^2}\; \df x \equiv I_2,}
+что равносильно
+\feq{I_2 - I_1 \ll I_1,}
+то наше предположение верно.
+
+Вычислим полученный неопределенный интеграл. Заменим переменную:
+\feq{x = a\tan{u},\quad \df x = \frac{a}{\cos^2{u}}\; \df u,\quad u = \arctan{\frac{x}{a}},}
+\salign{
+  \begin{aligned}
+    \hat{I}(x) &= \int \frac{1}{\left(x^2 + a^2\right)^2}\; \df x = \frac{1}{a^3} \int \frac{1}{\left(\tan^2{u} + 1^2\right)^2 \cos^2{u}}\; \df u = \frac{1}{a^3} \int \cos^2{u}\; \df u = \frac{1}{a^3} \int \cos^2{u}\; \df u =\\
+               &= \frac{1}{2a^3} \int \left(\left(2\cos^2{u} - 1\right) + 1\right)\; \df u = \frac{1}{4a^3} \int \left(\cos{(2u)} + 1\right)\; \df (2u) = \frac{\sin{(2u)} + 2u}{4a^3} + C =\\
+               &= \frac{1}{4a^3}\left(\frac{2\tan u}{1 + \tan^2{u}} + 2u\right) + C = \frac{1}{2a^3}\left(\frac{ax}{a^2 + x^2} + \arctan{\frac{x}{a}}\right) + C,
+  \end{aligned}
+}
+откуда:
+\feq{I_1 = \int_0^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x = \frac{\pi}{4a^3},\quad I_2 = \int_{-1}^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x = \frac{\pi}{4a^3} + \frac{1}{2a^3} \left(\frac{a}{a^2 + 1} + \arctan{\frac{1}{a}}\right).}
+Проверим предположение:
+\feq{a \gg 1 \Rightarrow I_2 - I_1 = \frac{1}{2a^3} \left(\frac{a}{a^2 + 1} + \arctan{\frac{1}{a}}\right) \approx \frac{1}{2a^3} \left(\frac{1}{a} + \frac{1}{a}\right) \ll \frac{1}{2a^3} \left(\frac{\pi}{2}\right) = I_1,}
+а следовательно наше предположение верно, и $I(a) \approx I_1$, ответ:
+\feq{\boxed{I(a) \approx \frac{\pi}{4a^3}}}

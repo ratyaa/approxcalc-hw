@@ -1,0 +1,20 @@
+\def \includedir{tex/include/}
+
+\input{\includedir packages}
+\input{\includedir macros}
+
+% \titlespacing{\chapter}{0pt}{-30pt}{12pt}
+% \titlespacing{\section}{\parindent}{5mm}{5mm}
+% \titlespacing{\subsection}{\parindent}{5mm}{5mm}
+
+\fancyhf{}
+\fancyfoot[L]{\normalsize{Домашняя работа \textnumero \input{\includedir index}}}
+\fancyfoot[R]{\normalsize{\thepage}}
+
+\fancyhead[C]{\normalsize{Приближенные методы аналитических вычислений, 22/23 уч. г.}}
+
+\pagestyle{fancy}
+
+\title{Домашняя работа \textnumero \input{\includedir index}}
+\author{\input{\includedir author}}
+\date{\input{\includedir date}}

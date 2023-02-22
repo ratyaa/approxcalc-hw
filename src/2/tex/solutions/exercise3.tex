@@ -1,0 +1,47 @@
+\def \picdir{pic/}
+
+\subsection*{Упражнение 3}
+Заменив переменную, обезразмерим интеграл:
+\salign{
+  \begin{gathered}
+    t = bx,\quad \df x = \frac{1}{b}\df t,\\
+    I(a, b) = \int_0^\infty \frac{x}{x^2 + a^2}(1 - \tanh{(bx)})\; \df x = \int_0^\infty \frac{t}{t^2 + a^2b^2}(1 - \tanh{t})\; \df t \equiv \int_0^\infty f(t)\; \df t.
+  \end{gathered}
+}
+Так как $a \ll 1$ и $b \ll 1$, выполняется $1 \gg ab \gg a^2b^2$. Представим интеграл в виде
+\feq{\int_0^\infty f(t)\; \df t = \int_0^{t'} f(t)\; \df t + \int_{t'}^T f(t)\; \df t + \int_T^\infty f(t)\; \df t,\quad 0 < t' < 1,\quad T \sim 1. \label{eq:3.1} \tag{\textbf{У3}.1}}
+Предположим, что $t'$ достаточно мал и $\tanh{t}$ в первом слагаемом можно разложить:
+\salign{
+  \begin{aligned}
+    \int_0^{t'} f(t)\; \df t &\approx \int_0^{t'} \frac{t}{t^2 + a^2b^2}(1 - t)\; = \frac12 \int_0^{t'} \frac{1}{t^2 + a^2b^2}\; \df (t^2) + \int_0^{t'} \left(1 - \frac{a^2b^2}{t^2 + a^2b^2}\right)\; \df t =\\
+                          &= \left.\frac12 \ln{(t^2 + a^2b^2)} - t + ab\arctan{\frac{t}{ab}}\right|_0^{t'} = \frac12 \ln{\left(1 + \frac{t'^2}{a^2b^2}\right)} - t' + ab \arctan{\frac{t'}{ab}}.
+  \end{aligned}
+}
+При $t' = \sfrac12$, $\tanh{t'} \approx t'$ с точностью примерно $10\%$, и это значение подойдет
+для грубых оценок с логарифмической точностью. Для данного $t'$ получаем:
+\salign{
+  \begin{gathered}
+    \frac12 \ln{\left(1 + \frac{t'^2}{a^2b^2}\right)} - t' \approx -\ln{(ab)} + \ln(t') - t' = -\ln{(ab)} + C_1,\ C_1 \sim 1,\\
+    ab \arctan{\frac{t'}{ab}} < \frac{\pi ab}{2} \ll 1, \implies\\
+    \int_0^{t'} f(t)\; \df t \approx -ln(ab) + C_1,\quad C_1 \sim 1.
+  \end{gathered}
+}
+
+Для оценки третьего слагаемого из \eqref{eq:3.1} возьмем $T = 2$:
+\salign{
+  \begin{gathered}
+    a^2b^2 \ll t' \Rightarrow \forall t \ge T > t' \hookrightarrow \frac{t}{t^2 + a^2b^2} \approx \frac{1}{t},\quad t \ge T = 2 \implies\\
+    C_3 \equiv \int_T^\infty f(t)\; dt \approx \int_T^\infty \frac{1}{t}(1-\tanh{t})\; \df t= \int_T^\infty \frac{1}{t} \frac{2e^{-2t}}{1 + e^{-2t}}\; \df t < \int_T^\infty e^{-2t}\; \df t = \frac12 e^{-4} \sim 10^{-2},
+  \end{gathered}
+}
+а, следовательно, при расчете с логарифмической точностью им можно пренебречь.
+
+Так как для $t \ge t'$ выполняется
+\feq{f(t) \approx \frac{1}{t}(1 - \tanh{t}) \ge f(t + \varepsilon),\ \varepsilon > 0,}
+т.е. $f(t)$ не имеет экстремальных точек при $t \ge t'$, оценим грубо второе слагаемое\
+из \eqref{eq:3.1} как площадь трапеции:
+\feq{C_2 \equiv \int_{t'}^T f(t)\; \df t \sim \frac12 \left(\frac{1}{t'}(1 - \tanh{t'}) + \frac{1}{T}(1 - \tanh{T})\right) \approx \frac12,}
+откуда получаем 
+\feq{\int_0^\infty f(t)\; \df t = -\ln{(ab)} + (C_1 + C_2 + C_3) = -\ln{(ab)} + C,\ C \sim 1,}
+ответ:
+\feq{\boxed{I(a,b) = -\ln{(ab)} + C,\ C \sim 1}}
