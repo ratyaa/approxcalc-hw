@@ -10,12 +10,12 @@
 \feq{xa^2 \sim a \gg 1,\ x \sim \frac{1}{a} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim a \gg 1 \Rightarrow f(x) \ll 1,}
 следовательно, интеграл набирается в некой окрестности нуля $x \le x' \sim \frac{1}{a} \ll 1$,\
 а значит в $h(x)$ можно отбросить члены высших порядков малости и интегрировать от $0$ до $x'$:
-\salign{
+\falign{
   I(a) &= \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \approx \int_0^{x'} \frac{1}{xa^2 + 1}\; \df x = \frac{1}{a^2}\int_0^{x'} \frac{1}{xa^2 + 1}\; \df (xa^2 + 1) =\\
   &= \left.\frac{1}{a^2}\frac{-1}{(xa^2 + 1)^2}\right|_0^{x'} = \frac{1}{a^2} \left(1 - \frac{1}{(x'a^2 + 1)^2}\right),\ x' \sim \frac{1}{a} \Rightarrow \frac{1}{(x'a^2 + 1)^2} \sim \frac{1}{a^2} \implies %
 }
 ответ:
-\salign{\boxed{I(a) \approx \frac{1}{a^2}}}
+\falign{\boxed{I(a) \approx \frac{1}{a^2}}}
 
 \subsubsection*{\Rnum{2}. $a \ll 1$}
 При $x \ll 1$ выполняется
@@ -26,7 +26,7 @@
 \feq{h(x) = (1 + \varepsilon)a^2 + (2\varepsilon + \varepsilon^2)^2 \ll 1 \Rightarrow f(x) \gg 1,}
 следовательно, интеграл набирается в некой окрестности $1 - \varepsilon' \le x \le 1 + \varepsilon',\ \varepsilon' \ll 1$,\
 а значит в $h(x)$ интегрировать по $\varepsilon$ от $-\varepsilon'$ до $\varepsilon'$, отбросив члены высших порядков малости:
-\salign{
+\falign{
   \begin{aligned}
     I(a) = \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x &\approx \int_{-\varepsilon'}^{\varepsilon'} \frac{1}{(1 + \varepsilon)a^2 + (2\varepsilon + \varepsilon^2)^2}\; \df \varepsilon \approx\\
                                                            &\approx \frac12 \int_{-\varepsilon'}^{\varepsilon'} \frac{1}{a^2 + (2\varepsilon)^2}\; \df (2\varepsilon) = \left.\frac{1}{2a}\arctan{\frac{2\varepsilon}{a}}\right|_{-\varepsilon'}^{\varepsilon'} = \frac{1}{a}\arctan{\frac{2\varepsilon'}{a}}.

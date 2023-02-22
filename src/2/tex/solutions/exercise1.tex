@@ -17,7 +17,7 @@
 При этом степень при экспоненте остается мала: $-\frac{a}{b}t \ll 1$, следовательно
 \feq{e^{-\frac{a}{b}t} \approx 1,\ I(a, b) = b \int_0^\infty e^{-\frac{a}{b}t} \frac{\sin^2{t}}{t^2}\; \df t \approx b \int_0^\infty \frac{\sin^2{t}}{t^2}\; \df t.}
 Полученный интеграл вычисляется:
-\salign{
+\falign{
   \begin{aligned}
     I &= \int_0^\infty \frac{\sin^2{t}}{t^2}\; \df t = \left.\frac{\sin^2{t}}{t}\right|_0^\infty - \int_0^\infty t\; \df \left(\frac{\sin^2{t}}{t^2}\right) = - \int_0^\infty t\; \df \left(\frac{\sin^2{t}}{t^2}\right)\\
       &= - \int_0^\infty t \left(\frac{2\sin{t}\cos{t}}{t^2} - \frac{2\sin^2{t}}{t^3}\right)\; \df t = - \int_0^\infty \frac{\sin{2t}}{2t}\; \df (2t) + 2I,\quad I = \int_0^\infty \frac{\sin{2t}}{2t}\; \df (2t) = \frac{\pi}{2},

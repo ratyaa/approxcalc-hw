@@ -21,7 +21,7 @@
 Так как $n' \ll \frac{a}{b},\ bn' \ll a \sim 1 \Rightarrow e^{-bn'} \approx e^{-b(n-1)} 1$, а следовательно, если выполняется
 \feq{(n'-1)^{(a+1)} \ll \frac{1}{b^a}, \label{eq:4.3} \tag{\textbf{У4}.3}}
 то
-\salign{
+\falign{
   \begin{gathered}
     \sum_{n=1}^{n'-1} f(n) \approx (n'-1)^{(a+1)} \ll \frac{1}{b^a}\Gamma(a+1) + \frac12 n'^a \approx \frac{1}{b^a}\Gamma(a+1) \approx \sum_{n = n'}^\infty f(n) \implies\\
     S(a,b) = \sum_{n=1}^{\infty} f(n) = \sum_{n=1}^{n'-1} f(n) + \sum_{n=n'}^{\infty} f(n) \approx \sum_{n=n'}^{\infty} f(n) \approx \frac{1}{b^a}\Gamma(a+1).
@@ -54,7 +54,7 @@
 \feq{f'(n) = an^{a-1}e^{-bn} - bn^ae^{-bn} = \left(\frac{a}{n} - b\right)f(n),}
 и при $\tilde{n} = \sfrac{a}{b}$, $f'(\tilde{n}) = 0$. Оценим, как изменяется отношение производной к\
 значению функции при изменении $\tilde{n}$ на $\varepsilon \sim 1$. $\sfrac{a}{b} \gg 1 \Rightarrow \sfrac{b}{a} \ll 1 \implies$
-\salign{
+\falign{
   \begin{gathered}
     \frac{f'(\tilde{n} + \varepsilon)}{f(\tilde{n} + \varepsilon)} = \frac{a}{\frac{a}{b} + \varepsilon} - b = \frac{b}{1 + \frac{b\varepsilon}{a}} - b \overset{\sfrac{b}{a} \ll 1}{\approx} b\left( 1- \frac{b\varepsilon}{a}\right) - b = -\varepsilon\frac{b^2}{a},\\
     b \gg \frac{a}{b} \Rightarrow b^2 \gg a \Rightarrow \frac{b^2}{a} \gg 1 \overset{\varepsilon \sim 1}{\implies} \left|\frac{f'(\tilde{n} + \varepsilon)}{f(\tilde{n} + \varepsilon)}\right| \gg 1,
@@ -66,7 +66,7 @@
 Также, из того, что $n$ натурально, нельзя просто взять $S(a,b) = f(\sfrac{a}{b})$,\
 так как $\sfrac{a}{b}$ необязательно натурально, поэтому за сумму надо брать первые\
 члены справа и слева от $\tilde{n}$:
-\salign{
+\falign{
   \begin{gathered}
     S(a,b) \approx f(\tilde{n}_1) + f(\tilde{n}_2),\quad 0 \le \tilde{n} - \tilde{n}_1 \le 1,\quad 0 \le \tilde{n}_2 - \tilde{n} \le 1 \iff\\
     \tilde{n}_1 = \floor*{\frac{a}{b}},\quad \tilde{n}_2 = \ceil*{\frac{a}{b}},

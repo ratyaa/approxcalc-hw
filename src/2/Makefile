@@ -77,36 +77,42 @@ PLT_EX4_TARGET =	$(PLT_EX4_SRC:$(PLT_DIR)/$(EX4_NAME)%.gp=$(PIC_DIR)%.svg)
 
 $(PLT_PR1_TARGET): $(PLT_PR1_SRC) $(PLT_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
+	mkdir -p $(PIC_DIR)
 ifneq ($(PLT_PR1_SRC),)
 	$(PLT_PR1_EXEC)
 endif
 
 $(PLT_PR2_TARGET): $(PLT_PR2_SRC) $(PLT_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
+	mkdir -p $(PIC_DIR)
 ifneq ($(PLT_PR2_SRC),)
 	$(PLT_PR2_EXEC)
 endif
 
 $(PLT_EX1_TARGET): $(PLT_EX1_SRC) $(PLT_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
+	mkdir -p $(PIC_DIR)
 ifneq ($(PLT_EX1_SRC),)
 	$(PLT_EX1_EXEC)
 endif
 
 $(PLT_EX2_TARGET): $(PLT_EX2_SRC) $(PLT_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
+	mkdir -p $(PIC_DIR)
 ifneq ($(PLT_EX2_SRC),)
 	$(PLT_EX2_EXEC)
 endif
 
 $(PLT_EX3_TARGET): $(PLT_EX3_SRC) $(PLT_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
+	mkdir -p $(PIC_DIR)
 ifneq ($(PLT_EX3_SRC),)
 	$(PLT_EX3_EXEC)
 endif
 
 $(PLT_EX4_TARGET): $(PLT_EX4_SRC) $(PLT_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
+	mkdir -p $(PIC_DIR)
 ifneq ($(PLT_EX4_SRC),)
 	$(PLT_EX4_EXEC)
 endif

@@ -5,7 +5,7 @@
 Так как $b \sim 1$, $\forall x \hookrightarrow (x - 1)^2 + b^2 \sim C \ge 1$, и при $x \ll 1$ справедливо $\frac{1}{x^2 + a^2} \gg 1$,\
 интеграл набирается в некоторой окрестности нуля $0 \le x \le x' \ll 1$, и можно пренебречь\
 величинами высших порядков малости:
-\salign{
+\falign{
   \begin{aligned}
     I(a, b) = \int_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + b^2}\; \df x \approx  \frac{1}{1 + b^2}\int_0^\infty \frac{1}{x^2 + a^2}\; \df x &= \left.\frac{1}{1+b^2} \frac{1}{a} \arctg{\frac{x}{a}}\right|_0^\infty = \\
                                                                                                                               &= \frac{\pi}{2a(1 + b^2),}
@@ -18,7 +18,7 @@
 Предположим, что при больших $a$ на данной области интегрирования можно пренебречь единицей в знаменателе:
 \feq{I(a) = \int_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2}\; \df x \approx \int_0^\infty \frac{1}{(x^2 + a^2)^2}\; \df x.}
 Проверку предположения проведем оценкой сверху и снизу:
-\salign{
+\falign{
   \begin{aligned}
     a \gg 1 &\Rightarrow \forall x \le \infty, x \ge 0 \hookrightarrow \frac{1}{\left((x-1)^2 + a^2\right)^2} \ge \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2} \ge \frac{1}{\left(x^2 + a^2\right)^2} > 0,\\
           &\implies \int_0^\infty \frac{1}{\left((x-1)^2 + a^2\right)^2}\; \df x \ge \int_0^\infty \frac{1}{x^2 + a^2} \frac{1}{(x-1)^2 + a^2}\; \df x \ge \int_0^\infty \frac{1}{\left(x^2 + a^2\right)^2}\; \df x,
@@ -32,7 +32,7 @@
 
 Вычислим полученный неопределенный интеграл. Заменим переменную:
 \feq{x = a\tan{u},\quad \df x = \frac{a}{\cos^2{u}}\; \df u,\quad u = \arctan{\frac{x}{a}},}
-\salign{
+\falign{
   \begin{aligned}
     \hat{I}(x) &= \int \frac{1}{\left(x^2 + a^2\right)^2}\; \df x = \frac{1}{a^3} \int \frac{1}{\left(\tan^2{u} + 1^2\right)^2 \cos^2{u}}\; \df u = \frac{1}{a^3} \int \cos^2{u}\; \df u = \frac{1}{a^3} \int \cos^2{u}\; \df u =\\
                &= \frac{1}{2a^3} \int \left(\left(2\cos^2{u} - 1\right) + 1\right)\; \df u = \frac{1}{4a^3} \int \left(\cos{(2u)} + 1\right)\; \df (2u) = \frac{\sin{(2u)} + 2u}{4a^3} + C =\\

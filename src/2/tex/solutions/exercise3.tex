@@ -2,7 +2,7 @@
 
 \subsection*{Упражнение 3}
 Заменив переменную, обезразмерим интеграл:
-\salign{
+\falign{
   \begin{gathered}
     t = bx,\quad \df x = \frac{1}{b}\df t,\\
     I(a, b) = \int_0^\infty \frac{x}{x^2 + a^2}(1 - \tanh{(bx)})\; \df x = \int_0^\infty \frac{t}{t^2 + a^2b^2}(1 - \tanh{t})\; \df t \equiv \int_0^\infty f(t)\; \df t.
@@ -11,7 +11,7 @@
 Так как $a \ll 1$ и $b \ll 1$, выполняется $1 \gg ab \gg a^2b^2$. Представим интеграл в виде
 \feq{\int_0^\infty f(t)\; \df t = \int_0^{t'} f(t)\; \df t + \int_{t'}^T f(t)\; \df t + \int_T^\infty f(t)\; \df t,\quad 0 < t' < 1,\quad T \sim 1. \label{eq:3.1} \tag{\textbf{У3}.1}}
 Предположим, что $t'$ достаточно мал и $\tanh{t}$ в первом слагаемом можно разложить:
-\salign{
+\falign{
   \begin{aligned}
     \int_0^{t'} f(t)\; \df t &\approx \int_0^{t'} \frac{t}{t^2 + a^2b^2}(1 - t)\; = \frac12 \int_0^{t'} \frac{1}{t^2 + a^2b^2}\; \df (t^2) + \int_0^{t'} \left(1 - \frac{a^2b^2}{t^2 + a^2b^2}\right)\; \df t =\\
                           &= \left.\frac12 \ln{(t^2 + a^2b^2)} - t + ab\arctan{\frac{t}{ab}}\right|_0^{t'} = \frac12 \ln{\left(1 + \frac{t'^2}{a^2b^2}\right)} - t' + ab \arctan{\frac{t'}{ab}}.
@@ -19,7 +19,7 @@
 }
 При $t' = \sfrac12$, $\tanh{t'} \approx t'$ с точностью примерно $10\%$, и это значение подойдет
 для грубых оценок с логарифмической точностью. Для данного $t'$ получаем:
-\salign{
+\falign{
   \begin{gathered}
     \frac12 \ln{\left(1 + \frac{t'^2}{a^2b^2}\right)} - t' \approx -\ln{(ab)} + \ln(t') - t' = -\ln{(ab)} + C_1,\ C_1 \sim 1,\\
     ab \arctan{\frac{t'}{ab}} < \frac{\pi ab}{2} \ll 1, \implies\\
@@ -28,7 +28,7 @@
 }
 
 Для оценки третьего слагаемого из \eqref{eq:3.1} возьмем $T = 2$:
-\salign{
+\falign{
   \begin{gathered}
     a^2b^2 \ll t' \Rightarrow \forall t \ge T > t' \hookrightarrow \frac{t}{t^2 + a^2b^2} \approx \frac{1}{t},\quad t \ge T = 2 \implies\\
     C_3 \equiv \int_T^\infty f(t)\; dt \approx \int_T^\infty \frac{1}{t}(1-\tanh{t})\; \df t= \int_T^\infty \frac{1}{t} \frac{2e^{-2t}}{1 + e^{-2t}}\; \df t < \int_T^\infty e^{-2t}\; \df t = \frac12 e^{-4} \sim 10^{-2},
