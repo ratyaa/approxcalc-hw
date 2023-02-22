@@ -10,10 +10,17 @@
 }
 
 % Simple single-line alignment
-\newcommand{\salign}[2][] {
+\newcommand{\falign}[2][*] {
   \begin{align#1}
     #2
   \end{align#1}
+}
+
+% Simple single-line equation
+\newcommand{\feq}[2][*] {
+  \begin{equation#1}
+    #2
+  \end{equation#1}
 }
 
 % Символы
