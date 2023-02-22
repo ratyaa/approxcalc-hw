@@ -3,27 +3,27 @@
 \subsection*{Упражнение 2}
 \subsubsection*{\Rnum{1}. $\alpha \gg 1$}
 Пусть $\tilde{x}$ --- корень уравнения $\ln{x} = e^{-\alpha x}$, тогда,
-\salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \Rightarrow \ln{\tilde{x}} > 0 \Rightarrow \tilde{x} > 1 \Rightarrow e^{-\alpha \tilde{x}} < e^{-\alpha} \ll 1,}
+\feq{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \Rightarrow \ln{\tilde{x}} > 0 \Rightarrow \tilde{x} > 1 \Rightarrow e^{-\alpha \tilde{x}} < e^{-\alpha} \ll 1,}
 следовательно, $0 < \ln{\tilde{x}} \ll 1$, и $\tilde{x}$ можно представить в виде
-\salign{\tilde{x} = 1 + \varepsilon, \quad 0 < \varepsilon \ll 1.}
+\feq{\tilde{x} = 1 + \varepsilon, \quad 0 < \varepsilon \ll 1.  \label{eq:2.1} \tag{\textbf{У2}.1}}
 От полученного данной подстановкой уравнения $\ln{(1 + \varepsilon)} = e^{-\alpha(1 + \varepsilon)}$
 возьмем экспоненту:\
-\salign[*]{1 + \varepsilon = e^{e^{-\alpha(1 + \varepsilon)}},}
+\feq{1 + \varepsilon = e^{e^{-\alpha(1 + \varepsilon)}},}
 и, так как $\xi = e^{-\alpha(1+\varepsilon)} \ll 1$, разложим правую часть по степеням $\xi$:
-\salign[*]{1 + \varepsilon = e^\xi \approx 1 + \xi + \frac{1}{2}\xi^2.}
+\feq{1 + \varepsilon = e^\xi \approx 1 + \xi + \frac{1}{2}\xi^2.}
 Подставляя $\xi$ и пренебрегая малыми величинами, получаем
-\salign[*]{\varepsilon \approx e^{-\alpha(1+\varepsilon)} + \frac{1}{2}e^{-2\alpha(1+\varepsilon)} \approx e^{-\alpha},}
-и, подставляя $\varepsilon$ в (4), получаем ответ:
-\salign[*]{\boxed{\tilde{x} \approx 1+e^{-\alpha}}}
+\feq{\varepsilon \approx e^{-\alpha(1+\varepsilon)} + \frac{1}{2}e^{-2\alpha(1+\varepsilon)} \approx e^{-\alpha},}
+и, подставляя $\varepsilon$ в \eqref{eq:2.1}, получаем ответ:
+\feq{\boxed{\tilde{x} \approx 1+e^{-\alpha}}}
 \subsubsection*{\Rnum{2}. $\alpha \ll 1$}
 Пусть $\tilde{x}$ --- корень уравнения $x-1 = e^{-\alpha x}$, тогда,
-\salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \Rightarrow \tilde{x} > 1 \Rightarrow |-\alpha \tilde{x}| \ll 1,}
+\feq{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \Rightarrow \tilde{x} > 1 \Rightarrow |-\alpha \tilde{x}| \ll 1,}
 следовательно, $0 < 1 - e^{-\alpha \tilde{x}} \ll 1$, и $e^{-\alpha \tilde{x}}$ можно представить в виде
-\salign{e^{-\alpha \tilde{x}} = 1 - \varepsilon, \quad 0 < \varepsilon \ll 1,}
-откуда $\tilde{x} = \frac{1}{\alpha}\ln{\frac{1}{1 - \varepsilon}}$, и, подстановкой (5) в исходное уравнение,
-\salign{\tilde{x} = e^{1 - \varepsilon},}
-\salign[*]{\alpha e^{1 - \varepsilon} = \ln{\frac{1}{1 - \varepsilon}}.}
+\feq{e^{-\alpha \tilde{x}} = 1 - \varepsilon, \quad 0 < \varepsilon \ll 1,  \label{eq:2.2} \tag{\textbf{У2}.2}}
+откуда $\tilde{x} = \frac{1}{\alpha}\ln{\frac{1}{1 - \varepsilon}}$, и, подстановкой \eqref{eq:2.2} в исходное уравнение,
+\feq{\tilde{x} = e^{1 - \varepsilon},  \label{eq:2.3} \tag{\textbf{У2}.3}}
+\feq{\alpha e^{1 - \varepsilon} = \ln{\frac{1}{1 - \varepsilon}}.}
 Пренебрегая малой величиной, получаем
-\salign[*]{\alpha e^{1-\varepsilon} \approx \alpha e, \quad \alpha e \approx \ln{\frac{1}{1 - \varepsilon}}, \quad \varepsilon = 1 - e^{-e\alpha} \approx e\alpha,}
-откуда подстановкой в (6) получаем ответ:
-\salign[*]{\boxed{\tilde{x} \approx e(1 - e\alpha)}}
+\feq{\alpha e^{1-\varepsilon} \approx \alpha e, \quad \alpha e \approx \ln{\frac{1}{1 - \varepsilon}}, \quad \varepsilon = 1 - e^{-e\alpha} \approx e\alpha,}
+откуда подстановкой в \eqref{eq:2.3} получаем ответ:
+\feq{\boxed{\tilde{x} \approx e(1 - e\alpha)}}

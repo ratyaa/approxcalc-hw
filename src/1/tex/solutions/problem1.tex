@@ -3,48 +3,48 @@
 \subsection*{Задача 1}
 \subsubsection*{\Rnum{1}. $0 < \alpha -1 \ll 1$}
 Нарисуем на графике правую часть уравнения, и левую при $\alpha \in \{2,\ 1,\ \frac12\}$\
-(\textbf{рис. 1}). Вблизи нуля функции $\tanh{\alpha x}$ и $\arctan{x}$ ведут себя линейно:\
+(\textbf{рис. \ref{plot:p1}}). Вблизи нуля функции $\tanh{\alpha x}$ и $\arctan{x}$ ведут себя линейно:\
 $\tanh{\alpha x} \sim \alpha x, \ \arctan{x} \sim x$. Так как функции слева и справа нечетны, помимо\
 тривиального корня $\tilde{x}_0 = 0$ остальные (если существуют) связаны соотношением\
 $\tilde{x}_i^+ = - \tilde{x}_i^-,\ \tilde{x}_i^+ > 0$. Отсюда и из графика можно сделать\
 выводы, аналогичные выводам из конспекта семинара по задаче (1), причем интересует случай, когда
-\salign[*]{\alpha = 1 + \varepsilon > 1,\ 0 < \varepsilon \ll 1,}
+\feq[*]{\alpha = 1 + \varepsilon > 1,\ 0 < \varepsilon \ll 1,}
 т. е. имеются две нетривиальные точки пересечения, и при малых $\varepsilon$ корни уравнения малы.\
-\svg[0.7]{problem1.1}{График функций $\boldsymbol{\arctan{x}}$ и $\boldsymbol{\tanh{\alpha x}}$ при различных $\boldsymbol{\alpha}$}
+\svg[0.7]{problem1.1}{График функций $\boldsymbol{\arctan{x}}$ и $\boldsymbol{\tanh{\alpha x}}$ при различных $\boldsymbol{\alpha}$}{plot:p1}
 
 Разложим обе части уравнения по степеням аргументов:
-\salign[*]{\tanh{\alpha x} \approx (1 + \varepsilon)x - \frac13(1 + \varepsilon)^3x^3 + \frac2{15}(1 + \varepsilon)^5x^5, \quad  \arctan{x} \approx x - \frac13x^3 + \frac15x^5,}
-\salign[*]{\varepsilon x - \frac13\left((1 + \varepsilon)^3 - 1\right)x^3 + \frac15\left(\frac23(1 + \varepsilon)^5 - 1\right)x^5 = 0.}
+\feq[*]{\tanh{\alpha x} \approx (1 + \varepsilon)x - \frac13(1 + \varepsilon)^3x^3 + \frac2{15}(1 + \varepsilon)^5x^5, \quad  \arctan{x} \approx x - \frac13x^3 + \frac15x^5,}
+\feq[*]{\varepsilon x - \frac13\left((1 + \varepsilon)^3 - 1\right)x^3 + \frac15\left(\frac23(1 + \varepsilon)^5 - 1\right)x^5 = 0.}
 Из $\varepsilon \ll 1$ следует $(1 + \varepsilon)^n \approx 1 + n\varepsilon$ и, следовательно,
-\salign[*]{\varepsilon x - \varepsilon x^3 + \left(\frac23\varepsilon - \frac1{15}\right)x^5 = 0.}
+\feq[*]{\varepsilon x - \varepsilon x^3 + \left(\frac23\varepsilon - \frac1{15}\right)x^5 = 0.}
 Разделим уравнение на $x$, домножим на $15$ для удобства, произведем замену $y = x^2$\
 и решим приближенно полученное квадратное уравнение:
-\salign[*]{y^2(10\varepsilon - 1) - 15\varepsilon y + 15\varepsilon = 0,}
-\salign[*]{\tilde{y} = \frac{15\varepsilon \pm \sqrt{15^2\varepsilon^2 - 60\varepsilon(10\varepsilon - 1)}}{2(10\varepsilon - 1)} = \frac{\pm 2\sqrt{15\varepsilon} \cdot \sqrt{1-\frac{25}{4}\varepsilon} + 15\varepsilon}{2(10\varepsilon - 1)} \approx \pm \sqrt{15\varepsilon},}
+\feq[*]{y^2(10\varepsilon - 1) - 15\varepsilon y + 15\varepsilon = 0,}
+\feq[*]{\tilde{y} = \frac{15\varepsilon \pm \sqrt{15^2\varepsilon^2 - 60\varepsilon(10\varepsilon - 1)}}{2(10\varepsilon - 1)} = \frac{\pm 2\sqrt{15\varepsilon} \cdot \sqrt{1-\frac{25}{4}\varepsilon} + 15\varepsilon}{2(10\varepsilon - 1)} \approx \pm \sqrt{15\varepsilon},}
 а так как $y > 0$:
-\salign[*]{\tilde{y} \approx \sqrt{15\varepsilon}.}
+\feq[*]{\tilde{y} \approx \sqrt{15\varepsilon}.}
 Подставляя полученный результат в $\varepsilon = \alpha - 1$ и $x = \pm\sqrt{y}$, получаем ответ:
-\salign[*]{\boxed{\tilde{x}_0 = 0,\ \tilde{x}_{1,2} \approx \pm\sqrt[4]{15(\alpha - 1)}}}
+\feq[*]{\boxed{\tilde{x}_0 = 0,\ \tilde{x}_{1,2} \approx \pm\sqrt[4]{15(\alpha - 1)}}}
 \subsubsection*{\Rnum{2}. $\alpha \gg 1$}
 Найдем сначала положительный корень данного уравнения $\tilde{x}_1 > 0$. Так как $\alpha \gg 1$,
-\salign{\tanh{\alpha \tilde{x}_1} = \frac{e^{\alpha \tilde{x}_1} - e^{-\alpha \tilde{x}_1}}{e^{\alpha \tilde{x}_1} + e^{-\alpha \tilde{x}_1}} = 1 - \frac{2}{e^{2\alpha \tilde{x}_1} + 1} = 1 - \varepsilon, \ 0 < \varepsilon < 1.}
+\feq{\tanh{\alpha \tilde{x}_1} = \frac{e^{\alpha \tilde{x}_1} - e^{-\alpha \tilde{x}_1}}{e^{\alpha \tilde{x}_1} + e^{-\alpha \tilde{x}_1}} = 1 - \frac{2}{e^{2\alpha \tilde{x}_1} + 1} = 1 - \varepsilon, \ 0 < \varepsilon < 1. \label{eq:5.1} \tag{\textbf{З1}.1}}
 В грубом приближении $\tanh{\alpha\tilde{x}_1} \approx 1, \ \tilde{x}_1 \approx \tan{1} \Rightarrow \varepsilon \ll 1$.
 Выразим $\tilde{x}_1$ через $\varepsilon$:
-\salign[*]{1 - \varepsilon = \arctan{\tilde{x}_1}, \quad \tilde{x}_1 = \tan{(1 - \varepsilon)} = \frac{\tan{1} - \tan{\varepsilon}}{1 + \tan{1}\tan{\varepsilon}}.}
+\feq[*]{1 - \varepsilon = \arctan{\tilde{x}_1}, \quad \tilde{x}_1 = \tan{(1 - \varepsilon)} = \frac{\tan{1} - \tan{\varepsilon}}{1 + \tan{1}\tan{\varepsilon}}.}
 Пусть $\tan{1} = \beta$. Так как $\beta\tan{\varepsilon} \ll 1$,
-\salign{\tilde{x}_1 = \beta\frac{1 - \frac{\tan{\varepsilon}}{\beta}}{1 + \beta \tan{\varepsilon}} = \beta - \frac{(\beta^2 + 1)\tan{\varepsilon}}{1 + \beta\tan{\varepsilon}} \approx \beta - (\beta^2 + 1)\varepsilon.}
-Теперь преобразуем (10) и подставим $\tilde{x}_1$ из (11):
-\salign[*]{\varepsilon = \frac{2}{e^{2\alpha\tilde{x}_1 + 1}}, \quad \tilde{x}_1 = \frac{1}{2\alpha}\ln{\left(\frac{2}{\varepsilon} - 1\right)} \approx \beta - (\beta^2 + 1)\varepsilon.}
+\feq{\tilde{x}_1 = \beta\frac{1 - \frac{\tan{\varepsilon}}{\beta}}{1 + \beta \tan{\varepsilon}} = \beta - \frac{(\beta^2 + 1)\tan{\varepsilon}}{1 + \beta\tan{\varepsilon}} \approx \beta - (\beta^2 + 1)\varepsilon. \label{eq:5.2} \tag{\textbf{З1}.2}}
+Теперь преобразуем \eqref{eq:5.1} и подставим $\tilde{x}_1$ из \eqref{eq:5.2}:
+\feq[*]{\varepsilon = \frac{2}{e^{2\alpha\tilde{x}_1 + 1}}, \quad \tilde{x}_1 = \frac{1}{2\alpha}\ln{\left(\frac{2}{\varepsilon} - 1\right)} \approx \beta - (\beta^2 + 1)\varepsilon.}
 Применим метод итераций к полученному уравнению. Возьмем $\varepsilon_1 = 0$, тогда:
-\salign[*]{\frac{1}{2\alpha}\ln{\left(\frac{2}{\varepsilon_{n+1}} - 1\right)} = \beta - (\beta^2 + 1)\varepsilon_n, \quad \varepsilon_2 = \frac{2}{e^{2\alpha\beta} + 1}, \quad \varepsilon_3 = \frac{2}{e^{2\alpha\beta}\left[e^{-(\beta^2 + 1)\frac{2}{e^{2\alpha\beta} + 1}}\right] + 1}.}
+\feq[*]{\frac{1}{2\alpha}\ln{\left(\frac{2}{\varepsilon_{n+1}} - 1\right)} = \beta - (\beta^2 + 1)\varepsilon_n, \quad \varepsilon_2 = \frac{2}{e^{2\alpha\beta} + 1}, \quad \varepsilon_3 = \frac{2}{e^{2\alpha\beta}\left[e^{-(\beta^2 + 1)\frac{2}{e^{2\alpha\beta} + 1}}\right] + 1}.}
 Уже при $\alpha = 5$
-\salign[*]{\varepsilon_2 \approx 1.7 \cdot 10^{-7}, \ \frac{(\Delta\varepsilon)_2}{\varepsilon_2} = \frac{\varepsilon_3 - \varepsilon_2}{\varepsilon_2} \approx 10^{-5} \Rightarrow (\Delta\varepsilon)_2 \ll \varepsilon_2,}
+\feq[*]{\varepsilon_2 \approx 1.7 \cdot 10^{-7}, \ \frac{(\Delta\varepsilon)_2}{\varepsilon_2} = \frac{\varepsilon_3 - \varepsilon_2}{\varepsilon_2} \approx 10^{-5} \Rightarrow (\Delta\varepsilon)_2 \ll \varepsilon_2,}
 а следовательно
-\salign[*]{\varepsilon \approx \varepsilon_2 \approx 2e^{-2\alpha\beta}}
+\feq[*]{\varepsilon \approx \varepsilon_2 \approx 2e^{-2\alpha\beta}}
 является достаточным приближением.
 
-Подставляя полученную величину в (11), получаем приближенное выражение для $\tilde{x}_1$:
-\salign[*]{\tilde{x}_1 \approx \beta - 2e^{-2\alpha\beta}(\beta^2 + 1).}
+Подставляя полученную величину в \eqref{eq:5.2}, получаем приближенное выражение для $\tilde{x}_1$:
+\feq[*]{\tilde{x}_1 \approx \beta - 2e^{-2\alpha\beta}(\beta^2 + 1).}
 Так как в исходном уравнении правая и левая части --- нечетные функции, $\exists \tilde{x}_2 = -\tilde{x}_1$:
 корень исходного уравнения, откуда, учитывая тривиальный корень $\tilde{x}_0 = 0$, ответ:
-\salign[*]{\boxed{\tilde{x}_0 = 0,\ \tilde{x}_{1,2} \approx \pm\left(\beta - 2e^{-2\alpha\beta}(\beta^2 + 1)\right),\ \beta = \tan{1}}}
+\feq[*]{\boxed{\tilde{x}_0 = 0,\ \tilde{x}_{1,2} \approx \pm\left(\beta - 2e^{-2\alpha\beta}(\beta^2 + 1)\right),\ \beta = \tan{1}}}

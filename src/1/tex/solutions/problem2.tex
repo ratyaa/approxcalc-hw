@@ -1,23 +1,23 @@
 \def \picdir{pic/}
 
 \subsection*{Задача 2}
-\svg[0.7]{problem2}{График функции $\boldsymbol{|\cos{x} + \alpha\sinc{x}|}$ при $\boldsymbol{\alpha = 3}$}
-На \textbf{рис. 2} изображен график $|\cos{x} + \alpha\sinc{x}|$ при $\alpha = 3$ для наглядности.\
+\svg[0.7]{problem2}{График функции $\boldsymbol{|\cos{x} + \alpha\sinc{x}|}$ при $\boldsymbol{\alpha = 3}$}{plot:p2}
+На \textbf{рис. \ref{plot:p2}} изображен график $|\cos{x} + \alpha\sinc{x}|$ при $\alpha = 3$ для наглядности.\
 Из графика и/или тривиальных математических рассуждений видно, что на каждый интервал\
 $\left(\pi k,\ \pi (k + 1)\right), k \in \mathbb{N} \cup \{0\}$ приходится зона:
-\salign{K_{k} = \left(\pi k,\ \pi k + \varepsilon_{k}\right),\ \varepsilon_k > 0}
+\feq{K_{k} = \left(\pi k,\ \pi k + \varepsilon_{k}\right),\ \varepsilon_k > 0 \label{eq:6.1} \tag{\textbf{З}2.1}}
 при этом оба слагаемых имеют одинаковый знак, и модуль можно раскрыть:
-\salign[*]{\left|\cos{x} + \alpha \frac{\sin{x}}{x}\right| = |\cos{x}| + \alpha\frac{|\sin{x}|}{x}}
+\feq{\left|\cos{x} + \alpha \frac{\sin{x}}{x}\right| = |\cos{x}| + \alpha\frac{|\sin{x}|}{x}}
 При $\alpha \ll 1$ и $k \gg 1$ (а, следовательно, и $x \gg 1$) ширина $(\Delta x)_k$ этих участков $(\Delta x)_k \ll 1$,\
 а следовательно поведение $\sin{x}$ и $\cos{x}$ в этих зонах описывается аналогично поведению\
 в окрестности нуля, т. е.:
-\salign[*]{x \in K_{k},\ |\cos{x}| + \alpha\frac{|\sin{x}|}{x} \approx 1 - \frac{(x - \pi k)^2}{2} + \alpha \frac{(x-\pi k) - \frac{(x-\pi k)^3}{6}}{x},}
+\feq{x \in K_{k},\ |\cos{x}| + \alpha\frac{|\sin{x}|}{x} \approx 1 - \frac{(x - \pi k)^2}{2} + \alpha \frac{(x-\pi k) - \frac{(x-\pi k)^3}{6}}{x},}
 откуда получаем уравнение для правой границы зоны:
-\salign[*]{x = \pi k + \varepsilon_k,\quad 1 - \frac{\varepsilon_k^2}{2} + \alpha \frac{\varepsilon_k - \frac{\varepsilon_k^3}{6}}{\pi k + \varepsilon_k} \approx 1,\quad -3\pi k\varepsilon_k^2 + \alpha \frac{6\varepsilon_k - \varepsilon_k^3}{1 + \frac{\varepsilon_k}{\pi k}} \approx 0.}
+\feq{x = \pi k + \varepsilon_k,\quad 1 - \frac{\varepsilon_k^2}{2} + \alpha \frac{\varepsilon_k - \frac{\varepsilon_k^3}{6}}{\pi k + \varepsilon_k} \approx 1,\quad -3\pi k\varepsilon_k^2 + \alpha \frac{6\varepsilon_k - \varepsilon_k^3}{1 + \frac{\varepsilon_k}{\pi k}} \approx 0.}
 Раскладываем знаменатель по степеням $\varepsilon_k/\pi k$ :
-\salign[*]{-3\pi k\varepsilon_k^2 + \alpha \left(6\varepsilon_k - \varepsilon_k^3\right)\left(1 - \frac{\varepsilon_k}{\pi k}\right) \approx 0 \approx -3\pi k\varepsilon_k^2 + 6\alpha\varepsilon_k - \frac{6\alpha\varepsilon_k^2}{\pi k},}
-\salign[*]{-\left(\pi k + \frac{2\alpha}{\pi k}\right)\varepsilon_k + 2\alpha \approx 0,\quad \varepsilon_k \approx \frac{2\alpha}{\pi k + \frac{2\alpha}{\pi k}} \approx \frac{2\alpha}{\pi k}.}
-Из (12) получаем
-\salign[*]{(\Delta x)_k = (\pi k + \varepsilon_k) - \pi k = \varepsilon_k,}
+\feq{-3\pi k\varepsilon_k^2 + \alpha \left(6\varepsilon_k - \varepsilon_k^3\right)\left(1 - \frac{\varepsilon_k}{\pi k}\right) \approx 0 \approx -3\pi k\varepsilon_k^2 + 6\alpha\varepsilon_k - \frac{6\alpha\varepsilon_k^2}{\pi k},}
+\feq{-\left(\pi k + \frac{2\alpha}{\pi k}\right)\varepsilon_k + 2\alpha \approx 0,\quad \varepsilon_k \approx \frac{2\alpha}{\pi k + \frac{2\alpha}{\pi k}} \approx \frac{2\alpha}{\pi k}.}
+Из \eqref{eq:6.1} получаем
+\feq{(\Delta x)_k = (\pi k + \varepsilon_k) - \pi k = \varepsilon_k,}
 ответ:
-\salign[*]{\boxed{(\Delta x)_k = \frac{2\alpha}{\pi k}}}
+\feq{\boxed{(\Delta x)_k = \frac{2\alpha}{\pi k}}}

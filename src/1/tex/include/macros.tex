@@ -1,10 +1,11 @@
 % svg inclusion
-\newcommand{\svg}[3][0.7] {
+\newcommand{\svg}[4][0.7] {
   \begin{figure}[h]
     \begin{center}
       \fontsize{7}{8}\selectfont
       \includesvg[scale=#1]{\picdir #2}
       \caption{#3}
+      \label{#4}
     \end{center}
   \end{figure}
 }
@@ -14,6 +15,13 @@
   \begin{align#1}
     #2
   \end{align#1}
+}
+
+% Simple single-line equation
+\newcommand{\feq}[2][*] {
+  \begin{equation#1}
+    #2
+  \end{equation#1}
 }
 
 % Символы

@@ -119,11 +119,13 @@ endif
 
 $(TEX_MAIN_TARGET): $(PLT_ALL_SRC) $(TEX_SOLUTION_SRC) $(TEX_MAIN_SRC) $(TEX_INCLUDE_SRC)
 	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/main.tex
+	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/main.tex
 	mv $(BUILD_DIR)/main.pdf $(PDF_DIR)/$(NAME).pdf
 
 $(TEX_PR1_TARGET): $(PLT_PR1_SRC) $(TEX_PR1_SRC) $(TEX_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
 	mkdir -p $(PDF_DIR)
+	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(PR1_NAME).tex
 	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(PR1_NAME).tex
 	mv $(BUILD_DIR)/$(PR1_NAME).pdf $(PDF_DIR)/$(NAME)_$(PR1_NAME).pdf
 
@@ -131,11 +133,13 @@ $(TEX_PR2_TARGET): $(PLT_PR2_SRC) $(TEX_PR2_SRC) $(TEX_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
 	mkdir -p $(PDF_DIR)
 	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(PR2_NAME).tex
+	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(PR2_NAME).tex
 	mv $(BUILD_DIR)/$(PR2_NAME).pdf $(PDF_DIR)/$(NAME)_$(PR2_NAME).pdf
 
 $(TEX_EX1_TARGET): $(PLT_EX1_SRC) $(TEX_EX1_SRC) $(TEX_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
 	mkdir -p $(PDF_DIR)
+	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(EX1_NAME).tex
 	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(EX1_NAME).tex
 	mv $(BUILD_DIR)/$(EX1_NAME).pdf $(PDF_DIR)/$(NAME)_$(EX1_NAME).pdf
 
@@ -143,17 +147,20 @@ $(TEX_EX2_TARGET): $(PLT_EX2_SRC) $(TEX_EX2_SRC) $(TEX_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
 	mkdir -p $(PDF_DIR)
 	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(EX2_NAME).tex
+	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(EX2_NAME).tex
 	mv $(BUILD_DIR)/$(EX2_NAME).pdf $(PDF_DIR)/$(NAME)_$(EX2_NAME).pdf
 
 $(TEX_EX3_TARGET): $(PLT_EX3_SRC) $(TEX_EX3_SRC) $(TEX_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
 	mkdir -p $(PDF_DIR)
 	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(EX3_NAME).tex
+	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(EX3_NAME).tex
 	mv $(BUILD_DIR)/$(EX3_NAME).pdf $(PDF_DIR)/$(NAME)_$(EX3_NAME).pdf
 
 $(TEX_EX4_TARGET): $(PLT_EX4_SRC) $(TEX_EX4_SRC) $(TEX_INCLUDE_SRC)
 	mkdir -p $(BUILD_DIR)
 	mkdir -p $(PDF_DIR)
+	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(EX4_NAME).tex
 	$(TEX) $(TEX_FLAGS) $(TEX_DIR)/$(EX4_NAME).tex
 	mv $(BUILD_DIR)/$(EX4_NAME).pdf $(PDF_DIR)/$(NAME)_$(EX4_NAME).pdf
 
