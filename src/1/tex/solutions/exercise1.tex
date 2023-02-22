@@ -1,0 +1,24 @@
+\def \picdir{pic/}
+
+\subsection*{Упражнение 1}
+\subsubsection*{\Rnum{1}. $\alpha \gg 1$}
+Пусть $\tilde{x}$ --- корень уравнения $x-1 = e^{-\alpha x}$, тогда,
+\salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \Rightarrow \tilde{x} > 1 \Rightarrow e^{-\alpha \tilde{x}} < e^{-\alpha} \ll 1,}
+следовательно, $0 < \tilde{x} - 1 \ll 1$, и $\tilde{x}$ можно представить в виде
+\salign{\tilde{x} = 1 + \varepsilon, \quad 0 < \varepsilon \ll 1.}
+От полученного данной подстановкой уравнения $\varepsilon = e^{-\alpha(1 + \varepsilon)}$ отбросим малый член:
+\salign[*]{e^{-\alpha(1 + \varepsilon)} \approx e{-\alpha}, \quad -\alpha \approx \ln{\varepsilon},}
+откуда получаем $\varepsilon \approx e^{-\alpha}$, и, подставляя $\varepsilon$ в (1), получаем ответ:
+\salign[*]{\boxed{\tilde{x} \approx 1 + e^{-\alpha}}}
+\subsubsection*{\Rnum{2}. $\alpha \ll 1$}
+Пусть $\tilde{x}$ --- корень уравнения $x-1 = e^{-\alpha x}$, тогда,
+\salign[*]{\forall x \hookrightarrow e^{-\alpha x} \geq 0 \Rightarrow \tilde{x} > 1 \Rightarrow |-\alpha \tilde{x}| \ll 1,}
+следовательно, $0 < 1 - e^{-\alpha \tilde{x}} \ll 1$, и $e^{-\alpha \tilde{x}}$ можно представить в виде
+\salign{e^{-\alpha \tilde{x}} = 1 - \varepsilon, \quad 0 < \varepsilon \ll 1,}
+откуда $\tilde{x} = \frac{1}{\alpha}\ln{\frac{1}{1 - \varepsilon}}$, и, подстановкой (2) в исходное уравнение,
+\salign{\tilde{x} = 2 - \varepsilon,}
+\salign[*]{\alpha(2 - \varepsilon) = \ln{\frac{1}{1 - \varepsilon}}.}
+Пренебрегая малой величиной, получаем
+\salign[*]{(2 - \varepsilon)\alpha \approx 2\alpha, \quad 2\alpha \approx \ln{\frac{1}{1 - \varepsilon}}, \quad \varepsilon \approx 1 - e^{-2\alpha} \approx 2\alpha,}
+откуда подстановкой в (3) получаем ответ:
+\salign[*]{\boxed{\tilde{x} \approx 2 - 2\alpha}}

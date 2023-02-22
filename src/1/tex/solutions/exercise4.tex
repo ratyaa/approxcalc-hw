@@ -1,0 +1,11 @@
+\def \picdir{pic/}
+
+\subsection*{Упражнение 4}
+Пусть $\tilde{x}$ --- корень данного уравнения, а $\lambda = - \frac{1}{e} + \delta, 0 < \delta \ll 1$,\
+тогда $\tilde{x}$ можно представить в виде
+\salign{\tilde{x} = -1 + \varepsilon, \quad |\varepsilon| \ll 1.}
+Домножим обе части уравнения на $e$ и разложим левую часть по степеням $\varepsilon$:
+\salign[*]{(-1 + \varepsilon)e^\varepsilon \approx (-1 + \varepsilon)(1 + \varepsilon + \frac{1}{2}\varepsilon^2) \approx -1 + \delta e,}
+\salign[*]{\frac{1}{2}\varepsilon^2 = \delta e, \quad \varepsilon = \pm \sqrt{2\delta e} = \pm \sqrt{2(\lambda e + 1)},}
+отсюда, подставляя в (9) и учитывая, что $\tilde{x}_1(\lambda) > \tilde{x}_2(\lambda)$, ответ:
+\salign[*]{\boxed{\tilde{x}_1(\lambda) = -1 + \sqrt{2(\lambda e + 1)}, \quad \tilde{x}_2(\lambda) = -1 - \sqrt{2(\lambda e + 1)}}}

@@ -1,0 +1,49 @@
+\def \picdir{pic/}
+
+\subsection*{Упражнение 3}
+\subsubsection*{\Rnum{1}. $\tilde{x}_1(\lambda)$}
+Пусть $0 > \tilde{x} > -1$ --- корень уравнения $xe^x = \lambda$. При малых $x$ таких, что $|x| \ll 1$,\
+\salign[*]{x e^x \approx x(1 + x + \frac{1}{2}x^2) \approx x,}
+следовательно, $\tilde{x} \approx \tilde{x}e^x \approx \lambda$, ответ:
+\salign[*]{\boxed{\tilde{x} \approx \lambda}}
+\subsubsection*{\Rnum{2}. $\tilde{x}_2(\lambda)$}
+Домножим на $-1$ и прологарифмируем обе части уравнения:
+\salign[*]{x = \ln{(-\lambda)} - \ln{(-x)}.}
+Чтобы записи были приятнее глазу, перепишем уравнение в следующем виде:
+\salign{y = -x, \quad \xi = -\ln{(-\lambda)}, \quad y = \xi + \ln{y}.}
+
+Пусть $\tilde{y}$ --- корень данного уравнения, удовлетворяющий условию задачи\
+$x_2(\lambda) < -1 \Leftrightarrow \tilde{y} > 1$. Применим метод итераций к (7) и докажем, что\
+последовательность $\{y_n\}$ сходится в $\tilde{y}$.
+
+Пусть $y_1 = 1$, тогда
+\salign[*]{y_2 = \xi + \ln{y_1}, \quad (\Delta y)_1 = y_2 - y_1 = \xi - 1.}
+Так как $|\lambda| \ll 1$, $\xi > 1$ и, следовательно,
+\salign[*]{y_2 > y_1, \quad (\Delta y)_1 > 0.}
+Докажем ограниченность сверху для $\{y_n\}$. Предположим, что $\exists n: y_n \geq \tilde{y}$, тогда
+\salign[*]{y_n = \xi + \ln{y_{n-1}}, \quad y_{n-1} = e^{y_n - \xi} = e^{(\tilde{y} - \xi) + (y_n - \tilde{y})} = \tilde{y}e^{y_n - \tilde{y}} \geq \tilde{y},}
+откуда по индукции:
+\salign[*]{\exists n: y_n \geq \tilde{y} \Rightarrow \forall k \in \mathbb{N}, \ k \leq n \hookrightarrow y_k \geq \tilde{y},}
+что противоречит начальным условиям $\tilde{y} > 1, \ y_1 = 1$, следовательно $\{y_n\}$\
+ограниченна сверху, и
+\salign{\forall n \in \mathbb{N} \hookrightarrow y_n < \tilde{y}.}
+
+Докажем, что последовательность $\{y_n\}$ монотонно возрастает:
+\salign[*]{(\Delta y)_n = y_{n+1} - y_n = (\xi + \ln{y_n}) - (\xi + \ln{y_{n-1}}) = \ln{\frac{y_n}{y_{n-1}}} = \ln{\left(1 + \frac{(\Delta y)_{n-1}}{y_{n-1}}\right)},}
+\salign[*]{(\Delta y)_{n-1} > 0 \Rightarrow \ln\left(1 + \frac{(\Delta y)_{n-1}}{y_{n-1}}\right) > 0 \Rightarrow (\Delta y)_n > 0,}
+откуда по индукции:
+\salign[*]{(\Delta y)_1 > 0 \Rightarrow \forall n \in \mathbb{N} \hookrightarrow (\Delta y)_n > 0 \Leftrightarrow \forall n \in \mathbb{N} \hookrightarrow y_{n+1} > y_n,}
+т.е. $\{y_n\}$ монотонно возрастает.
+
+Oтсюда и из условия (8) ограниченности последовательности $\{y_n\}$
+\salign[*]{\exists \lim_{n \to \infty} y_n = \hat{y}, \quad \hat{y} \leq \tilde{y}.}
+Переходя к пределу в формуле $y_{n+1} = \xi + \ln{y_n}$ при $n \to \infty$, получаем\
+$\hat{y} = \xi + \ln{\hat{y}}$, т.е. $\hat{y} = \tilde{y}$. $\blacksquare$
+
+То, с какой точностью записывать ответ, сильно зависит от $\lambda$. Например, при\
+$x_1 = -1$ для $\lambda = -e^{-4}$, с точностью до трёх значащих цифр
+\salign[*]{\tilde{x}_2(-e^{-4}) \approx x_6 = -(\xi + \ln{(\xi + \ln{(\xi + \ln{(\xi + \ln{\xi})})})}), \ \xi = -\ln{(-\lambda)} = 4,}
+a для $\lambda = -e^{-8}$ ту же точность получаем при
+\salign[*]{\tilde{x}_2(-e^{-8}) \approx x_4 = -(\xi + \ln{(\xi + \ln{\xi})}), \ \xi = -\ln{(-\lambda)} = 8.}
+\textbf{Буду считать, что $\lambda = -e^{-4} \approx -0.02$ удовлетворяет условию $|\lambda| \ll 1$ и запишу в ответ $\tilde{x}_2(\lambda) \approx x_6$:}
+\salign[*]{\boxed{\tilde{x}_2(\lambda) \approx -(\xi + \ln{(\xi + \ln{(\xi + \ln{(\xi + \ln{\xi})})})}), \ \xi = -\ln{(-\lambda)}}}
