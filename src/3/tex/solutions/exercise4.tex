@@ -2,20 +2,20 @@
 
 \subsection*{Упражнение 4}
 Пусть $f(x)$ --- степень при экспоненте, $\cg(x)$ --- подынтегральная функция:
-\salign[*]{f(x) = \lambda\left(\sin{x} - x\right),\quad \cg(x) = e^{f(x)}.}
+\feq{f(x) = \lambda\left(\sin{x} - x\right),\quad \cg(x) = e^{f(x)}.}
 Представим $f(x)$ в виде
-\salign[*]{f(x) = \lambda \tilde{f}(x),\quad \tilde{f}(x) = \sin{x} - x}.
+\feq{f(x) = \lambda \tilde{f}(x),\quad \tilde{f}(x) = \sin{x} - x}.
 Так как $\forall x > 0 \hookrightarrow \sin{x} < x,$ в точке $\hat{x} = 0$ $\tilde{f}(x)$, а следовательно, и $\cg(x)$,\
 имеет максимум на участке $[0, +\infty]$. Разложим $f(x)$ по формуле Тейлора:
-\salign[*]{f(x) \underset{x \rightarrow 0}{=} \lambda\left(-\frac{x^3}{3!} + \frac{x^5}{5!} + \dotsb + \frac{x^{2n-1}}{(2n-1)!}+o(x^{2n})\right) = \xi_3(x) + \xi_5(x) + \dotsb + \xi_{2n-1}(x) + o(x^{2n}).}
+\feq{f(x) \underset{x \rightarrow 0}{=} \lambda\left(-\frac{x^3}{3!} + \frac{x^5}{5!} + \dotsb + \frac{x^{2n-1}}{(2n-1)!}+o(x^{2n})\right) = \xi_3(x) + \xi_5(x) + \dotsb + \xi_{2n-1}(x) + o(x^{2n}).}
 Проверим условия, при которых на участке $\Delta x$, на котором набирается данный интеграл,\
 можно пренебречь членами высших порядков:
-\salign[*]{\lambda \rightarrow +\infty,\ \xi_3(\Delta x) = \frac16 \lambda(\Delta x)^3 \sim 1,\ \Delta x \sim \frac{1}{\sqrt[3]{\lambda}} \ll 1 \implies}
-\salign[*]{\forall k \ge 3 \hookrightarrow \xi_{2k-1}(\Delta x) = \frac{1}{(2k-1)!}\lambda (\Delta x)^{2k-1} \sim \frac{\lambda}{\lambda^{\sfrac{(2k-1)}{3}}} = \frac{1}{\lambda^{\sfrac{(2k-4)}{3}}} \le \frac{1}{\sqrt[3]{\lambda^2}} \ll \xi_3(\Delta x) \sim 1,}
+\feq{\lambda \rightarrow +\infty,\ \xi_3(\Delta x) = \frac16 \lambda(\Delta x)^3 \sim 1,\ \Delta x \sim \frac{1}{\sqrt[3]{\lambda}} \ll 1 \implies}
+\feq{\forall k \ge 3 \hookrightarrow \xi_{2k-1}(\Delta x) = \frac{1}{(2k-1)!}\lambda (\Delta x)^{2k-1} \sim \frac{\lambda}{\lambda^{\sfrac{(2k-1)}{3}}} = \frac{1}{\lambda^{\sfrac{(2k-4)}{3}}} \le \frac{1}{\sqrt[3]{\lambda^2}} \ll \xi_3(\Delta x) \sim 1,}
 а следовательно,
-\salign[*]{I(\lambda) = \int_0^1 e^{\lambda(\sin{x} - x)}\; \df x \approx \int_0^1 e^{-\frac16 \lambda x^3}\; \df x.}
+\feq{I(\lambda) = \int_0^1 e^{\lambda(\sin{x} - x)}\; \df x \approx \int_0^1 e^{-\frac16 \lambda x^3}\; \df x.}
 Tак как $\Delta x \ll 1$,
-\salign[*]{
+\falign{
   \begin{aligned}
     I(\lambda) &= \int_0^1 e^{-\frac16 \lambda x^3}\; \df x \approx \int_0^{+\infty} e^{-\frac16 \lambda x^3}\; \df x = \int_0^{+\infty} \frac{2}{\lambda x^2} e^{-\frac16 \lambda x^3}\; \df \left(\frac16 \lambda x^3\right) =\\
          &= \frac{2}{\sqrt[3]{36\lambda}}\int_0^{+\infty} \left(\frac16 \lambda x^3\right)^{-\sfrac23} e^{-\frac16 \lambda x^3}\; \df \left(\frac16 \lambda x^3\right),\quad y = \frac16 \lambda x^3,\\
@@ -23,6 +23,6 @@ Tак как $\Delta x \ll 1$,
   \end{aligned}
 }
 ответ:
-\salign[*]{\boxed{I(\lambda) = \frac{2\Gamma(\sfrac13)}{\sqrt[3]{36\lambda}}}}
+\feq{\boxed{I(\lambda) = \frac{2\Gamma(\sfrac13)}{\sqrt[3]{36\lambda}}}}
 
 

@@ -1,3 +1,41 @@
 \def \picdir{pic/}
 
 \subsection*{Задача 1}
+Преобразуем интеграл:
+\feq{I(\lambda) = \int_{-\infty}^{+\infty} e^{-x^2} \cosh^\lambda{x}\; \df x = \int_{-\infty}^{+\infty} e^{-x^2 + \lambda\ln{(\cosh{x})}}\; \df x.}
+Пусть $f(x)$ --- степень при экспоненте, $\cg(x)$ --- подынтегральная функция:
+\feq{f(x) = -x^2 + \lambda\ln{(\cosh{x})},\quad \cg(x) = e^{f(x)}.}
+Найдем первые две производные:
+\falign{
+  f'(x) &= -2x + \lambda\tanh{x},\\
+  f''(x) &= -2 + \lambda(1-\tanh^2{x}).
+}
+Сразу выведем полезное далее соотношение для исследования производных с $\tanh{x}$:
+\feq{\tanh^n{x} = \left(\frac{1 - e^{-2x}}{1 + e^{-2x}}\right)^n \underset{x \rightarrow +\infty}{\approx} 1 - 2ne^{-2x}, \label{eq:5.1} \tag{\textbf{З1}.1}}
+\falign{
+  \begin{aligned}
+    \frac{\df}{\df x} \tanh^n{x} &= n\left(\tanh^{n-1}{x} - \tanh^{n+1}{x}\right) \overset{\eqref{eq:5.1}}{\underset{x \rightarrow +\infty}{\approx}}\\
+                                 &\overset{\eqref{eq:5.1}}{\underset{x \rightarrow +\infty}{\approx}} n\left[1 - 2(n-1)e^{-2x} - 1 + 2(n+1)e^{-2x}\right] = 2ne^{-2x},
+  \end{aligned} \label{eq:5.2} \tag{\textbf{З1}.2}
+}
+\feq{\frac{\df^m}{\df x^m} \tanh^n{x} \overset{\eqref{eq:5.2}}{\underset{x \rightarrow +\infty}{<}} 2^m(m + n - 1)e^{-2x} \label{eq:5.3} \tag{\textbf{З1}.3}.}
+При $x \approx \pm\sfrac12 \lambda$ и $x = 0$, $f'(x) = 0$. Так как $\lambda \rightarrow +\infty$, для $\hat{x} \approx \sfrac12 \lambda$\
+выполняется
+\feq{f'(\hat{x}) = 0,\quad f(\hat{x}) \approx - \frac{1}{4}\lambda^2 + \lambda\ln{\left(\frac{1}{2}(e^{\sfrac12 \lambda} + e^{-\sfrac12 \lambda})\right)} \approx \frac12 \lambda^2 \gg f(0) = 0,}
+\feq{f''(\hat{x}) \overset{\eqref{eq:5.1}}{\approx} -2 + \frac{4\lambda}{e^\lambda} \approx -2 \ne 0, }
+следовательно, в точках $x \in \{\hat{x},\ -\hat{x}\}$ находятся максимумы $f(x)$, в окресности\
+которых на участке $\Delta x$ набирается интеграл.
+
+Проверим условия применимости метода перевала:
+\feq{f''(x) = -2 + \lambda(1 - \tanh^2{x}) \overset{\eqref{eq:5.3}}{\underset{\hat{x} \rightarrow +\infty}{\implies}} \forall n > 2 \hookrightarrow \frac{1}{n!} f^{(n)}(\hat{x}) < \frac{2^{n-2}(n - 1)\lambda}{n!e^\lambda} \ll 1, \label{eq:5.4} \tag{\textbf{З1}.4}}
+\falign{
+  \begin{aligned}
+    f''(\hat{x}) \approx -2 \sim 1,\quad &f''(\hat{x}) (\Delta x)^2 \sim 1,\quad \Delta x \sim 1 \overset{\eqref{eq:5.4}}{\implies}\\
+                            &\overset{\eqref{eq:5.4}}{\implies} \forall n > 2 \hookrightarrow \frac{\frac{1}{n!} f^{(n)}(\hat{x}) (\Delta x)^n}{\frac12 f''(\hat{x}) (\Delta x)^2} \sim \frac{1}{n!} f^{(n)}(\hat{x}) \ll 1,
+  \end{aligned}
+}
+следовательно, метод перевала применим, и
+\feq{I(\lambda) \approx e^{f(\hat{x})} \sqrt{\frac{2\pi}{|f''(\hat{x})|}} + e^{f(-\hat{x})} \sqrt{\frac{2\pi}{|f''(-\hat{x})|}} \approx 2e^{\frac12 \lambda^2}\sqrt{\pi},}\
+ответ:
+\falign{\boxed{I(\lambda) \approx 2e^{\frac12 \lambda^2}\sqrt{\pi}}}
+

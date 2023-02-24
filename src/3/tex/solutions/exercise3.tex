@@ -2,19 +2,19 @@
 
 \subsection*{Упражнение 3}
 Преобразуем интеграл:
-\salign[*]{I(\lambda) = \int_1^{+\infty} \left(\frac{\ln{x}}{x}\right)^\lambda\; \df x = \int_1^{+\infty} e^{\lambda\ln{\left(\frac{\ln{x}}{x}\right)}}\; \df x.}
+\feq{I(\lambda) = \int_1^{+\infty} \left(\frac{\ln{x}}{x}\right)^\lambda\; \df x = \int_1^{+\infty} e^{\lambda\ln{\left(\frac{\ln{x}}{x}\right)}}\; \df x.}
 Пусть $f(x)$ --- степень при экспоненте, $\cg(x)$ --- подынтегральная функция:
-\salign[*]{f(x) = \lambda\ln{\left(\frac{\ln{x}}{x}\right)},\quad \cg(x) = e^{f(x)}.}
+\feq{f(x) = \lambda\ln{\left(\frac{\ln{x}}{x}\right)},\quad \cg(x) = e^{f(x)}.}
 Представим $f(x)$ в виде
-\salign[*]{f(x) = \lambda \tilde{f}(x),\quad \tilde{f}(x) = \ln{\left(\frac{\ln{x}}{x}\right)}}
+\feq{f(x) = \lambda \tilde{f}(x),\quad \tilde{f}(x) = \ln{\left(\frac{\ln{x}}{x}\right)}}
 и исследуем $\tilde{f}(x)$. Найдем производные:
-\salign[*]{\tilde{f}'(x) = \frac{x}{\ln{x}}\left(\frac{1}{x^2} - \frac{\ln{x}}{x^2}\right) = \frac{1}{x\ln{x}}\left(1 - \ln{x}\right),\quad \tilde{f}''(x) = \frac{1}{x^2} -\frac{\ln{x} + 1}{x^2\ln^2{x}}.}
+\feq{\tilde{f}'(x) = \frac{x}{\ln{x}}\left(\frac{1}{x^2} - \frac{\ln{x}}{x^2}\right) = \frac{1}{x\ln{x}}\left(1 - \ln{x}\right),\quad \tilde{f}''(x) = \frac{1}{x^2} -\frac{\ln{x} + 1}{x^2\ln^2{x}}.}
 При $\hat{x} = e$, $\tilde{f}'(\hat{x}) = 0$, а так как
-\salign[*]{\forall x \ne \hat{x},\ 1 \le x < +\infty \hookrightarrow \tilde{f}'(x) \ne 0\ \land \lim\limits_{x \rightarrow +1}\tilde{f}(x) = -\infty < \tilde{f}(\hat{x}) = -1,}
+\feq{\forall x \ne \hat{x},\ 1 \le x < +\infty \hookrightarrow \tilde{f}'(x) \ne 0\ \land \lim\limits_{x \rightarrow +1}\tilde{f}(x) = -\infty < \tilde{f}(\hat{x}) = -1,}
 в точке $x = \hat{x}$ $\tilde{f}(x)$, а следовательно, и $\cg(x)$, имеeт максимум. При $\lambda \rightarrow +\infty$ и
-\salign[*]{\tilde{f}''(\hat{x}) = \left.\frac{1}{x^2} -\frac{\ln{x} + 1}{x^2\ln^2{x}}\right|_{x=\hat{x}} = - \frac{1}{e^2} \sim 0.01 \overset{\lambda \rightarrow +\infty}{\implies}}
-\salign[*]{\frac{[f^{(3)}(\hat{x})]^2}{[f''(\hat{x})]^3} = \frac{1}{\lambda}\frac{[\tilde{f}^{(3)}(\hat{x})]^2}{[\tilde{f}''(\hat{x})]^2} \ll 1,\quad \frac{[f^{(4)}(\hat{x})]}{[f''(\hat{x})]^2} = \frac{1}{\lambda}\frac{[\tilde{f}^{(4)}(\hat{x})]}{[\tilde{f}''(\hat{x})]^2} \ll 1,}
+\feq{\tilde{f}''(\hat{x}) = \left.\frac{1}{x^2} -\frac{\ln{x} + 1}{x^2\ln^2{x}}\right|_{x=\hat{x}} = - \frac{1}{e^2} \sim 0.01 \overset{\lambda \rightarrow +\infty}{\implies}}
+\feq{\frac{[f^{(3)}(\hat{x})]^2}{[f''(\hat{x})]^3} = \frac{1}{\lambda}\frac{[\tilde{f}^{(3)}(\hat{x})]^2}{[\tilde{f}''(\hat{x})]^2} \ll 1,\quad \frac{[f^{(4)}(\hat{x})]}{[f''(\hat{x})]^2} = \frac{1}{\lambda}\frac{[\tilde{f}^{(4)}(\hat{x})]}{[\tilde{f}''(\hat{x})]^2} \ll 1,}
 метод перевала применим и
-\salign[*]{I(\lambda) =  \int_{1}^{+\infty} \cg(x)\; \df x = \int_{1}^{+\infty} e^{\lambda \tilde{f}(x)}\; \df x \approx e^{\lambda \tilde{f}(\hat{x})}\sqrt{\frac{2\pi}{\lambda|\tilde{f}''(\hat{x})|}} =e^{-\lambda}\sqrt{\frac{2\pi e^2}{\lambda}},}
+\feq{I(\lambda) =  \int_{1}^{+\infty} \cg(x)\; \df x = \int_{1}^{+\infty} e^{\lambda \tilde{f}(x)}\; \df x \approx e^{\lambda \tilde{f}(\hat{x})}\sqrt{\frac{2\pi}{\lambda|\tilde{f}''(\hat{x})|}} =e^{-\lambda}\sqrt{\frac{2\pi e^2}{\lambda}},}
 ответ:
-\salign[*]{\boxed{I(\lambda) \approx e^{-\lambda}\sqrt{\frac{2\pi e^2}{\lambda}}}}
+\feq{\boxed{I(\lambda) \approx e^{-\lambda}\sqrt{\frac{2\pi e^2}{\lambda}}}}

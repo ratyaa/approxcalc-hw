@@ -2,13 +2,13 @@
 
 \subsection*{Упражнение 1}
 Пусть $f(x)$ --- степень при экспоненте, $\cg(x)$ --- подынтегральная функция:
-\salign[*]{f(x) = \frac{\lambda}{\cosh^2 x},\quad \cg(x) = e^{f(x)}.}
+\feq{f(x) = \frac{\lambda}{\cosh^2 x},\quad \cg(x) = e^{f(x)}.}
 В точке $\hat{x} = 0$ $\cosh^2{x}$ минимален, а следовательно $\cg(x)$ максимальна. Представим\
 $f(x)$ в виде
-\salign[*]{f(x) = \lambda \tilde{f}(x),\quad \tilde{f}(x) = \frac{1}{\cosh^2{x}}}
+\feq{f(x) = \lambda \tilde{f}(x),\quad \tilde{f}(x) = \frac{1}{\cosh^2{x}}}
 и найдем вторую производную $\tilde{f}''(x)$:
-\salign[*]{\tilde{f}''(x) = \left(\frac{1}{\cosh^2{x}}\right)'' = \left(\frac{-2\sinh{x}}{\cosh^3{x}}\right)' = \frac{6\sinh^2{x}}{\cosh^4{x}} - \frac{2}{\cosh^2{x}},}
+\feq{\tilde{f}''(x) = \left(\frac{1}{\cosh^2{x}}\right)'' = \left(\frac{-2\sinh{x}}{\cosh^3{x}}\right)' = \frac{6\sinh^2{x}}{\cosh^4{x}} - \frac{2}{\cosh^2{x}},}
 тогда, так как $\lambda \rightarrow \infty$ и $\tilde{f}''(x) \sim 1$ для $x$ в окрестности $\hat{x}$, максимум $\cg(x)$ резкий и
-\salign[*]{I(\lambda) =  \int_{-1}^{1} \cg(x)\; \df x = \int_{-1}^{1} e^{\lambda \tilde{f}(x)}\; \df x \approx e^{\lambda \tilde{f}(\hat{x})}\sqrt{\frac{2\pi}{\lambda|\tilde{f}''(\hat{x})|}},\quad \tilde{f}(\hat{x}) = 1,\quad \tilde{f}''(\hat{x}) = -2,}
+\feq{I(\lambda) =  \int_{-1}^{1} \cg(x)\; \df x = \int_{-1}^{1} e^{\lambda \tilde{f}(x)}\; \df x \approx e^{\lambda \tilde{f}(\hat{x})}\sqrt{\frac{2\pi}{\lambda|\tilde{f}''(\hat{x})|}},\quad \tilde{f}(\hat{x}) = 1,\quad \tilde{f}''(\hat{x}) = -2,}
 откуда ответ:
-\salign[*]{\boxed{I(\lambda) \approx e^\lambda \sqrt{\frac{\pi}{2\lambda}}}}
+\feq{\boxed{I(\lambda) \approx e^\lambda \sqrt{\frac{\pi}{2\lambda}}}}

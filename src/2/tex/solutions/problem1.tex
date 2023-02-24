@@ -2,20 +2,22 @@
 
 \subsection*{Задача 1}
 Определим $f(x)$ как подынтегральную функцию, и $h(x)$ как ее знаменатель:
-\feq{I(a) = \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \equiv \int_0^\infty f(x)\; \df x \equiv \int_0^\infty \frac{1}{h(x)}\; \df x,\quad h(x) = xa^2 + (1-x^2)^2.}
+\feq{I(a) = \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x = \int_0^\infty f(x)\; \df x = \int_0^\infty \frac{1}{h(x)}\; \df x,\quad h(x) = xa^2 + (1-x^2)^2.}
 \subsubsection*{\Rnum{1}. $a \gg 1$}
 При очень малых $x$, т.е. $xa^2 \ll 1$, следует
 \feq{x \ll \frac{1}{a^2} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim 1 \Rightarrow f(x) \sim 1.}
-При $xa \sim 1$:
-\feq{xa^2 \sim a \gg 1,\ x \sim \frac{1}{a} \ll 1 \Rightarrow (1-x^2)^2 \approx 1 \Rightarrow h(x) \sim a \gg 1 \Rightarrow f(x) \ll 1,}
-следовательно, интеграл набирается в некой окрестности нуля $x \le x' \sim \frac{1}{a} \ll 1$,\
-а значит в $h(x)$ можно отбросить члены высших порядков малости и интегрировать от $0$ до $x'$:
+Найдем такое $x'$, начиная с которого нельзя пренебрегать $x^2$ и $x^4$.\
+Так как для $x \sim \sqrt{a} \gg 1$ выполняется $x^2 \ll x^4,\ x^4 \sim a^2 \ll xa^2 \sim a^{\sfrac52}$ ,\
+искомое $x' > \sqrt{a}$, и, так как $x'^2 \ll x'^4$, сравнивать $x'a^2$ надо с $x'^4$:
+\feq{x'a^2 \sim x'^4,\quad x' \sim a^{\sfrac23}. \label{eq:5.1} \tag{\textbf{З1}.1}}
+Теперь можно представить интеграл в следующем виде:
 \falign{
-  I(a) &= \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \approx \int_0^{x'} \frac{1}{xa^2 + 1}\; \df x = \frac{1}{a^2}\int_0^{x'} \frac{1}{xa^2 + 1}\; \df (xa^2 + 1) =\\
-  &= \left.\frac{1}{a^2}\frac{-1}{(xa^2 + 1)^2}\right|_0^{x'} = \frac{1}{a^2} \left(1 - \frac{1}{(x'a^2 + 1)^2}\right),\ x' \sim \frac{1}{a} \Rightarrow \frac{1}{(x'a^2 + 1)^2} \sim \frac{1}{a^2} \implies %
+  I(a) &= \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x \approx \int_0^{x'} \frac{1}{xa^2 + 1}\; \df x + \int_{x'}^{\infty} \frac{1}{x^4}\; \df x \approx \int_0^{x'} \frac{1}{xa^2 + 1}\; \df x = \\
+  &= \frac{1}{a^2}\int_0^{x'} \frac{1}{xa^2 + 1}\; \df (xa^2 + 1) = \left.\frac{1}{a^2}\ln{(xa^2 + 1)}\right|_0^{x'} = \frac{1}{a^2}\ln{(x'a^2 + 1)^2},\ x' \sim a^{\sfrac23} \overset{\eqref{eq:5.1}}{\underset{a \gg 1}{\implies}}\\
+  &\overset{\eqref{eq:5.1}}{\underset{a \gg 1}{\implies}}\ln{(x'a^2 + 1)^2} \approx \frac83 \ln{a} + C,\ C \sim 1,
 }
 ответ:
-\falign{\boxed{I(a) \approx \frac{1}{a^2}}}
+\feq{\boxed{I(a) \approx \frac{8}{3a^2}(\ln{a} + C),\ C \sim 1}}
 
 \subsubsection*{\Rnum{2}. $a \ll 1$}
 При $x \ll 1$ выполняется
@@ -29,7 +31,7 @@
 \falign{
   \begin{aligned}
     I(a) = \int_0^\infty \frac{1}{xa^2 + (1-x^2)^2}\; \df x &\approx \int_{-\varepsilon'}^{\varepsilon'} \frac{1}{(1 + \varepsilon)a^2 + (2\varepsilon + \varepsilon^2)^2}\; \df \varepsilon \approx\\
-                                                           &\approx \frac12 \int_{-\varepsilon'}^{\varepsilon'} \frac{1}{a^2 + (2\varepsilon)^2}\; \df (2\varepsilon) = \left.\frac{1}{2a}\arctan{\frac{2\varepsilon}{a}}\right|_{-\varepsilon'}^{\varepsilon'} = \frac{1}{a}\arctan{\frac{2\varepsilon'}{a}}.
+                                                    &\approx \frac12 \int_{-\varepsilon'}^{\varepsilon'} \frac{1}{a^2 + (2\varepsilon)^2}\; \df (2\varepsilon) = \left.\frac{1}{2a}\arctan{\frac{2\varepsilon}{a}}\right|_{-\varepsilon'}^{\varepsilon'} = \frac{1}{a}\arctan{\frac{2\varepsilon'}{a}}.
   \end{aligned}
 }
 При $\hat\varepsilon \sim \sqrt{a} \hookrightarrow \hat\varepsilon \ll 1\ \land\ \frac{2\hat\varepsilon}{a} \sim \frac{1}{\sqrt{a}} \gg 1$,\

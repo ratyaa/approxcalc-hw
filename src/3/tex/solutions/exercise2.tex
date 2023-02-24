@@ -2,19 +2,19 @@
 
 \subsection*{Упражнение 2}
 Пусть $f(x)$ --- степень при экспоненте, $\cg(x)$ --- подынтегральная функция:
-\salign[*]{f(x) = -\lambda(x-1)^2(x-2)^2,\quad \cg(x) = e^{f(x)}.}
+\feq{f(x) = -\lambda(x-1)^2(x-2)^2,\quad \cg(x) = e^{f(x)}.}
 Так как $\forall x \in \left\{1,2\right\} \hookrightarrow f(x) = 0$ и $\forall x \notin \left\{1,2\right\} \hookrightarrow f(x) < 0$,\
 в точках $x_1 = 1$ и $x_2 = 2$ находятся максимумы $f(x)$, а следовательно, и максимумы
 $\cg(x)$. Представим $f(x)$ в виде
-\salign[*]{f(x) = \lambda \tilde{f}(x),\quad \tilde{f}(x) = -(x-1)^2(x-2)^2,}
+\feq{f(x) = \lambda \tilde{f}(x),\quad \tilde{f}(x) = -(x-1)^2(x-2)^2,}
 тогда, так как
-\salign[*]{\tilde{f}''(x) = -\left[8x^2 + 2\left((x-1)^2 + (x-2)^2\right)\right],\quad \tilde{f}''(x_1) = -10 \sim 1,\quad \tilde{f}''(x_2) = -34 \sim 1}
+\feq{\tilde{f}''(x) = -\left[8x^2 + 2\left((x-1)^2 + (x-2)^2\right)\right],\quad \tilde{f}''(x_1) = -10 \sim 1,\quad \tilde{f}''(x_2) = -34 \sim 1}
 и $\lambda \rightarrow \infty$, оба максимума $\cg(x)$ резкие и
-\salign[*]{
+\falign{
   \begin{aligned}
     I(\lambda) &=  \int_{0}^{\infty} \cg(x)\; \df x = \int_{0}^{\infty} e^{\lambda \tilde{f}(x)}\; \df x \approx e^{\lambda \tilde{f}(x_1)}\sqrt{\frac{2\pi}{\lambda\left|\tilde{f}''(x_1)\right|}} + e^{\lambda \tilde{f}(x_2)}\sqrt{\frac{2\pi}{\lambda\left|\tilde{f}''(x_2)\right|}} =\\
                                                                             &= \sqrt{\frac{2\pi}{\lambda}}\left(\frac{1}{\sqrt{10}} + \frac{1}{\sqrt{34}}\right),
   \end{aligned}
 }
 ответ:
-\salign[*]{\boxed{I(\lambda) = \sqrt{\frac{2\pi}{\lambda}}\left(\frac{1}{\sqrt{10}} + \frac{1}{\sqrt{34}}\right)}}
+\feq{\boxed{I(\lambda) = \sqrt{\frac{2\pi}{\lambda}}\left(\frac{1}{\sqrt{10}} + \frac{1}{\sqrt{34}}\right)}}

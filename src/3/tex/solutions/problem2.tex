@@ -1,5 +1,9 @@
 \def \picdir{pic/}
 
 \subsection*{Задача 2}
-\lipsum[11-12]
-\svg[0.7]{sin}{Sample Text}
+Преобразуем интеграл:
+\feq{I(\lambda,\epsilon,s) = \int_0^{+\infty} x^se^{-\epsilon x}e^{- \lambda(1 - \cos{x})}\; \df x = \int_0^{+\infty} x^se^{-\epsilon x - \lambda(1 - \cos{x})}\; \df x.}
+Пусть $f(x)$ --- степень при экспоненте, $\cg(x)$ --- подынтегральная функция:
+\feq{f(x) = -\epsilon x - \lambda(1 - \cos{x}),\quad \cg(x) = e^{f(x)}.}
+Представим $f(x)$ в виде
+\feq{f(x) = -\lambda \tilde{f}(x),\quad \tilde{f}(x) = \frac{\epsilon}{\lambda}x + (1 - \cos{x}).}
