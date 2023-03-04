@@ -1,5 +1,4 @@
 \def \picdir{pic/}
-
 \subsection*{Задача 2}
 Преобразуем интеграл:
 \feq{I(\lambda,\epsilon,s) = \int_0^{+\infty} x^se^{-\epsilon x}e^{- \lambda(1 - \cos{x})}\; \df x = \int_0^{+\infty} x^se^{-\epsilon x - \lambda(1 - \cos{x})}\; \df x.}
@@ -7,3 +6,38 @@
 \feq{f(x) = -\epsilon x - \lambda(1 - \cos{x}),\quad \cg(x) = e^{f(x)}.}
 Представим $f(x)$ в виде
 \feq{f(x) = -\lambda \tilde{f}(x),\quad \tilde{f}(x) = \frac{\epsilon}{\lambda}x + (1 - \cos{x}).}
+Найдем первую и вторую производные $\tilde{f}(x)$:
+\begin{equation*}
+  \tilde{f}'(x) = \frac{\epsilon}{\lambda} + \sin{x},\quad \tilde{f}''(x) = \cos{x}.
+\end{equation*}
+Первая производная обнуляется при $\sin{x} = \frac{\epsilon}{\lambda}$, а следовательно, для\
+точек
+\begin{equation*}
+  \hat{x}_1(k) \approx (2k - 1)\pi + \frac{\epsilon}{\lambda},\quad \hat{x}_2(k) \approx 2 \pi k - \frac{\epsilon}{\lambda},\ k \in \mathbb{N}
+\end{equation*}
+выполняется
+\begin{equation*}
+  \tilde{f}'(\hat{x}_{1,2}) = 0,\quad \tilde{f}''(\hat{x}_1) \approx - 1 + \frac{\epsilon^2}{2\lambda^2} \ne 0,\quad \tilde{f}''(\hat{x}_2) \approx 1 - \frac{\epsilon^2}{2 \lambda^2},
+\end{equation*}
+а так как
+\begin{gather*}
+  \tilde{f}(\hat{x}_1(k)) \approx \frac{\epsilon}{\lambda}(2k-1)\pi + \frac{\epsilon^2}2{\lambda^2} + 2,\quad \tilde{f}(\hat{x}_2(k)) \approx \frac{\epsilon}{\lambda}2 \pi k - \frac{\epsilon^2}{2\lambda^2},\\
+  \tilde{f}(\hat{x}_1(k)) - \tilde{f}(\hat{x}_2(k)) = 2 + \frac{\epsilon^2}{\lambda^2} - \frac{\pi \epsilon}{\lambda} \approx 2 \Rightarrow g(\hat{x}_1(k)) \ll g(\hat{x}_2(k)),
+\end{gather*}
+т.е в точках $\hat{x}_2(k)$ подынтегральная функция $g(x)$ имеет максимумы. Так как $\lambda \gg 1$,\
+максимумы резкие, и для каждого можно применить метод перевала:
+\begin{align*}
+  i_k = \left(\hat{x}_2(k) \right)^se^{-\lambda \tilde{f}(\hat{x}_2(k))}\sqrt{\frac{2 \pi}{\lambda| \tilde{f}''(\hat{x}_2(k))|}} &\approx \left(2 \pi k - \frac{\epsilon}{\lambda}\right)^se^{-2 \pi \epsilon k + \frac{\epsilon^2}{2 \lambda}} \sqrt{\frac{2 \pi}{\lambda - \frac{\epsilon^2}{2 \lambda}}}\\
+  &\approx (2 \pi k)^se^{-2 \pi \epsilon k}\sqrt{\frac{2 \pi}{\lambda}},
+\end{align*}
+\begin{equation*}
+I(\lambda,\epsilon,s) \approx \sum_{k=1}^{\infty} i_k \approx \sum_{k=1}^{\infty} (2 \pi k)^se^{-2 \pi \epsilon k}\sqrt{\frac{2 \pi}{\lambda}} = (2 \pi)^s\sqrt{\frac{2 \pi}{\lambda}} \sum_{k=1}^{\infty} k^se^{-2 \pi \epsilon k}.
+\end{equation*}
+Полученная сумма была посчитана в \textbf{Упр. 4 домашней работы \textnumero2}:
+\begin{equation*}
+  \sum_{k=1}^{\infty} k^se^{-2 \pi \epsilon k} \approx \frac{1}{(2 \pi \epsilon)^s}\Gamma(s + 1),\quad I(\lambda,\epsilon,s) \approx \frac{1}{\epsilon^s}\sqrt{\frac{2 \pi}{\lambda}}\Gamma(s+1),
+\end{equation*}
+ответ:
+\begin{equation*}
+\boxed{I(\lambda,\epsilon,s) \approx \frac{1}{\epsilon^s}\sqrt{\frac{2 \pi}{\lambda}}\Gamma(s+1)}
+\end{equation*}
