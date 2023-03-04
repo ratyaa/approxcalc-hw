@@ -8,13 +8,10 @@
 $\cg(x)$. Представим $f(x)$ в виде
 \feq{f(x) = \lambda \tilde{f}(x),\quad \tilde{f}(x) = -(x-1)^2(x-2)^2,}
 тогда, так как
-\feq{\tilde{f}''(x) = -\left[8x^2 + 2\left((x-1)^2 + (x-2)^2\right)\right],\quad \tilde{f}''(x_1) = -10 \sim 1,\quad \tilde{f}''(x_2) = -34 \sim 1}
+\feq{\tilde{f}''(x) = -\left[8(x-1)(x-2) + 2\left((x-1)^2 + (x-2)^2\right)\right],\quad \tilde{f}''(x_1) = {f}''(x_2) = -2 \sim 1}
 и $\lambda \rightarrow \infty$, оба максимума $\cg(x)$ резкие и
-\falign{
-  \begin{aligned}
-    I(\lambda) &=  \int_{0}^{\infty} \cg(x)\; \df x = \int_{0}^{\infty} e^{\lambda \tilde{f}(x)}\; \df x \approx e^{\lambda \tilde{f}(x_1)}\sqrt{\frac{2\pi}{\lambda\left|\tilde{f}''(x_1)\right|}} + e^{\lambda \tilde{f}(x_2)}\sqrt{\frac{2\pi}{\lambda\left|\tilde{f}''(x_2)\right|}} =\\
-                                                                            &= \sqrt{\frac{2\pi}{\lambda}}\left(\frac{1}{\sqrt{10}} + \frac{1}{\sqrt{34}}\right),
-  \end{aligned}
-}
+\feq{
+    I(\lambda) =  \int_{0}^{\infty} \cg(x)\; \df x = \int_{0}^{\infty} e^{\lambda \tilde{f}(x)}\; \df x \approx e^{\lambda \tilde{f}(x_1)}\sqrt{\frac{2\pi}{\lambda\left|\tilde{f}''(x_1)\right|}} + e^{\lambda \tilde{f}(x_2)}\sqrt{\frac{2\pi}{\lambda\left|\tilde{f}''(x_2)\right|}} = 2\sqrt{\frac{\pi}{\lambda } },
+  }
 ответ:
-\feq{\boxed{I(\lambda) = \sqrt{\frac{2\pi}{\lambda}}\left(\frac{1}{\sqrt{10}} + \frac{1}{\sqrt{34}}\right)}}
+\feq{\boxed{I(\lambda) = 2\sqrt{\frac{\pi}{\lambda } }}}
