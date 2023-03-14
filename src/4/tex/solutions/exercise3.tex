@@ -1,0 +1,44 @@
+\def \picdir{pic/}
+
+\subsection*{Упражнение 3}
+Отдельно рассмотрим случай $m = 0$:
+\begin{align*}
+  n = -1 &\Rightarrow I(-1,0,k) = \frac{1}{2^k}\int_{0}^{\infty} \frac{1}{x}\; \mathrm{d} x = \left. \frac{\ln{x}}{2^k} \right|_{0}^{\infty},\\
+  n \ne -1 &\Rightarrow I(n,0,k) = \frac{1}{2^k}\int_{0}^{\infty} x^n\; \mathrm{d} x = \left. \frac{x^{n+1}}{2^k(n+1)} \right|_{0}^{\infty},
+\end{align*}
+а следовательно, при $m = 0$ для любых $n, k$ интеграл расходится.
+
+Пусть $m \ne 0$. Произведем следующую замену:
+\begin{align*}
+  t(x) &= \frac{x^m}{x^m+1},\\
+  1-t &= \frac{1}{x^m+1},\\
+  \mathrm{d} t &= \frac{mx^{m-1}}{ \left(x^m+1\right)^2}\ \mathrm{d} x = mt^{\sfrac{(m-1)}{m}}(1-t)^{\sfrac{(m+1)}{m}}\ \mathrm{d} x,\\
+  \mathrm{d} x &= \frac{1}{m}t^{\sfrac{-(m-1)}{m}}(1-t)^{\sfrac{-(m+1)}{m}}\ \mathrm{d} t,\\
+  m > 0 &\Rightarrow \lim_{x \rightarrow \infty} t(x) = 1,\ \lim_{x \rightarrow 0} t(x) = 0,\\
+  m < 0 &\Rightarrow \lim_{x \rightarrow \infty} t(x) = 0,\ \lim_{x \rightarrow 0} t(x) = 1,\\
+\end{align*}
+откуда
+\begin{align*}
+  I(n,m,k) &= \int_{0}^{\infty} \frac{x^n}{\left(x^m + 1\right)^k}\; \mathrm{d} x = \int_{0}^{\infty} \left(\frac{x^m}{x^m+1} \right)^{\sfrac{n}{m}} \left(\frac{1}{x^m+1} \right)^{\sfrac{(km-n)}{m}}  \; \mathrm{d} x\\
+           &= \sign{(m)}\int_{0}^{1} t^{\sfrac{n}{m}}(1-t)^{\sfrac{(km-n)}{m}} \cdot \frac{1}{m}t^{\sfrac{-(m-1)}{m}}(1-t)^{\sfrac{-(m+1)}{m}}\; \mathrm{d} t\\
+           &= \frac{1}{|m|}\int_{0}^{1} t^{\frac{n + 1}{m}-1}(1-t)^{k - \frac{n + 1}{m} - 1}\; \mathrm{d} t\\
+           &= \boxed{\frac{1}{|m|} B \left(\frac{n+1}{m}, k-\frac{n+1}{m} \right)}
+\end{align*}
+
+Для того, чтобы искомый интеграл сходился, нужно чтобы он сходился в окрестностях нуля и бесконечности, т.е. выполнить два условия:
+\begin{align*}
+  I(n,m,k) &= \int_{0}^{\infty} f(x)\; \mathrm{d} x \in \mathbb{R} \iff
+  \begin{cases}
+    f(x) \underset{x \rightarrow 0}{\sim} x^\alpha,\ \alpha > -1\\
+    f(x) \underset{x \rightarrow \infty}{\sim} x^\alpha,\ \alpha < -1
+  \end{cases},
+\end{align*}
+или
+\begin{align*}
+  \boxed{
+  \begin{cases}
+    -\min\{km, 0\} + n > -1\\
+    -\max\{km, 0\} + n < -1
+  \end{cases}
+  }
+\end{align*}

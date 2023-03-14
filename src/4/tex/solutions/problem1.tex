@@ -1,0 +1,14 @@
+\def \picdir{pic/}
+
+\subsection*{Задача 1}
+\begin{align*}
+  I(m) &= \int_{0}^{\infty} \frac{\cos{x}}{x^m}\; \mathrm{d} x = \frac{1}{\Gamma(m)}\int_{0}^{\infty} t^{m-1}\; \mathrm{d} t \int_{0}^{\infty} e^{-tx}\cos{x}\; \mathrm{d} x\\
+       &= \frac{1}{\Gamma(m)}\int_{0}^{\infty} t^{m-1}\; \mathrm{d} t \int_{0}^{\infty} \Re\left(e^{-tx+ix}\right)\; \mathrm{d} x\\
+       &= \frac{1}{\Gamma(m)}\int_{0}^{\infty}  \frac{t^m}{t^2+1}\; \mathrm{d} t\\
+       &\overset{(\textbf{У3})}{=} \frac{1}{2 \Gamma(m)} B \left(\frac{m+1}{2}, 1-\frac{m+1}{2} \right)\\
+       &= \frac{\Gamma\left(\frac{m+1}{2}\right)\Gamma\left(1-\frac{m+1}{2}\right)}{2 \Gamma(m)} = \frac{\pi}{2 \Gamma(m)\sin{\left[\frac{\pi}{2}(m+1)\right]}},
+\end{align*}
+ответ:
+\begin{equation*}
+  \boxed{I(m) = \frac{1}{2 \Gamma(m)} B \left(\frac{m+1}{2}, 1-\frac{m+1}{2} \right) = \frac{\pi}{2 \Gamma(m)\sin{\left[\frac{\pi}{2}(m+1)\right]}}}
+\end{equation*}

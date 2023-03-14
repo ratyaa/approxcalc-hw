@@ -1,0 +1,16 @@
+\def \picdir{pic/}
+
+\subsection*{Упражнение 2}
+Так как $0 \le x \le \sfrac{\pi}{2} \Rightarrow \cos{x} > 0$, справедлива следующая подстановка:
+\begin{align*}
+  t &= \sin^2{x},\\
+  \mathrm{d} x &= \frac{1}{2\sin{x}\cos{x}}\ \mathrm{d} t = \frac{1}{2t^{\sfrac{1}{2}}(1-t)^{\sfrac{1}{2}}}\ \mathrm{d} t,\\
+  I(n,m) &= \int_{0}^{\sfrac{\pi}{2}} \sin^n{x}\cos^m{x}\; \mathrm{d} x = \int_{0}^{\sfrac{\pi}{2}} \left(\sin^2{x}\right)^{\sfrac{n}{2}} \left(1-\sin^2{x}\right)^{\sfrac{m}{2}}\; \mathrm{d} x\\
+    &= \int_{0}^{1} \frac{t^{\sfrac{n}{2}} (1-t)^{\sfrac{m}{2}}}{2t^{\sfrac{1}{2}}(1-t)^{\sfrac{1}{2}}}\; \mathrm{d} t = \frac{1}{2}\int_{0}^{1} t^{\frac{n+1}{2} - 1}(1-t)^{\frac{m+1}{2} - 1}\; \mathrm{d} t\\
+    &= \frac{1}{2} B\left(\frac{n+1}{2}, \frac{m+1}{2}\right),
+\end{align*}
+ответ:
+\begin{equation*}
+\boxed{I(n,m) = \frac{1}{2} B\left(\frac{n+1}{2}, \frac{m+1}{2}\right)}
+\end{equation*}
+

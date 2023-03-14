@@ -1,0 +1,47 @@
+\def \picdir{pic/}
+
+\subsection*{Упражнение 4}
+\subsubsection*{\Rnum{1}. $I_1$}
+Подынтегральная функция четная, и интеграл сводится к интегралу Лапласа:
+\begin{equation*}
+I_1 = \int_{0}^{\infty} \frac{x\sin{(\lambda x)}}{x^2+1}\; \mathrm{d} x = \frac{1}{2}\int_{-\infty}^{+\infty} \frac{x\sin{(\lambda x)}}{x^2+1}\; \mathrm{d} x = \frac{1}{2}\sign{(\lambda)} \pi e^{-|\lambda|},
+\end{equation*}
+ответ:
+\begin{equation*}
+\boxed{I_1 = \frac{1}{2}\sign{(\lambda)}\pi e^{-|\lambda|}}
+\end{equation*}
+
+\subsubsection*{\Rnum{2}. $I_2$}
+Из задачи с семинара и четности косинуса:
+\begin{equation*}
+\int_{0}^{\infty} \frac{\cos{(\lambda x)}}{x^2+1}\; \mathrm{d} x = \frac{1}{2}\int_{-\infty}^{+\infty} \frac{\cos{(\lambda x)}}{x^2+1}\; \mathrm{d} x = \frac{1}{2}\pi e^{-|\lambda|}.
+\end{equation*}
+Для удобства положим $\lambda \ge 0$. Попробуем получить дифференциальное уравнение на $I_2(\lambda)$:
+\begin{align*}
+  \frac{\partial^{} }{\partial \lambda^{}} I_2(\lambda) &= \frac{\partial^{} }{\partial \lambda^{}} \int_{0}^{\infty} \frac{x\sin{(\lambda x)}}{ \left(x^2+1 \right)^2}\; \mathrm{d} x = \int_{0}^{\infty} \frac{x^2\cos{(\lambda x)}}{ \left(x^2+1 \right)^2}\; \mathrm{d} x\\
+                              &= \int_{0}^{\infty} \left[\frac{1}{x^2+1} - \frac{1}{ \left(x^2+1 \right)^2} \right] \cos{(\lambda x)} \; \mathrm{d} x\\
+                              &= \frac{1}{2} \int_{-\infty}^{+\infty} \frac{\cos{(\lambda x)}}{x^2 + 1}\; \mathrm{d} x - \int_{0}^{\infty} \frac{\cos{(\lambda x)}}{ \left(x^2+1 \right)^2}\; \mathrm{d} x\\
+                              &= \frac{1}{2}\pi e^{-\lambda} - \int_{0}^{\infty} \frac{\cos{(\lambda x)}}{ \left(x^2+1 \right)^2}\; \mathrm{d} x,\\
+  \frac{\partial^{2} }{\partial \lambda^{2}} I_2(\lambda) &= -\frac{1}{2}\pi e^{-\lambda} + \int_{0}^{\infty} \frac{x\sin{(\lambda x)}}{ \left(x^2+1 \right)^2}\; \mathrm{d} x = -\frac{1}{2}\pi e^{-\lambda} + I_2(\lambda).
+\end{align*}
+Найдем решение полученного уравнения как сумму общего решения однородного и частного решения неоднородного:
+\begin{align*}
+  \frac{\partial^{2} }{\partial \lambda^{2}} f(\lambda) - f(\lambda) &= 0,\quad f(\lambda) = C_1e^{\lambda} + C_2e^{-\lambda},\\
+  \frac{\partial^{2} }{\partial \lambda^{2}} f_0(\lambda) - f_0(\lambda) &= -\frac{1}{2}\pi e^{-\lambda},\quad f_0(\lambda) = \frac{1}{4}\pi e^{-\lambda}\lambda,\\
+  I_2(\lambda) &= f(\lambda) + f_0(\lambda) = \frac{1}{4}\pi e^{-\lambda}\lambda + C_1e^{\lambda} + C_2e^{-\lambda}.
+\end{align*}
+Так как, очевидно,
+\begin{equation*}
+  I_2(\lambda) \le \int_{0}^{\infty} \frac{x}{ \left(x^2 + 1 \right)^2}\; \mathrm{d} x \overset{(\textbf{У3})}{=} \frac{1}{2},
+\end{equation*}
+коэффициент $C_1$ должен быть равен нулю. Так как $\left.\frac{1}{4}\pi e^{-\lambda}\lambda\right|_{\lambda = 0} = 0$,\
+и при $\lambda = 0$ подынтегральная функция обращается в тождественный ноль, то $\left.C_2e^{-\lambda}\right|_{\lambda=0} = 0 \Rightarrow C_2 = 0$,\
+откуда получаем ответ для $\lambda \ge 0$:
+\begin{equation*}
+I_2(\lambda) = \frac{1}{4}\pi \lambda e^{-\lambda}.
+\end{equation*}
+Так как подынтегральная функция нечетна относительно $\lambda$, ответ для общего случая:
+\begin{equation*}
+\boxed{I_2 = \frac{1}{4}\pi \lambda e^{-|\lambda|}}
+\end{equation*}
+

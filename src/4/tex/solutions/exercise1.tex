@@ -1,0 +1,29 @@
+\def \picdir{pic/}
+
+\subsection*{Упражнение 1}
+\subsubsection*{\Rnum{1}. $I_1$}
+Воспользуемся предложенной подстановкой:
+\begin{align*}
+  I_1 &= \int_{0}^{\infty} \frac{\sin{x}}{x}\; \mathrm{d} x = \int_{0}^{\infty} \mathrm{d} t \int_{0}^{\infty} \Im{\left(e^{-tx + ix}\right)}\; \mathrm{d} x,\\
+  J(t) &= \int_{0}^{\infty} \Im{\left(e^{-tx + ix}\right)}\; \mathrm{d} x = - \Im \left(\frac{1}{i-t}\right) = \frac{1}{t^2 + 1},\\
+  I_1 &= \int_{0}^{\infty} J(t)\; \mathrm{d} t = \int_{0}^{\infty} \frac{1}{t^2 + 1}\; \mathrm{d} t = \left.\arctan{x}\right|_{0}^{\infty} = \frac{\pi}{2},
+\end{align*}
+ответ:
+\begin{equation*}
+  \boxed{I_1 = \frac{\pi}{2}}
+\end{equation*}
+\subsubsection*{\Rnum{2}. $I_2$}
+Для удобства положим $\lambda \ge 0$. Продифференцируем интеграл как функцию от $\lambda$ по $\lambda$:
+\begin{equation*}
+  \frac{\partial^{} }{\partial \lambda^{}} I_2 = \frac{\partial^{} }{\partial \lambda^{}} \int_{0}^{\infty} \frac{\sin^2{\lambda x}}{x^2}\; \mathrm{d} x = \int_{0}^{\infty} \frac{2\sin{\lambda x}\cos{\lambda x}}{x}\; \mathrm{d} x = \int_{0}^{\infty} \frac{\sin{2\lambda x}}{x}\; \mathrm{d} x = \frac{\pi}{2},
+\end{equation*}
+откуда получаем
+\begin{equation*}
+  I_2(\lambda) = \frac{\pi \lambda}{2} + C.
+\end{equation*}
+
+Из того, что при $\lambda = 0$ подынтегральная функция тождественно равна нулю, и $I_2(0) = C$, следует $C = 0$.\
+Так как подынтегральная функция четна относительно $\lambda$, ответ для произвольного $\lambda$:
+\begin{equation*}
+  \boxed{I_2 = \frac{\pi |\lambda|}{2}}
+\end{equation*}

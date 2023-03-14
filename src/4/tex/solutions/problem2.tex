@@ -1,0 +1,21 @@
+\def \picdir{pic/}
+
+\subsection*{Задача 2}
+Сделаем замену переменных:
+\begin{align*}
+  \xi &= e^{\sfrac{\epsilon}{T}},\\
+  \mathrm{d} \epsilon &= Te^{- \sfrac{\epsilon}{T}}\ \mathrm{d} \xi = \frac{T}{\xi}\ \mathrm{d} \xi,\\
+  \alpha &= e^{\sfrac{V}{T}},\\
+  I(V,T) &= \int_{-\infty}^{+\infty} \left(\frac{1}{e^{\frac{\epsilon-V}{T}} + 1} - \frac{1}{e^{\sfrac{\epsilon}{T}}+1} \right) \; \mathrm{d} \epsilon = \int_{0}^{\infty} \left(\frac{\alpha}{\xi + \alpha}- \frac{1}{\xi + 1} \right)\frac{T}{\xi} \; \mathrm{d} \xi\\
+    &= T \int_{0}^{\infty} \left(\frac{(\xi + \alpha) - \xi}{(\xi + \alpha)\xi}- \frac{(\xi + 1) - \xi}{(\xi + 1)\xi} \right)\; \mathrm{d} \xi = T \int_{0}^{\infty} \left(\frac{1}{\xi + 1}- \frac{1}{\xi + \alpha} \right)\; \mathrm{d} \xi\\
+    &= \left.T\ln{\frac{\xi + 1}{\xi + \alpha}}\right|_0^\infty = V.
+\end{align*}
+Предлагаемое в условии разбиение интеграла на две части не работает,\
+потому как по отдельности каждая из частей расходится:
+\begin{equation*}
+  \lim_{\epsilon \rightarrow -\infty}n_F(\epsilon) = 1,
+\end{equation*}
+т.е. в итоге получается неопределенность вида $\infty - \infty$. Ответ:
+\begin{equation*}
+  \boxed{I(V,T) = V}
+\end{equation*}

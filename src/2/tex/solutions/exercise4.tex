@@ -15,7 +15,7 @@
 т.е. в этой точке будет находится максимум $f(n)$, и если мы подберем
 \feq{(n')^a \ll (\sfrac{a}{b})^a, \label{eq:4.2} \tag{\textbf{У4}.2}}
 то интерал охватит примерно всю область, на которой он набирается:
-\feq{\sum_{n = n'}^\infty f(n) \approx \int_{n'}^\infty f(n)\; \df n + \frac12 f(n') \approx \int_{0}^\infty f(n)\; \df n + \frac12 f(n') = \frac{1}{b^a}\Gamma(a+1) + \frac12 n'^ae^{-bn'}.}
+\feq{\sum_{n = n'}^\infty f(n) \approx \int_{n'}^\infty f(n)\; \df n + \frac12 f(n') \approx \int_{0}^\infty f(n)\; \df n + \frac12 f(n') = \frac{1}{b^{a+1}}\Gamma(a+1) + \frac12 n'^ae^{-bn'}.}
 Оценим сумму остальных членов сверху:
 \feq{n' \ll \frac{a}{b} \Rightarrow \forall n < n' \hookrightarrow f(n) \le f(n') \Rightarrow \sum_{n = 1}^{n' - 1} f(n) \le (n'-1)f(n'-1) = (n'-1)^{(a+1)}e^{-b(n'-1)}.}
 Так как $n' \ll \frac{a}{b},\ bn' \ll a \sim 1 \Rightarrow e^{-bn'} \approx e^{-b(n-1)} 1$, а следовательно, если выполняется
